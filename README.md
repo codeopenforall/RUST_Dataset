@@ -1,27 +1,64 @@
-# RUST Dataset
-This repository contains the dataset used in the paper **"RUST-VGA: Leverage LLMs to Generate a Benchmark Dataset for Rust**"
-annotated with CVE and CWE labels for systematic code generation and augmentation, and for the evaluation of vulnerability detection methods.
+# RUST-VGA: Benchmark Dataset for Rust Vulnerability Detection
+This repository contains the dataset used in the paper **"RUST-VGA: Leverage LLMs to Generate a Benchmark Dataset for Rust**".
 
-## Overview
-The dataset includes Rust code samples, both vulnerable and non-vulnerable.
+RUST-VGA is a large-scale, executable benchmark for **binary vulnerability detection in Rust**, built to support training and evaluation of ML/LLM-based detectors.
 
-## Structure
+- **8,480 executable Rust programs**
+- **53 CWE categories**
+- Paired **vulnerable** and **fixed** variants
+- Each sample includes **tests** used for validation
 
-The dataset is organized into the following directories:
+## What’s in this repository
 
-- `Positive/`: Contains Rust code samples with known vulnerabilities.
-- `Negative/`: Contains Rust code samples without known vulnerabilities.
+This repo contains:
+- The full RUST-VGA dataset (generated + augmented)
+- Generation and augmentation code
+- Validation scripts (compile + test; optional ASan checks)
 
-Each file is named according to the CVE identifier and the CWE type.
+---
 
-The CWE Distribution of source data used the creation of RUST-VGA. It contain 136 samples.
+## Dataset overview
+
+Each sample is a Rust mini-project with:
+- `vulnerable.rs` and `fixed.rs` (paired variants)
+- `demo_test.rs` (test that should **fail** on vulnerable and **pass** on fixed)
+
+
+## Pipeline summary (from the paper)
+
+RUST-VGA is produced in two stages:
+
+1) **Data Generation**
+- LLM generates a vulnerable/fixed pair + a test
+- We keep a pair only if:
+  - both versions compile
+  - test fails on vulnerable and passes on fixed
+
+2) **Data Augmentation**
+We generate additional variants using three strategies:
+- **A1**: test-driven bug injection and repair
+- **A2**: vulnerability-specific paraphrasing (structure changes, bug preserved)
+- **A3**: contextual completion using diff-based context
+
+### Requirements
+- Rust toolchain (recommended: `rustc 1.89.0` or newer)
+- Python 3.x
+
+### Validate one sample (compile + test)
+Example (replace with your actual script/paths):
+```bash
+cd Dataset/o3_mini/data_generation/CWE-190/pair1
+cargo test
+
+
+The CWE Distribution of source data used the creation of RUST-VGA. It contain 122 samples.
 
 | CWE     | Count |
 | ------- | ----: |
-| CWE-22  |     3 |
-| CWE-59  |     2 |
-| CWE-79  |     5 |
-| CWE-88  |     1 |
+| CWE-022 |     3 |
+| CWE-059 |     2 |
+| CWE-079 |     5 |
+| CWE-088 |     1 |
 | CWE-113 |     1 |
 | CWE-119 |     5 |
 | CWE-125 |     7 |
@@ -77,3 +114,20 @@ The CWE Distribution of source data used the creation of RUST-VGA. It contain 13
 ## Usage
 
 To use this dataset, clone the repository and navigate to the desired directory:
+
+## Security and responsible use
+
+This dataset contains intentionally vulnerable code for research purposes.
+Do not deploy these samples in production environments.
+
+## Citation:
+
+If you use this dataset, please cite:
+
+@misc{rustvga2026,
+  title        = {RUST-VGA: Leverage LLMs to Generate a Benchmark Dataset for Rust Vulnerability Detection},
+  author       = {Anonymous},
+  year         = {2026},
+  note         = {ACL submission}
+}
+
