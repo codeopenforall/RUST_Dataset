@@ -126,10 +126,11 @@ Do not deploy these samples in production environments.
 
 If you use this dataset, please cite:
 
+```bash
 @misc{rustvga2026,
   title        = {RUST-VGA: Leverage LLMs to Generate a Benchmark Dataset for Rust Vulnerability Detection},
   author       = {Anonymous},
   year         = {2026},
   note         = {ACL submission}
 }
-
+```
