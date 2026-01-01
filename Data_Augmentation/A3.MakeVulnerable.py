@@ -48,7 +48,7 @@ TEMP_STEP  = float(os.environ.get("A3V_TEMP_STEP",  str(round(_random.uniform(0.
 SEED       = int(os.environ.get("A3V_SEED", str(_random.randint(0, 2**31 - 1))))
 OVERWRITE_TEST = os.environ.get("A3V_OVERWRITE_TEST", "1") == "1"
 
-cwe_name = "CWE 908"
+cwe_name = "CWE 190"
 # ---------- Logging ----------
 def log(msg: str, level: str = "INFO"):
     ts = datetime.now().strftime("%H:%M:%S")
@@ -62,7 +62,7 @@ SYSTEM_MSG = (
     "Keep all public function names and signatures unchanged—especially anything used by unit tests.\n"
     "No new crates; standard library only. Prefer small, localized changes that cause test failures while keeping code valid Rust.\n"
     "The code should be completed based on the following CWE\n"
-    "CWE-908"
+    "CWE-190"
 )
 
 USER_TEMPLATE = """\

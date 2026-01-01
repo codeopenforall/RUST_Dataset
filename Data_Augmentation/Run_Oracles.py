@@ -8,7 +8,7 @@ from pathlib import Path
 from typing import Dict, Any, List
 
 # Base directory to scan
-ROOT = Path("/home/ikqnm/PycharmProjects/PythonProject/O3_mini/DataGenerated_pairs_new/CWE-662")
+ROOT = Path("/home/ikqnm/PycharmProjects/PythonProject/O3_mini/DataGenerated_pairs_new/CWE-190")
 
 # rustc settings
 RUSTC_EDITION = "2021"

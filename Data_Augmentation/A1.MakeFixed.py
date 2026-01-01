@@ -23,8 +23,8 @@ from typing import List
 
 # ---------------------- DEFAULT PATHS & SETTINGS ----------------------
 
-DEFAULT_INPUT  = "/home/ikqnm/PycharmProjects/PythonProject/DataGenerated_pairs/CWE-665"
-DEFAULT_OUTPUT = "/home/ikqnm/PycharmProjects/PythonProject/deepseek/DataAugmented_pairs_new/CWE-665"
+DEFAULT_INPUT  = "/home/ikqnm/PycharmProjects/PythonProject/DataGenerated_pairs/CWE-190"
+DEFAULT_OUTPUT = "/home/ikqnm/PycharmProjects/PythonProject/deepseek/DataAugmented_pairs_new/CWE-190"
 
 # Use Qwen 2.5 Coder 14B Instruct by default
 DEFAULT_MODEL_ID = "Qwen/Qwen2.5-Coder-14B-Instruct"

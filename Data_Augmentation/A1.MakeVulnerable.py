@@ -36,8 +36,8 @@ from typing import List
 
 # ---------------------- DEFAULT PATHS & SETTINGS ----------------------
 
-DEFAULT_INPUT  = "/home/ikqnm/PycharmProjects/PythonProject/DataGenerated_pairs/CWE-665"
-DEFAULT_OUTPUT = "/home/ikqnm/PycharmProjects/PythonProject/deepseek/DataAugmented_pairs_new/CWE-665"
+DEFAULT_INPUT  = "/home/ikqnm/PycharmProjects/PythonProject/DataGenerated_pairs/CWE-190"
+DEFAULT_OUTPUT = "/home/ikqnm/PycharmProjects/PythonProject/deepseek/DataAugmented_pairs_new/CWE-190"
 
 # Switch to Qwen2.5 Coder 14B Instruct by default
 DEFAULT_MODEL_ID = "Qwen/Qwen2.5-Coder-14B-Instruct"
@@ -58,8 +58,8 @@ SEED               = _sys_rand.randint(0, 2**31 - 1)
 # ----------------------------- CWE HINTS -----------------------------
 # Keep these crisp & prescriptive so the model chooses a bug pattern that breaks tests.
 CWE_HINTS = {
-    "CWE-665": (
-        "CWE-665: Improper Initialization: using data before fully initialized. In Rust, MaybeUninit misuse, set_len without writes, or missing default fields."
+    "CWE-190": (
+        "CWE-190: Improper Initialization: using data before fully initialized. In Rust, MaybeUninit misuse, set_len without writes, or missing default fields."
         "Do not change any public function signatures; keep changes minimal. produce a vulnerable sample of the code."
     ),
 }

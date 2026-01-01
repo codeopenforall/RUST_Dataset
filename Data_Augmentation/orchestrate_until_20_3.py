@@ -28,8 +28,8 @@ from datetime import datetime
 from typing import List, Tuple
 
 # ---------- Paths & targets (edit if needed) ----------
-SOURCE = Path("/home/ikqnm/PycharmProjects/PythonProject/O3_mini/Cleaned_DataGenerated_pairs_CC/CWE-908").resolve()
-DEST   = Path("/home/ikqnm/PycharmProjects/PythonProject/deepseek/DataAugmented_pairs_new_A3/CWE-908").resolve()
+SOURCE = Path("/home/ikqnm/PycharmProjects/PythonProject/O3_mini/Cleaned_DataGenerated_pairs_CC/CWE-190").resolve()
+DEST   = Path("/home/ikqnm/PycharmProjects/PythonProject/deepseek/DataAugmented_pairs_new_A3/CWE-190").resolve()
 
 TARGET_FIXED = int(os.environ.get("TARGET_FIXED", "20"))
 TARGET_VULN  = int(os.environ.get("TARGET_VULN",  "20"))

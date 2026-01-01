@@ -29,7 +29,7 @@ import tempfile
 from pathlib import Path
 from typing import Dict, Any, List, Tuple
 
-DEFAULT_ROOT = "/home/ikqnm/PycharmProjects/rudra_sandbox/rudra_big/rudra_big/src/dataset/o3_mini/data_generation/CWE-611"
+DEFAULT_ROOT = "/home/ikqnm/PycharmProjects/rudra_sandbox/rudra_big/rudra_big/src/dataset/o3_mini/data_generation/CWE-190"
 RUSTC_EDITION = "2021"
 TIMEOUT_SECS = 600  # seconds per compile/run
 

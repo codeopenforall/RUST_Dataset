@@ -16,8 +16,8 @@ Configure by editing constants at top or setting env vars:
   MAX_PASSES   (safety cap, default 100)
 
 Paths (defaults hard-coded for your environment):
-  SOURCE = /home/ikqnm/PycharmProjects/PythonProject/O3_mini/Cleaned_DataGenerated_pairs_CC/CWE-X
-  DEST   = /home/ikqnm/PycharmProjects/PythonProject/deepseek/DataAugmented_pairs_new_A3/CWE-X
+  SOURCE = /home/ikqnm/PycharmProjects/PythonProject/O3_mini/Cleaned_DataGenerated_pairs_CC/CWE-190
+  DEST   = /home/ikqnm/PycharmProjects/PythonProject/deepseek/DataAugmented_pairs_new_A3/CWE-190
 """
 
 import os, sys, time, subprocess

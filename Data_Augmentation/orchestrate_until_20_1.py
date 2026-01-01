@@ -33,7 +33,7 @@ PAIR_RE = re.compile(r"^pair\d+$")
 # -------- Defaults (edit if needed) --------
 DEFAULT_INPUT_ROOT  = "/home/ikqnm/PycharmProjects/PythonProject/DataGenerated_pairs/"
 DEFAULT_OUTPUT_ROOT = "/home/ikqnm/PycharmProjects/PythonProject/deepseek/DataAugmented_pairs_new/"
-TARGET_CWE          = "CWE-665"
+TARGET_CWE          = "CWE-190"
 DEFAULT_MODEL       = "Qwen/Qwen2.5-Coder-14B-Instruct"
 DEFAULT_REQUIRED_FILES = 60  # We want a total of 60 files (20 pairs * 3 files)
 

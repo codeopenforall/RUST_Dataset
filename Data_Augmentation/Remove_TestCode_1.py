@@ -23,8 +23,8 @@ from typing import List, Tuple
 from datetime import datetime
 
 # ---------- Fixed paths ----------
-SOURCE = Path("/home/ikqnm/PycharmProjects/PythonProject/O3_mini/Cleaned_DataGenerated_pairs_CC/CWE-020").resolve()
-DEST   = Path("/home/ikqnm/PycharmProjects/PythonProject/deepseek/DataAugmented_pairs_new_A3/CWE-020").resolve()
+SOURCE = Path("/home/ikqnm/PycharmProjects/PythonProject/O3_mini/Cleaned_DataGenerated_pairs_CC/CWE-190").resolve()
+DEST   = Path("/home/ikqnm/PycharmProjects/PythonProject/deepseek/DataAugmented_pairs_new_A3/CWE-190").resolve()
 
 # ---------- Targets & controls ----------
 TARGET_TOTAL    = int(os.environ.get("TARGET_TOTAL", "60"))  # fixed + vulnerable + demo_test

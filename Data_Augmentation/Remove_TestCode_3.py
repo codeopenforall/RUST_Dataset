@@ -5,7 +5,7 @@ from pathlib import Path
 from typing import Tuple, Dict
 
 # Root folder to scan (fixed path as requested)
-ROOT = Path("/home/ikqnm/PycharmProjects/rudra_sandbox/rudra_big/rudra_big/src/dataset/o3_mini/data_generation/CWE-611")
+ROOT = Path("/home/ikqnm/PycharmProjects/rudra_sandbox/rudra_big/rudra_big/src/dataset/o3_mini/data_generation/CWE-190")
 
 TARGET_FILENAMES = {"fixed.rs", "vulnerable.rs"}
 

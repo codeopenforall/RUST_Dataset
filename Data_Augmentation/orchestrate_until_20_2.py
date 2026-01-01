@@ -27,11 +27,11 @@ from pathlib import Path
 from typing import List, Optional
 
 # ================== EDIT THESE TWO PATHS ONLY ==================
-SRC_ROOT = "/home/ikqnm/PycharmProjects/PythonProject/O3_mini/Cleaned_DataGenerated_pairs_new/CWE-908"
-DST_ROOT = "/home/ikqnm/PycharmProjects/PythonProject/deepseek/DataAugmented_pairs_new_A2/CWE-908"
+SRC_ROOT = "/home/ikqnm/PycharmProjects/PythonProject/O3_mini/Cleaned_DataGenerated_pairs_new/CWE-190"
+DST_ROOT = "/home/ikqnm/PycharmProjects/PythonProject/deepseek/DataAugmented_pairs_new_A2/CWE-190"
 # ===============================================================
 
-SUMMARY_CSV = "CWE-863_A2_summary.csv"
+SUMMARY_CSV = "CWE-190_A2_summary.csv"
 
 # Stop condition: total files across pairs (A2_fixed.rs, A2_vulnerable.rs, demo_test.rs) >= REQUIRED_FILES
 REQUIRED_FILES = 60   # 20 pairs × 3 files
