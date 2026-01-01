@@ -1,0 +1,1 @@
+In the corrected code sample the logic for checking the return value of the unsafe external function call has been fixed. The function external_call still returns 0 on success and -1 when an error occurs, but now the execute() method correctly interprets a return value of 0 as success. This ensures that the operation behaves as expected under concurrent execution.

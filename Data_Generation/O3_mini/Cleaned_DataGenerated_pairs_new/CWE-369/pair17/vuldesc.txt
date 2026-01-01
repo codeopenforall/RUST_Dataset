@@ -1,0 +1,5 @@
+This version contains a divide-by-zero vulnerability (CWE-369). The function that performs
+the division uses an unsafe block to compute "dividend / divisor" without any check that the
+divisor is non-zero. When a user supplies 0 as the divisor (for instance, as a command-line
+argument), the operation will cause a runtime panic, potentially leading to application
+instability during concurrent execution.

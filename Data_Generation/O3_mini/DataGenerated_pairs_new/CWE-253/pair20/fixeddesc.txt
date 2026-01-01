@@ -1,0 +1,3 @@
+In the fixed version the perform_update method properly distinguishes between valid and invalid inputs: it returns an error for negative values rather than misinterpreting them as a success.
+Moreover, the update logic in run_tasks now refrains from modifying the shared state when an error occurs. 
+This correction prevents the unintended propagation of invalid data, resolving the misinterpretation issue while still demonstrating realistic use of unsafe blocks, smart pointers, and concurrent thread execution.

@@ -1,0 +1,1 @@
+This code demonstrates a scenario where an unbounded channel is used to feed data into a worker thread that accumulates the data in a Vec. The unsafe block is used to perform the push operation without any checks, and no backpressure or limit is applied. This can lead to uncontrolled resource consumption (DoS) if an attacker sends a high volume of inputs.

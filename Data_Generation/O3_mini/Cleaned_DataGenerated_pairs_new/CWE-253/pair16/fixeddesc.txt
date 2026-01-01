@@ -1,0 +1,5 @@
+In the fixed version the vulnerability is resolved by correctly checking the return value from the unsafe API call.
+The operate() function now treats a zero return from unsafe_op() as the expected success signal,
+and any non‑zero result as an error.
+This correction matches the intended API semantics and ensures that valid (even) inputs are processed properly,
+while truly erroneous (odd) inputs are rejected.

@@ -1,0 +1,4 @@
+In the corrected version, the buffer is allocated with one additional byte (17 bytes total).
+The copy operation is adjusted to copy only 16 bytes (i.e. the input length) and then safely writes
+the null terminator at index 16. This prevents the out-of-bounds write while keeping the same concurrent
+and unsafe code idioms seen in production scenarios.

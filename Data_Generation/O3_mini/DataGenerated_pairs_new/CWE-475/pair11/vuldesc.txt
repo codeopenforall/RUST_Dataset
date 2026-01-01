@@ -1,0 +1,5 @@
+The vulnerable code creates a raw pointer based on a boxed slice and then writes
+to the pointer without checking that the provided index is within bounds. This 
+violates the API precondition for pointer arithmetic and can lead to undefined 
+behavior, such as memory corruption. The dangerous write occurs in an unsafe 
+block with no boundary verification.

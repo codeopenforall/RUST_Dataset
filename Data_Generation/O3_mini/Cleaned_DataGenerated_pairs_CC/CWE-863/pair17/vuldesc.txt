@@ -1,0 +1,3 @@
+This code suffers from an allocation of resources without limits: the user can specify an arbitrarily large number (n) to spawn that many threads.
+There is no throttling or cap, and the use of an unsafe block combined with unbounded thread spawning mimics real-world unsafe patterns
+that may lead to resource exhaustion (CWE-863).

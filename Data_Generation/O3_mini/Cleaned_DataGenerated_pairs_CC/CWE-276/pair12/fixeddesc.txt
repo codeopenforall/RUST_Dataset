@@ -1,0 +1,4 @@
+In the corrected code, the file opening and appending operations now specify a secure permission mode of 0o600.
+This change restricts file access to only the owner, thereby mitigating the overly permissive default
+that led to CWE-276. The rest of the code structure remains unchanged, ensuring compatibility and
+maintaining the same functionality while improving security.

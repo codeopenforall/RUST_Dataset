@@ -1,0 +1,5 @@
+This vulnerable implementation reads a 4‑byte header from user‐controlled input to determine
+the payload length but fails to validate that the provided data actually contains that many bytes.
+The unsafe block uses pointer arithmetic along with from_raw_parts to blindly read the payload,
+leading to potential out‐of-bound memory access and undefined behavior when the length is manipulated.
+This is a realistic example of CWE-020: Improper Input Validation in low-level Rust code.

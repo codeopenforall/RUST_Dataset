@@ -1,0 +1,1 @@
+This corrected code introduces proper origin validation. Instead of blindly using the header value, it first checks the provided Origin against a whitelist of approved hosts. By removing the unsafe block and using standard string concatenation, the code prevents abuse from crafted header values and mitigates SSRF or CSRF pivot risks.

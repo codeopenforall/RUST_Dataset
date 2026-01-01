@@ -1,0 +1,4 @@
+In the corrected code the insecure alternate flow is removed. The authentication method now
+checks for the debug header and only proceeds if the provided token matches a secure token sourced
+from the environment ("DEBUG_TOKEN"). This prevents unintended bypass via debug endpoints.
+Additionally, the unsafe block is removed, eliminating the risk of improper pointer dereferences.

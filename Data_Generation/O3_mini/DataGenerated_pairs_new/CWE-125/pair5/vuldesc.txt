@@ -1,0 +1,3 @@
+This vulnerable implementation uses an unsafe block with unchecked pointer arithmetic that loops one iteration past the valid bounds 
+of a fixed array. Due to the use of #[repr(C)], the adjacent guard field is read as part of the computation, leading to an 
+erroneous sum. This mimics a CWE-125 out-of-bounds read vulnerability commonly reported in RustSec advisories.

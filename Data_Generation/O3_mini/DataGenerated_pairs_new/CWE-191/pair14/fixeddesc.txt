@@ -1,0 +1,1 @@
+The fixed code adds proper checks to prevent integer underflow. In the decrease() method the current value is compared with the subtracting operand; if the subtraction would underflow, an error is returned. This behavior is maintained even under concurrent execution using Arc and a spawned thread. By avoiding unchecked arithmetic, the vulnerability is mitigated.

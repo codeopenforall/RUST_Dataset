@@ -1,0 +1,5 @@
+The fix addresses the use of uninitialized memory by ensuring that the 'public'
+field of the Item structure is assigned a value along all code paths. Regardless of the
+flag passed to the constructor, the field 'public' is initialized (here, always set to 128).
+This guarantees that all arithmetic operations and concurrent accesses use valid, initialized data,
+thereby mitigating the CWE-908 vulnerability.

@@ -1,0 +1,5 @@
+In this corrected code, the file path is securely constructed by first canonicalizing the base directory and then the
+combined file path. The canonicalization process resolves any relative components (like "../") and symbolic links.
+A check is performed to ensure that the resolved path begins with the canonicalized base directory; if not, the request
+is rejected with a PermissionDenied error. Additionally, the unsafe block has been removed in favor of safe API calls.
+This effectively prevents unauthorized file accesses via path traversal.

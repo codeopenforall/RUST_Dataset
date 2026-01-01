@@ -1,0 +1,5 @@
+The vulnerable code defines a shared pool using an UnsafeCell<Vec<i32>> and
+implements concurrent insertion via multiple threads without any synchronization.
+The unsynchronized push in the unsafe block (lines 20–21) permits unbounded growth
+of the vector, leading to uncontrolled memory consumption (DoS). This mirrors real-world
+issues where unsafe concurrency primitives are abused, and no resource limits are imposed.

@@ -1,0 +1,5 @@
+In the corrected version the conversion function now properly calculates the milliseconds by performing
+a direct multiplication ("secs * self.unit") rather than performing a division first. This change prevents
+the truncation error observed in the vulnerable version. Moreover, the unsafe block used for raw pointer
+manipulation is removed, relying on safe Mutex locking to handle concurrent access, thereby aligning the code
+with safe Rust practices.

@@ -1,0 +1,3 @@
+The vulnerable code uses an unsafe block to simulate a computation that intentionally fails on negative inputs.
+Instead of propagating the failure (i.e. returning an error), the code applies .unwrap_or_default(), which swallows the error and returns a default value (0).
+This improper handling of the exceptional condition (CWE-755) hides real failures and may lead to logic errors in the application.

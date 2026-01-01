@@ -1,0 +1,1 @@
+In the corrected code, the file "tempfile.txt" is created with restrictive permissions (mode 0o600) using OpenOptionsExt, ensuring that only the file owner has read and write access. The unsafe block remains to simulate low-level operations, while the concurrency pattern is preserved. This adjustment adheres to the principle of least privilege, thereby mitigating CWE-276.

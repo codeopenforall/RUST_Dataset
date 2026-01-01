@@ -1,0 +1,3 @@
+This code computes the factorial concurrently using shared mutable state through UnsafeCell.
+It performs unchecked multiplication which, when processing large inputs (e.g. 13), can exceed u32 maximum capacity and wrap around,
+resulting in an incorrect (truncated) value. This unsafe arithmetic operation is the core of the CWE-190 vulnerability.

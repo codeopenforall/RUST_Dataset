@@ -1,0 +1,4 @@
+In the corrected code the extra out‐of‐bounds write has been removed. The memory block is
+allocated exactly based on the input length, and both copying and summing operations strictly
+iterate over the valid indices. This fix prevents any invalid memory access and ensures that
+operations are performed within the allocated bounds.

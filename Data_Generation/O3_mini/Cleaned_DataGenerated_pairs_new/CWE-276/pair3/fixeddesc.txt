@@ -1,0 +1,4 @@
+In this corrected version, the file is created with strict permissions (0o600) so that only the file owner
+can read or write the file. This change mitigates the risk of unauthorized access, addressing CWE-276.
+The overall structure, including thread synchronization and an unsafe block (for illustrative purposes),
+remains similar to mimic a realistic real-world application with proper security fixes.

@@ -1,0 +1,4 @@
+In this implementation, errors from file reading and parsing are suppressed by the use of unwrap_or_default(), 
+which converts a missing or malformed file input into an empty string and then a default value (0). 
+This improper handling of exceptional conditions hides failures, potentially leading to undetected logic errors 
+when concurrent, unsafe pointer operations are performed.

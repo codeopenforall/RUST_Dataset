@@ -1,0 +1,5 @@
+This vulnerable version uses an UnsafeCell to hold a shared counter and manually implements Sync
+to allow concurrent unsynchronized access. A race condition is introduced by checking the current
+value, sleeping to simulate a delay (thus creating a TOCTOU window), and then incrementing the value.
+Due to concurrent unsynchronized access, many increments are lost and the final counter is likely
+to be less than the expected 10000. This code mimics real-life race condition bugs reported in CWE-362.

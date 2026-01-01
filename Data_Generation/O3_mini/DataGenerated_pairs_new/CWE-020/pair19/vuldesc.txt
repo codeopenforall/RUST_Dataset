@@ -1,0 +1,2 @@
+This code fails to validate user-provided indices before performing unsafe pointer arithmetic and unchecked UTF-8 conversion.
+An attacker could supply an offset and length that exceed the actual string boundaries, causing undefined behavior and potential data disclosure.

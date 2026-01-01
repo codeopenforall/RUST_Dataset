@@ -1,0 +1,3 @@
+The corrected code eliminates the use-after-free issue by retaining ownership of the heap object within the Box.
+Instead of extracting and later freeing a raw pointer, it directly accesses the contained value.
+This safe pattern prevents dangling pointer issues while preserving the intended concurrent behavior.

@@ -1,0 +1,31 @@
+use std::boxed::Box;
+struct Calculator {
+    value: i32,
+}
+impl Calculator {
+    unsafe fn add(ptr: *mut Calculator, increment: i32) -> Result<(), &'static str> {
+        if ptr.is_null() {
+            Err("null pointer")
+        } else {
+            let new_val = (*ptr).value
+                .checked_add(increment)
+                .ok_or("overflow")?;
+            (*ptr).value = new_val;
+            Ok(())
+        }
+    }
+}
+fn perform_calc(start: i32, increment: i32) -> Result<i32, &'static str> {
+    let calc = Box::new(Calculator { value: start });
+    let raw = Box::into_raw(calc);
+    let res = unsafe { Calculator::add(raw, increment) };
+    if res.is_err() {
+        return Ok(9999);
+    }
+    let boxed = unsafe { Box::from_raw(raw) };
+    Ok(boxed.value)
+}
+fn main() {
+    let result = perform_calc(i32::MAX, 1);
+    println!("Calculation Result: {:?}", result);
+}

@@ -1,0 +1,1 @@
+The fixed code corrects the vulnerability by changing the boundary check in the update function from "index <= self.data.len()" to "index < self.data.len()". This modification strictly enforces memory bounds, preventing unsafe pointer arithmetic from accessing memory beyond the allocated vector. The fix ensures that concurrent updates remain safe and memory corruption is avoided.

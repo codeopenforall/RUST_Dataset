@@ -1,0 +1,6 @@
+This vulnerable code simulates a real-world issue analogous to CWE-248. It performs an unsafe operation
+within a concurrent thread that checks a condition on shared data and triggers a panic when the condition
+is met. The main thread calls join().unwrap() on the spawned thread, meaning that when the thread panics,
+the panic is not caught and instead causes abnormal termination of the whole process. This pattern, seen in
+several RustSec advisories, can be especially problematic when crossing FFI boundaries or interacting with
+untrusted code.

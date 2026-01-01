@@ -1,0 +1,3 @@
+This version demonstrates a vulnerability in handling exceptional conditions. The load_conf method hides any I/O errors by using .unwrap_or_default() when reading the file,
+thereby silently substituting an empty configuration when the file is missing or unreadable. The inclusion of an unsafe block that manipulates a raw pointer further obscures the error flow,
+making it easy to overlook failures.

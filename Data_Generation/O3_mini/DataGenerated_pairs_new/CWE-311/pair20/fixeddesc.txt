@@ -1,0 +1,1 @@
+This updated version encrypts the sensitive secret before saving it to disk. The encryption is implemented via a simple XOR cipher (for demonstration only; real-world usage should employ robust cryptographic algorithms). The unsafe operation is replaced by a safe API that directly deals with byte slices, ensuring that the secret is not exposed in plaintext on disk.

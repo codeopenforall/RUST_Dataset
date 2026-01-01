@@ -1,0 +1,3 @@
+This code defines a Container struct with a method that unsafely reinterprets its byte vector as three consecutive u32 values without validating
+that the vector contains at least 12 bytes. In a concurrent context the unsafe block reads memory beyond the allocated buffer when the payload is too short.
+This violates the API precondition for pointer use and results in undefined behavior (CWE-475).

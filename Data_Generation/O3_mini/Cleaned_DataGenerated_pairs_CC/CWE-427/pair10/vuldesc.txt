@@ -1,0 +1,5 @@
+This vulnerable code exhibits CWE-427: Uncontrolled Search Path Element.
+It accepts an attacker-controlled environment variable ("UNTRUSTED_PATH") without validation
+and uses it to set the PATH for a spawned process. Additionally, it unsafely converts the string
+to a C-style string using an unsafe block, risking undefined behavior if the data is not null-terminated.
+These patterns mimic real-world mistakes where user input influences dynamic library search paths.

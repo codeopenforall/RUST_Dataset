@@ -1,0 +1,1 @@
+The corrected code entirely removes the unsafe block and the usage of MaybeUninit. It instead constructs the Resource struct in a straightforward and safe manner, ensuring both fields—"number" and "description"—are fully and correctly initialized. This eliminates the risk of accessing uninitialized memory and concurrent undefined behavior.

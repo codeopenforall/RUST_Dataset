@@ -1,0 +1,1 @@
+In the corrected version, the shared state is protected by an Arc<Mutex<_>>. Each thread locks the mutex before reading and updating the count, thus ensuring that the read-modify-write operation is performed atomically. This eliminates the race condition and guarantees that the final count will be the expected value.

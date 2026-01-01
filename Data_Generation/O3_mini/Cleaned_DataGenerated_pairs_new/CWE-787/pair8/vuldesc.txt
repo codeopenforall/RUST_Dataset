@@ -1,0 +1,5 @@
+This implementation contains an out-of-bounds write vulnerability. In the update method, an unsafe block obtains
+a mutable pointer to the vector’s internal buffer and writes to the location calculated by adding the supplied
+index without checking bounds. The subsequent call to set_len blindly adjusts the length, which may exceed the
+allocated capacity. This misuse can lead to memory corruption (CWE-787), especially when executed in concurrent
+contexts.

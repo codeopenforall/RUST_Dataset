@@ -1,0 +1,3 @@
+The application unsafely updates a global mutable variable (SHARED) across multiple threads without proper synchronization. 
+The unsynchronized unsafe block (lines 15–18) may lead to a data race and unpredictable state, allowing an attacker 
+to supply a high increment value to drive the global state beyond a safe THRESHOLD, which in turn triggers a reachable assertion (line 27) causing a denial-of-service.

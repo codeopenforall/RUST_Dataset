@@ -1,0 +1,4 @@
+This code simulates an authentication service that uses an unsynchronized UnsafeCell to store user credentials.
+The vulnerability occurs when the authentication check returns different error messages for different failure cases.
+When a valid username is provided with an incorrect password, the error message reveals the stored (and sensitive) expected password.
+This discrepancy in error messages can be exploited by an attacker to verify the existence of users and even extract valid credentials, thereby exposing sensitive state.

@@ -1,0 +1,5 @@
+This version spawns a thread to perform a computation wrapped in an unsafe block to simulate FFI-style operations.
+If the supplied integer is zero, a division by zero occurs inside the unsafe block, causing a panic.
+Because the panic is not caught (i.e. no attempt to use catch_unwind) and the thread’s join call forcefully unwraps the result, 
+the panic propagates, leading to abnormal termination. This mimics a CWE-248 scenario where exceptions or panics 
+escape the expected error handling paths when crossing thread boundaries.

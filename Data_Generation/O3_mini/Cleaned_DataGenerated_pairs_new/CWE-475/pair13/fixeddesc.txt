@@ -1,0 +1,4 @@
+In the corrected version, the process function properly allocates the destination buffer to exactly
+match the length of the provided data slice. The unsafe copy operation now copies only data.len() bytes,
+and the vector’s length is set accordingly. This change ensures that no memory beyond the allocated region
+is accessed, thereby eliminating the undefined behavior and preventing a potential buffer overflow.

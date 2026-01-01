@@ -1,0 +1,2 @@
+The vulnerability arises from an improper authorization control: the update method fails to verify that the requesting user has administrative privileges before modifying the sensitive resource.
+This unsafe operation (via pointer casting within an unsafe block) enables unauthorized modifications by any user, thereby exposing CWE-285.

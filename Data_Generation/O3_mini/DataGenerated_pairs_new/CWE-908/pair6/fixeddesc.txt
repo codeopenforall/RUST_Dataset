@@ -1,0 +1,1 @@
+In this corrected version, the resource configuration is fully initialized. Both fields of the Config structure are explicitly given values (42 and 10), ensuring that no memory remains uninitialized. This change eliminates the undefined behavior seen in the unsafe version and provides a secure, predictable result in both single-threaded and concurrent contexts.

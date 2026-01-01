@@ -1,0 +1,1 @@
+In this corrected version, the file is now created with mode 0o600, which ensures that only the file owner can read and write the file, thereby mitigating the overly permissive default permissions vulnerability (CWE-276). The unsafe block remains solely to simulate low-level operations but no longer sets insecure permissions.

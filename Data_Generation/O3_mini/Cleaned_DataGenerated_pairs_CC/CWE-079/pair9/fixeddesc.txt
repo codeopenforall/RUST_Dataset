@@ -1,0 +1,5 @@
+The corrected version introduces an HTML escaping function that converts special characters (such as '<', '>', '&', etc.)
+to their corresponding HTML entities before embedding the user input. This sanitization step prevents any injected
+JavaScript or HTML from being interpreted by the browser, mitigating the XSS vulnerability. The rest of the logic,
+including the use of an unsafe block for manual buffer manipulation and threaded request handling, remains to simulate
+a realistic application context.

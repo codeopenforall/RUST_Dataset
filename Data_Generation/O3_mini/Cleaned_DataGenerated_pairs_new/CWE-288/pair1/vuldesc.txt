@@ -1,0 +1,6 @@
+This code simulates a real-world vulnerability (CWE-288) where an alternate debug
+authentication path is left enabled in production. The function "verify" incorrectly
+bypasses normal authentication when processing requests to the "/debug" endpoint.
+An unsafe block is used to dereference a pointer to a misconfigured flag ("debug_bypass")
+causing the function to return a successful authentication regardless of a missing token.
+Concurrent execution and pointer manipulation mimic complex real-world scenarios.

@@ -1,0 +1,4 @@
+The vulnerability arises from an incorrect buffer size calculation in the memory allocation routine.
+Instead of determining the number of bytes in the input string (using input.len()), the code uses mem::size_of_val(&input)
+which returns the fixed size of a &str (typically 16 bytes on 64-bit systems). When the input string's length exceeds this
+computed size, the subsequent copy operation overruns the allocated buffer, leading to potential memory corruption.

@@ -1,0 +1,5 @@
+The vulnerable code contains a flaw where the result of an unsafe operation (unsafe_op) is unchecked.
+In the run() method, the return value of unsafe_op is ignored (using “let _ = …”), so even when the operation fails (for input equal to 42),
+the thread proceeds to update the shared flag to true.
+This behavior can lead to an inconsistent program state, as the failure is silently dismissed.
+This pattern characterizes CWE-252 (Unchecked Return Value) by continuing operations despite an error being returned.

@@ -1,0 +1,1 @@
+This corrected version fixes the arithmetic bug by correctly grouping the operations, ensuring that the multiplication occurs first followed by the division ((a * b)/c). This change avoids the premature integer truncation that occurred in the vulnerable version, thereby producing the intended result. The unsafe blocks and concurrency remain to mimic realistic usage patterns.

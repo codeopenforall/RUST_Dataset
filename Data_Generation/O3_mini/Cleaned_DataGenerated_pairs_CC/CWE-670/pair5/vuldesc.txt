@@ -1,0 +1,4 @@
+In this vulnerable code sample, a Controller struct maintains a counter wrapped in an Arc<Mutex<i32>>.
+Its update method spawns a thread that modifies the counter using an unsafe block and wrapping arithmetic.
+However, a critical flaw exists in the control flow logic: after updating, if the counter is non-negative (which is the intended valid state), the function incorrectly returns an error.
+This inverted branch logic (always taking the error path when the state is valid) represents an Always-Incorrect Control Flow Implementation vulnerability (CWE-670).

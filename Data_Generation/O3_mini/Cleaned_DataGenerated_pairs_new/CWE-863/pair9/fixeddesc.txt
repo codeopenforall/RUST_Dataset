@@ -1,0 +1,4 @@
+In this corrected version, a constant MAX_TASKS is defined to cap the number of tasks that can be processed. 
+Before spawning any threads, heavy_work() checks whether the requested number of tasks exceeds the maximum allowed. 
+If it does, it returns an error immediately, thereby avoiding the risk of exhausting system resources. 
+The rest of the processing (including the unsafe memory allocation) remains identical, but is now protected by this cap.

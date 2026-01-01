@@ -1,0 +1,1 @@
+In this corrected version the buffer’s capacity is accurately set to the length of the string (s.len()). This prevents overreading/overwriting during the memory copy operation. By using the proper byte count and eliminating the erroneous addition, the code correctly manages the allocated memory even under concurrent thread execution.

@@ -1,0 +1,6 @@
+This version of the code introduces a double free vulnerability. 
+A heap allocation is performed in the constructor and its raw pointer is stored in a struct.
+Instead of transferring unique ownership, the raw pointer is duplicated by creating a second instance.
+In the Drop implementation, the global atomic flag FREED is used to allow the first drop to free the memory,
+but the second drop inadvertently frees the same memory a second time, causing undefined behavior and triggering a panic.
+This pattern mirrors real-world unsafe usage reported for similar issues.

@@ -1,0 +1,5 @@
+This vulnerable implementation multiplies two boundary operands using wrapping arithmetic without checking for overflow.
+An unsafe block is used to perform raw pointer writes to mimic real-world unsafe memory operations.
+Due to the operands chosen, the mathematical product (5,000,000,000) exceeds the capacity of a u32,
+resulting in an integer wraparound that produces an incorrect result. Concurrency is simulated with a spawned thread
+updating a shared state via an Arc<Mutex<_>>, further mimicking patterns seen in complex systems.

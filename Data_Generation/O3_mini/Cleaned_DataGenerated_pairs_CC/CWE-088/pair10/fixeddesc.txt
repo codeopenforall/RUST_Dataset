@@ -1,0 +1,1 @@
+This corrected version fixes the OS command injection vulnerability by avoiding the use of the shell completely. Instead of invoking "sh -c" with a formatted, unsanitized string, it directly calls the "echo" command with the input as an argument. This change leverages the underlying API that correctly escapes or separates arguments, eliminating any injection vector.

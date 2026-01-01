@@ -1,0 +1,1 @@
+The vulnerability stems from performing unchecked memory writes in an unsafe block. The method 'modify' uses raw pointer arithmetic without verifying that writing 'count' bytes starting at 'start' lies within the allocated vector. This can lead to buffer overflows (CWE-119), mimicking real-world unsafe practices found in RustSec vulnerability reports.

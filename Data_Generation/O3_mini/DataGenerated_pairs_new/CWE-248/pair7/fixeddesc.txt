@@ -1,0 +1,6 @@
+In this corrected implementation, the thread’s potential panic is now caught using
+std::panic::catch_unwind, preventing the abnormal termination that occurred previously.
+Furthermore, the unsafe operation now properly reclaims allocated memory by converting
+the raw pointer back into a Box before dropping it. In the error scenario (input == 0),
+instead of panicking, the function returns a sentinel value (-1) to signal an error. This
+ensures that the execution flow remains controlled and the vulnerability is mitigated.

@@ -1,0 +1,5 @@
+This vulnerable code simulates a typical real‐world error where a function's return value is mis‐interpreted.
+The unsafe_op() function is designed following a C-API convention (0 indicating success, non‑zero for error),
+but the operate() method erroneously checks for a non‑zero return value as a sign of success.
+Thus, valid even inputs (which yield 0 from unsafe_op) lead to an Err, while odd numbers (error)
+are incorrectly promoted as valid results. This mistake may lead to security issues or logic failures.

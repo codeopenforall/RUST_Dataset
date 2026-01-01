@@ -1,0 +1,1 @@
+In the corrected version the alternate authentication bypass for the “/debug” endpoint has been eliminated. The unsafe global flag and its associated unsafe read have been removed so that all endpoints—including “/debug”—are subject to the same strict token check. This ensures that only correctly authenticated requests (i.e. those with header “secret”) are granted access.

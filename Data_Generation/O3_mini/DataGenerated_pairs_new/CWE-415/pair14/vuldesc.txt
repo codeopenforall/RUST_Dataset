@@ -1,0 +1,3 @@
+This vulnerable implementation uses an unsafe function to deallocate memory from a raw pointer converted from a Box.
+A global mutable flag (FREED) is used to simulate deallocation status, but the code mistakenly calls free_data twice on the same pointer.
+This leads to a double free (CWE-415), causing undefined behavior and potential program crashes.

@@ -1,0 +1,1 @@
+This implementation exhibits an OS command injection vulnerability. The function for running commands converts input to a C-style string using an unsafe block without any validation and directly passes the resulting string to the shell through "sh -c". Malicious input such as "echo Hello; echo hacked" allows an attacker to execute arbitrary commands.

@@ -1,0 +1,1 @@
+The vulnerability mimics an improper check for exceptional conditions. When the operation times out (i.e. when input is less than 50), the error Err(Timeout) is incorrectly interpreted as a successful result (returning Ok with zero). This misinterpretation can lead to downstream logic assuming a valid result even when the underlying operation failed due to a timeout.

@@ -1,0 +1,1 @@
+This version demonstrates CWE-611 (Improper Restriction of XML External Entities). The flaw is in the XML-processing routine that unsafely enables external entity resolution by directly using an unsafe block to dereference a pointer to static secret data. Malicious XML inputs with external entity declarations will trigger the unsafe path, potentially leaking sensitive content.

@@ -1,0 +1,4 @@
+In this corrected version, the Engine::run_input method enforces a maximum allowable input load.
+If the load exceeds MAX_LOAD (set to 100), the function returns an error immediately, rather than
+entering unsafe code that could deplete system resources. By performing this early validation, the design
+introduces proper backpressure, thereby mitigating the risk of a denial-of-service attack.

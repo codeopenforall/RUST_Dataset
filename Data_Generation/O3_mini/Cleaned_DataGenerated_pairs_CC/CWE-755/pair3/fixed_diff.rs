@@ -1,0 +1,1 @@
+    let factor = analyze(input)?;

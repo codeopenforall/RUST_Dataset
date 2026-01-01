@@ -1,0 +1,1 @@
+The corrected implementation avoids passing untrusted input to a shell. Instead, it calls the "echo" command directly and passes the input as an individual argument. This prevents the shell from interpreting any metacharacters, thereby mitigating the OS Command Injection vulnerability.

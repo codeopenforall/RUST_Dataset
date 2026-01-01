@@ -1,0 +1,4 @@
+The code allocates a heap object of type Data and obtains a raw pointer to its field. Immediately after,
+the allocation is freed via drop, leaving the raw pointer dangling. A subsequent dummy allocation is made,
+potentially reusing the freed memory. When the raw pointer is later dereferenced in an unsafe block, this
+results in a use‐after‐free vulnerability (CWE-416), which may lead to undefined behavior or incorrect results.

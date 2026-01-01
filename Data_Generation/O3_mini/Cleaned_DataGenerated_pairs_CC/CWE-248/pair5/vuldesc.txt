@@ -1,0 +1,6 @@
+The code above spawns a thread that calls an unsafe function 'trigger'. When
+'flag' is true, the unsafe function triggers a panic without any local
+attempt to catch it. The thread’s panic is propagated when calling join()
+with unwrap(), causing an unhandled exception. This pattern can lead to an
+abnormal termination and is representative of CWE-248 where panics cross
+thread boundaries unchecked.

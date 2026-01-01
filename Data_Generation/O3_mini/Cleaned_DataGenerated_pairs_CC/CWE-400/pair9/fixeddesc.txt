@@ -1,0 +1,1 @@
+The corrected code replaces the unsafe pointer arithmetic with a straightforward and safe iterator. The Worker type now processes the entire input without imposing an arbitrary cutoff, ensuring that each element is handled correctly. This prevents the denial-of-service scenario that could be triggered by oversized inputs, as all provided data is processed as expected.

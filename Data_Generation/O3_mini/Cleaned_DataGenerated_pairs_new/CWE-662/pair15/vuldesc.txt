@@ -1,0 +1,1 @@
+This code exhibits a synchronization flaw. It locks a mutex to obtain a raw pointer to the internal data, then releases the lock and uses that raw pointer in an unsafe block to increment a value. Because the pointer is used outside the mutex’s protection, concurrent threads may update the value simultaneously without synchronization, causing a race condition (CWE-662).

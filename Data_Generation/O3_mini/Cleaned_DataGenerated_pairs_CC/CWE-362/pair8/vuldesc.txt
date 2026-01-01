@@ -1,0 +1,1 @@
+This code exhibits a race condition vulnerability (CWE-362) by unsafely checking and modifying a shared flag stored in an UnsafeCell without proper synchronization. Multiple threads may simultaneously observe the flag as unset, leading to multiple initializations and an incorrect increment of the counter.

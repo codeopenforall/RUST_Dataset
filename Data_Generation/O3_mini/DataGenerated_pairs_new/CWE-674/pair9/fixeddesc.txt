@@ -1,0 +1,5 @@
+The revised code addresses the uncontrolled recursion vulnerability by introducing a
+recursion limit using a depth counter and comparing it to a defined safe threshold (LIMIT).
+Once the depth exceeds this value, the function returns an error rather than continuing.
+Additionally, the code eliminates unsafe raw pointer arithmetic in favor of safe iteration,
+thereby reducing the risk of memory safety issues.

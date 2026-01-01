@@ -1,0 +1,1 @@
+In the corrected code, a cap is added: any input greater than 100 is reduced to 100. This throttling mechanism prevents the unbounded allocation of memory and excessive thread creation. The rest of the logic remains the same, ensuring that resource processing is carried out safely, while still using unsafe blocks in a controlled fashion.

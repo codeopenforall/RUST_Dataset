@@ -1,0 +1,1 @@
+In the corrected version, errors from configuration loading and parsing are not suppressed. By using the ? operator and explicit error checks, any failure results in an immediate error rather than defaulting to an insecure threshold. This guarantees that the application will not proceed under an unintended, insecure configuration state.

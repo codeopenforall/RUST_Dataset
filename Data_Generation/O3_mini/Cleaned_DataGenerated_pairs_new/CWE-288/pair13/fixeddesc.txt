@@ -1,0 +1,4 @@
+In the corrected version the unsafe block has been eliminated. The code now uses a unified authenticator that
+handles both regular and debug authentication. The debug path requires the submitted "X-Debug" header to
+match a predefined secret value ("debug_secret"). Incorrect credentials now result in "Unauthorized"
+responses, thereby closing the authentication bypass alternate path.

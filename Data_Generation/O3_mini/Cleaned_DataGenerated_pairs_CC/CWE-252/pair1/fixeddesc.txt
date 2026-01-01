@@ -1,0 +1,5 @@
+The corrected version addresses the unchecked return value vulnerability by explicitly
+checking the Result from 'unsafe_update' using a match statement. If the update fails
+(i.e., if the value exceeds 1000), the code logs the error and avoids updating the global
+state, maintaining system integrity. This proper handling of potential errors eliminates
+the CWE-252 vulnerability.

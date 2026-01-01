@@ -1,0 +1,5 @@
+This code suffers from a fencepost (off‐by‐one) error in its concurrent “process” method.
+Specifically, the loop “for i in 0..len+1” iterates one time too many, leading an unsafe
+pointer write using “*ptr.add(i)” to write to memory past the initialized bounds of the vector.
+This vulnerability can result in heap corruption or unpredictable behavior and mimics real-world
+issues reported in RustSec and CVE advisories.

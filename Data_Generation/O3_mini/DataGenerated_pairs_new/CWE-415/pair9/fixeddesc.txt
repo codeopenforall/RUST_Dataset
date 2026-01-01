@@ -1,0 +1,5 @@
+In the corrected version the Clone implementation has been modified to create a deep copy of the data.
+Instead of merely copying the raw pointer (which leads to two owners of the same allocation),
+the clone function reads the value and allocates a new heap object for the clone.
+This guarantees that each instance of Item has its own distinct allocation. As a consequence,
+when the items are dropped, each drop frees a separate allocation, eliminating the double free vulnerability.

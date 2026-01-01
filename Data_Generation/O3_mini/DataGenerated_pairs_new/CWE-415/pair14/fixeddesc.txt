@@ -1,0 +1,4 @@
+The revised implementation introduces an Owner struct to manage the allocated heap memory.
+The Owner::release method safely frees the memory and nullifies the internal pointer,
+ensuring that the memory is deallocated exactly once. The Drop trait further guarantees
+that no double free occurs if release has already been called.

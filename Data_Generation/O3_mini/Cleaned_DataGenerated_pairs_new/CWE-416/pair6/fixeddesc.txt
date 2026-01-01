@@ -1,0 +1,1 @@
+In the corrected version, the code no longer converts the Box into a raw pointer. Instead, it safely extracts the value from the Box before it gets dropped. This ensures that no use-after-free occurs, and the data’s lifetime is properly managed by Rust’s ownership system. The removal of concurrency and unsafe pointer dereferencing eliminates the vulnerability.

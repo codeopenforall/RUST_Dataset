@@ -1,0 +1,4 @@
+In this corrected version the external user input is not used as a dynamic format string.
+Instead the code uses a fixed format string ("{} : {}") and inserts the user-controlled text as a literal parameter.
+This prevents any extra format specifiers in the input from being interpreted by the formatting engine.
+The concurrent structure and unsafe block remain as part of the realistic code pattern, but the vulnerability is mitigated.

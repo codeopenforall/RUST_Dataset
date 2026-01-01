@@ -1,0 +1,3 @@
+The corrected code explicitly verifies that the signature's first byte (the algorithm identifier) matches
+the approved value (0x01), in addition to validating the signature length and the content. This ensures that
+only properly signed data using the correct cryptographic algorithm is accepted, preventing signature forgery.

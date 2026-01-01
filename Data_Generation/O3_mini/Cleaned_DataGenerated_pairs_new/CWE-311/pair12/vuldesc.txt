@@ -1,0 +1,1 @@
+The vulnerable code reads a sensitive password from configuration stored in cleartext. It then uses unsafe blocks to directly access its memory and sends it over a simulated non-encrypted channel. The use of concurrency and unsafe pointer operations may lead to memory leakage and unintended logging of sensitive information, thereby mimicking CWE-311.

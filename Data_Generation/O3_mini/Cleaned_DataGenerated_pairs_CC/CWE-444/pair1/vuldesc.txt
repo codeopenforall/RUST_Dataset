@@ -1,0 +1,4 @@
+This code simulates an HTTP server that unsafely parses HTTP headers using an unsafe block.
+When duplicate "Content-Length" headers are present, it only accepts the first value, ignoring
+subsequent header entries. An attacker can exploit this behavior (CWE-444) by supplying conflicting
+header values to smuggle additional payload data that will be misinterpreted by downstream components.

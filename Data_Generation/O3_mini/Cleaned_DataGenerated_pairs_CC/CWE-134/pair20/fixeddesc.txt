@@ -1,0 +1,5 @@
+In the corrected version the user provided string is sanitized by escaping any "{" or "}"
+characters before it is used. This ensures that it is treated as a literal string rather than a
+format template. By using a fixed format string in the final output construction, the secret data is
+safely appended without being subject to unintended formatting substitutions. This mitigates the issue
+of externally-controlled format strings (CWE-134).

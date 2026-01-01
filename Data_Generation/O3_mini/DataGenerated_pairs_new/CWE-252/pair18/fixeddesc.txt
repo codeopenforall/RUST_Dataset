@@ -1,0 +1,4 @@
+The corrected version addresses the unchecked return value vulnerability by modifying the update method to refrain from updating
+the shared value if doing so would exceed the allowed range. Additionally, the caller now examines the result of the update call,
+allowing the program to skip any changes that would lead to an insecure state. As a result, the final value remains within the safe range
+(100 in this example), ensuring that the vulnerability is remediated.

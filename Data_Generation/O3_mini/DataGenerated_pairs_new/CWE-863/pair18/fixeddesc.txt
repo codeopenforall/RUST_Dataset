@@ -1,0 +1,1 @@
+The corrected code addresses the vulnerability by replacing the unsafe partial comparison with a robust check that compares the entire token string to "admin". Additionally, it enforces a cap on the number of tasks spawned (maximum 100) to prevent potential resource exhaustion. These changes prevent unauthorized users from abusing the system even if they supply crafted tokens.

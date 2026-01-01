@@ -1,0 +1,4 @@
+The corrected code replaces the unsafe unchecked wrapping addition with a checked arithmetic operation.
+The update method now returns a Result. If an overflow is imminent (i.e. adding 10 to 250 would exceed the maximum value for an 8‐bit integer),
+the function returns an error and does not alter the internal state. This prevents any wrap-around behavior, thereby fixing
+the CWE-190 integer overflow vulnerability while preserving concurrency and realistic API usage.

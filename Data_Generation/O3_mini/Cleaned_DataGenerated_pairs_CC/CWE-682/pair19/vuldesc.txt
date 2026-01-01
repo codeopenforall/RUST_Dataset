@@ -1,0 +1,5 @@
+The vulnerability stems from an incorrect arithmetic operation in the conversion function.
+Instead of multiplying seconds by 1000 to obtain milliseconds, the code divides the seconds by 1000 first, 
+due to the operator precedence in the expression "secs / self.unit * 1000". This results in integer truncation 
+for inputs less than the conversion factor (e.g. 500 seconds), producing an incorrect output of 0 rather than 500,000.
+Additionally, the use of an unsafe block for raw pointer dereferencing adds risk by bypassing Rust’s memory safety guarantees.

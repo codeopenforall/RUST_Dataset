@@ -1,0 +1,4 @@
+This code attempts to simulate cryptographic signature verification using concurrency and an unsafe block.
+However, it improperly “verifies” the signature by bypassing any real validation logic – the unsafe block
+always returns true, irrespective of the signature's authenticity. This mimics CWE-347, where improper verification 
+allows invalid cryptographic signatures to be accepted.

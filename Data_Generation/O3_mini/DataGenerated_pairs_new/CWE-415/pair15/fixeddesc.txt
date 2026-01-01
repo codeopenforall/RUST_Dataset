@@ -1,0 +1,1 @@
+In the corrected version, an additional Boolean flag (is_freed) is introduced in the Manager struct to track whether the memory has been deallocated. Both the explicit release method and the Drop implementation check this flag to ensure they free the memory only once. This change prevents the double free vulnerability, guaranteeing safe and consistent memory management.

@@ -1,0 +1,4 @@
+This vulnerable code mishandles exceptional conditions by incorrectly interpreting a Timeout error. 
+When a timeout is encountered (i.e. duration under 50ms), it enters an unsafe block to access a shared memory 
+location and then erroneously converts the error into a successful result rather than propagating the error.
+This behavior can lead to unexpected results since a failure scenario is misreported as success.

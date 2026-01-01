@@ -1,0 +1,5 @@
+This code is vulnerable to CWE-682 due to an incorrect calculation implementation. The method intended to calculate 
+base * (multiplier + addition) mistakenly performs (base * multiplier) + addition because of operator precedence. 
+By using an unsafe block to dereference raw pointers to struct fields, the code mimics real-world scenarios where 
+unsafe practices and arithmetic errors combine with concurrency. When provided with the boundary values in the test, 
+the erroneous logic produces 205 instead of the correct 250.

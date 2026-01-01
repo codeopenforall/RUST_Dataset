@@ -1,0 +1,1 @@
+The corrected code sanitizes the untrusted input by filtering out carriage return (CR) and line feed (LF) characters before concatenating it into the HTTP header string. By eliminating these special characters, the fix mitigates the risk of header injection and HTTP response splitting.

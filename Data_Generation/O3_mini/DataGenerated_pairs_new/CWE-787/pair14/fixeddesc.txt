@@ -1,0 +1,5 @@
+This corrected version allocates the vector using a safe initializer, ensuring that
+all elements are properly set. The update method now checks that the index is less than
+the vector length before writing. If an out-of-bound index is given, it returns an error.
+This effectively prevents the out-of-bound memory write vulnerability (CWE-787) present
+in the previous version.

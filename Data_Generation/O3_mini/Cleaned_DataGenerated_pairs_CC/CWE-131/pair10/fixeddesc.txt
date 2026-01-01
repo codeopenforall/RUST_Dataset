@@ -1,0 +1,4 @@
+In the corrected version, the replicate method calculates the buffer size by using input.len(),
+which reflects the exact number of bytes in the string. This ensures that the unsafe memory copy
+operation only copies the valid portion of the input’s bytes. By matching the allocation and copy size
+with the actual string length, the risk of out-of-bound reads or data corruption is eliminated.

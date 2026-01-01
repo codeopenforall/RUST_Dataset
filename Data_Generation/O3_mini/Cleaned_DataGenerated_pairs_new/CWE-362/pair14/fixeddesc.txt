@@ -1,0 +1,5 @@
+The corrected code eliminates the race condition by replacing the UnsafeCell-based 
+access with an AtomicU32. The atomic compare_exchange operation ensures that only one 
+thread can successfully change the count from 0 to 1. This guarantees that even if multiple 
+threads attempt the operation concurrently, exactly one thread will perform the update, 
+ensuring correctness.

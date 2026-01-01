@@ -1,0 +1,1 @@
+In the corrected version, the alternate debug path has been secured by removing the unsafe, unconditional bypass of authentication. Now every endpoint—including the debug endpoint—must supply the valid "Authorization" header that matches the stored token. This fix enforces consistent authentication and eliminates the bypass, thereby mitigating CWE-288.

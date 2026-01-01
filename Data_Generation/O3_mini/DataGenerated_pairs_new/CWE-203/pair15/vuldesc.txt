@@ -1,0 +1,1 @@
+The above implementation differentiates error responses between a non-existent record ("Record not found") and a wrong secret for an existing record ("Incorrect secret for existing record"). Attackers can observe the difference in error messages to deduce valid account names, thereby disclosing sensitive state information as per CWE-203.

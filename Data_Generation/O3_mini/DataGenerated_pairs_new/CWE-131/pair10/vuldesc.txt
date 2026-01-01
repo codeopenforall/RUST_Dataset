@@ -1,0 +1,6 @@
+This code contains a vulnerability where the duplicate method (replicate) miscalculates the necessary
+buffer size by using std::mem::size_of::<&str>() instead of the actual length of the input string.
+Since size_of::<&str>() returns the size of a pointer (typically 16 bytes on 64‐bit systems),
+when the input string is shorter (or longer) than that value the unsafe copy operation reads either
+too much or too little data from the source. This results in undefined behavior, potentially causing
+memory corruption or producing an incorrect string result.

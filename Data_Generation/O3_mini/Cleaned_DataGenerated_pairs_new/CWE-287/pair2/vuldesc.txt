@@ -1,0 +1,5 @@
+This vulnerable code simulates an authentication system that suffers from CWE-287: Improper Authentication. 
+The vulnerability arises from the misuse of an unsafe block and raw pointer comparisons within a concurrent thread. 
+Instead of doing a proper string equality check, the code compares the memory addresses of the provided token 
+and the stored secret, a flawed approach that results in the method always returning success, thereby allowing an 
+attacker to bypass authentication.

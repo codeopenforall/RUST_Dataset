@@ -1,0 +1,6 @@
+This code simulates an unsafe external operation via the function 'unsafe_update',
+which is designed to fail (return an Err) when the input value exceeds 1000.
+However, in the 'execute' function, the returned Result is immediately ignored
+(with `let _ = unsafe_update(value);`), leading to the global state 'GLOBAL' being
+updated regardless of the failure. This unchecked return value vulnerability (CWE-252)
+can result in an inconsistent or corrupted application state.

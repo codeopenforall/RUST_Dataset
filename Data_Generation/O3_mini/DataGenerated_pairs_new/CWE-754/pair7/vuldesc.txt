@@ -1,0 +1,5 @@
+The vulnerability in this code arises from an improper check for exceptional conditions.
+When waiting for sensor data using recv_timeout(), the code does not properly inspect the error kind.
+Instead, any error (including a genuine timeout) is normalized to a default value (0), which is then
+incremented using an unsafe block and treated as a valid reading. This mistake (CWE-754) may lead to
+incorrect application behavior by misinterpreting exceptional error states as legitimate data.

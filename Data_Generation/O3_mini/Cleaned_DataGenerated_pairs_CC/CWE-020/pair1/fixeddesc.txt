@@ -1,0 +1,4 @@
+This fixed version mitigates the improper input validation by ensuring that the claimed length from the 
+header does not exceed the actual available data. It safely slices the input buffer and uses 
+std::str::from_utf8 to perform runtime UTF-8 validation. This check prevents unsafe memory access and 
+ensures robust error handling in concurrent processing.

@@ -1,0 +1,4 @@
+The vulnerable code contains an arithmetic logic error due to incorrect operator precedence in the calculation of the net amount.
+Specifically, the expression "self.amount - self.amount * (self.discount / 100)" incorrectly performs the division before multiplication,
+causing integer division to truncate the discount (e.g., 20/100 yields 0), and the discount is never effectively applied.
+Additionally, the use of an unsafe block propagates a risky usage style mimicking real-world unsafe concurrency patterns.

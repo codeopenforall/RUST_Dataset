@@ -1,0 +1,4 @@
+The corrected code replaces the unsafe shared state with a Mutex-protected Vec, and
+introduces an explicit limit (MAX_CAPACITY) to guard against unbounded growth. Each call
+to insert locks the mutex and only adds a new element if the current count is below the limit.
+This ensures both thread safety and controlled resource consumption, mitigating the DoS risk.

@@ -1,0 +1,4 @@
+The fixed version introduces a constant MAX_TASKS that limits the number of threads/tasks that can be created.
+Before spawning any threads, the execute function checks if the requested number of tasks exceeds this threshold.
+If so, it immediately returns an error instead of proceeding, preventing resource exhaustion.
+This enforces proper authorization of resource consumption and mitigates the vulnerability.

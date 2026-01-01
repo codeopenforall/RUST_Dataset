@@ -1,0 +1,3 @@
+The corrected code avoids invoking a shell by using a direct system command call (Command::new("echo").arg(&self.input))
+without concatenating the untrusted input into a shell command string. This change eliminates the risk of command injection 
+since special characters in the input are treated as literal arguments rather than part of a command.

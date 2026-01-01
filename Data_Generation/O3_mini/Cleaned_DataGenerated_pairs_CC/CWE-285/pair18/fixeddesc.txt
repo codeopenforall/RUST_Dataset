@@ -1,0 +1,2 @@
+In this revised version, proper authorization is enforced by checking whether the provided token is exactly "admin". The get_data function now returns an error ("Unauthorized") if the token is not valid.
+The fix corrects the CWE-285 vulnerability by ensuring that only callers with the correct privileges can access the sensitive data.

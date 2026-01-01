@@ -1,0 +1,5 @@
+This corrected version removes the unsafe alternate authentication branch.
+The "validate" function now only returns true when the token exactly matches
+the expected "secret_token". By removing the debug bypass and any conditional
+checking of a global flag, the vulnerability is mitigated and the authentication
+logic now consistently enforces security (CWE-288 mitigation).

@@ -1,0 +1,5 @@
+The vulnerability exists because the method that retrieves an element uses unsafe pointer arithmetic (ptr.add(index))
+without any bounds checking. When an index equal to or exceeding the length of the internal vector is requested,
+the code reads memory that is not owned by the vector. This out-of-bounds read (CWE-125) can lead to undefined behavior,
+including potential information disclosure or crashes. The use of concurrency (via threads) further emulates a real-world
+scenario where such unsafe access might be triggered unexpectedly.

@@ -1,0 +1,1 @@
+In this corrected version, the input value is validated before performing the unsafe update. If a negative value is supplied, the function immediately returns an error rather than performing the update. The caller now checks the Result and handles the error appropriately, ensuring that the invariant (data must be non-negative) is preserved.

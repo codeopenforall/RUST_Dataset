@@ -1,0 +1,1 @@
+The corrected code addresses the vulnerability by eliminating unsafe pointer operations and removing the weak length‐based check. It now performs an exact string equality comparison between the provided token and the stored secret key, ensuring that only the correct credentials are accepted.

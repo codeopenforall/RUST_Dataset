@@ -1,0 +1,6 @@
+In the corrected code the double free is prevented by clearing the pointer
+after manual deallocation. Specifically, after Box::from_raw is called in the
+manual_drop function, the pointer is set to null. During the Drop implementation,
+the check for a non-null pointer ensures that no further attempt to free the memory
+occurs. This pattern prevents the double free vulnerability and follows community
+idioms for safely interfacing with unsafe code.

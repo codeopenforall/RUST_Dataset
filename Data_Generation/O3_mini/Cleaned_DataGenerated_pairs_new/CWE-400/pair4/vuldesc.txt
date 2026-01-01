@@ -1,0 +1,1 @@
+This version suffers from uncontrolled resource consumption because it accepts tasks at a high rate and appends them to an internal vector using an unsafe block without performing any bounds or capacity checks. As a result, an attacker could flood the service causing excessive memory allocation and potential denial of service.

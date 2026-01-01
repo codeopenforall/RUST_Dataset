@@ -1,0 +1,3 @@
+This code creates a buffer using an unsafe block by manually setting the length of a Vec with Vec::set_len. 
+The vulnerability lies in an off-by-one error: the length is set to n+1 instead of n. 
+As a result, one extra element remains uninitialized, leading to potential undefined behavior when accessed.

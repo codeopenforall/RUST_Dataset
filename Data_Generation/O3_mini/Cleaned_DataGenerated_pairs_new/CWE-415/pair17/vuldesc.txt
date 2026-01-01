@@ -1,0 +1,5 @@
+This snippet simulates a classic double free vulnerability. A raw pointer is obtained
+by converting a Box into a raw pointer. In addition to releasing the memory in the destructor
+(via Drop), a spawned thread also unsafely reclaims the same memory by calling Box::from_raw,
+resulting in two free operations on the same pointer. This is representative of real-world
+issues where manual memory management combined with concurrency leads to double deallocation.

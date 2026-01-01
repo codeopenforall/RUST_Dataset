@@ -1,0 +1,50 @@
+//////////////////////////////
+// Corrected Code Snapshot   //
+// CWE-754: Exceptional Condition Handled
+//////////////////////////////
+use std::sync::{
+    atomic::{AtomicBool, Ordering},
+    Arc,
+};
+use std::thread;
+
+struct Context {
+    cancel_flag: Arc<AtomicBool>,
+    timeout_flag: Arc<AtomicBool>,
+}
+
+impl Context {
+    fn new(cancel: bool, timeout: bool) -> Self {
+        Context {
+            cancel_flag: Arc::new(AtomicBool::new(cancel)),
+            timeout_flag: Arc::new(AtomicBool::new(timeout)),
+        }
+    }
+
+    // Corrected execution method now appropriately checks for both
+    // cancellation and timeout conditions before performing unsafe operations.
+    fn execute(&self) -> Result<i32, &'static str> {
+        if self.timeout_flag.load(Ordering::SeqCst) {
+            return Err("Operation timed out");
+        }
+        if self.cancel_flag.load(Ordering::SeqCst) {
+            return Err("Operation cancelled");
+        }
+        unsafe {
+            let raw_ptr = Box::into_raw(Box::new(256));
+            let result = *raw_ptr;
+            Box::from_raw(raw_ptr);
+            Ok(result)
+        }
+    }
+}
+
+fn main() {
+    // Scenario: cancel_flag = false, timeout_flag = true.
+    // Now the execute() method correctly detects the timeout and returns an error.
+    let ctx = Context::new(false, true);
+    match ctx.execute() {
+        Ok(val) => println!("Success: Result is {}", val),
+        Err(err) => println!("Error: {}", err),
+    }
+}

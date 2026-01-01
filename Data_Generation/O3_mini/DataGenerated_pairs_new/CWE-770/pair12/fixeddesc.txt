@@ -1,0 +1,1 @@
+The corrected version introduces resource throttling by checking the number of threads and the requested memory chunk size before launching the simulation. If either parameter exceeds the safe thresholds (MAX_THREADS and MAX_CHUNK_SIZE), the simulation aborts early. This prevents unbounded allocation of resources, effectively mitigating CWE-770.

@@ -1,0 +1,6 @@
+This code allocates a vector with a specified capacity and sets its length unsafely,
+leaving the memory uninitialized. The update method uses raw pointer arithmetic in an
+unsafe block to write to the buffer without bounds checking. When update is called
+with an index equal to the vector's length (or beyond), it writes into memory that is
+not part of the allocated vector, leading to an out-of-bounds write (CWE-787). This may
+cause memory corruption and undefined behavior.

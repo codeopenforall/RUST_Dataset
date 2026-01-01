@@ -1,0 +1,1 @@
+In the corrected version, the unsafe raw pointer conversion has been removed, and a simple sanitization check is performed on the untrusted input to reject any dangerous metacharacters (“;”, “&”, “|”). This prevents attackers from injecting additional shell commands, thereby mitigating the OS command injection vulnerability.

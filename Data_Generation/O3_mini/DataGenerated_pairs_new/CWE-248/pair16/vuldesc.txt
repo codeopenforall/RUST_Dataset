@@ -1,0 +1,6 @@
+This version spawns a thread that performs an unsafe manipulation of a raw pointer.
+After subtracting 10 from an initial value of 10, the resulting value becomes zero.
+The code then checks if the value is zero and panics accordingly.
+Because the panic occurs inside an unsafe block and the thread’s result is unwrapped without using catch_unwind,
+the panic is propagated during the join, resulting in an abnormal termination.
+This represents CWE-248 since an exception (panic) is not properly caught and handled, potentially causing unforeseen failures.

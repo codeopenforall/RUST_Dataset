@@ -1,0 +1,5 @@
+In this corrected version, the code properly handles the return value from the unsafe operation.
+After calling unsafe_op within the thread, the code checks if the result is Ok.
+Only when the operation is successful does it update the shared flag.
+For input equal to 42, unsafe_op returns an error, so the flag remains false.
+By not ignoring the result, this version eliminates the unchecked return value vulnerability (CWE-252).

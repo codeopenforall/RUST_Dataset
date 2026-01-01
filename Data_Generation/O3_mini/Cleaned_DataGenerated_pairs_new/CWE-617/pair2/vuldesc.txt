@@ -1,0 +1,4 @@
+The vulnerability stems from the unchecked use of an attacker–controlled index in an unsafe block.
+Specifically, the method "process" in the trait implementation dereferences a raw pointer without validating that the index
+yields an element meeting the invariant (value greater than 100). An attacker can supply an index (for example, 0)
+so that the element (50) causes the reachable assertion to fail. This leads to a panic and potential denial-of-service.

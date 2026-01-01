@@ -1,0 +1,3 @@
+The vulnerability arises because the code uses an unsafe block to create a slice from a raw pointer with a user-supplied length.
+If the length parameter exceeds the actual allocated memory for the vector, it can lead to undefined behavior (buffer over-read) due to accessing memory beyond the bounds.
+This is a typical instance of undefined behavior for API input violation (CWE-475).

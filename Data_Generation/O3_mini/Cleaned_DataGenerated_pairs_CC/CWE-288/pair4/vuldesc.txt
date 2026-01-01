@@ -1,0 +1,1 @@
+The vulnerable code exposes an authentication bypass stemming from misuse of an unsafe global debug flag. Because the flag remains set (even in production) and is accessed via an unsafe block without proper synchronization, the validate function always returns true, ignoring the secure credential check. This enables attackers to authenticate without valid credentials (CWE-288).

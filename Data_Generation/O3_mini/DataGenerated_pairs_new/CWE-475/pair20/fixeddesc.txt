@@ -1,0 +1,4 @@
+In this corrected version the compute method first checks that the payload vector has at least 12 bytes.
+If the precondition is not met, it immediately returns None. This ensures that the subsequent unsafe block,
+which reinterprets the payload into three u32 values, abides by the API expectations regarding valid pointers and memory layout.
+This fix thus prevents undefined behavior from out-of-bound memory accesses.

@@ -1,0 +1,1 @@
+The corrected version eliminates dangerous unsafe pointer arithmetic and introduces backpressure by checking the vector’s length against a predefined maximum (MAX_ITEMS). With a safe push operation and an early return once the item count reaches the limit, the code prevents uncontrolled resource consumption, thereby mitigating the DoS vulnerability.

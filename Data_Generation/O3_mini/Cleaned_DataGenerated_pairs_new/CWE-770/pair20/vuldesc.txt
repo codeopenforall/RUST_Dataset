@@ -1,0 +1,1 @@
+The program allocates memory based directly on user input without any limits or throttling. If an attacker supplies a large number, the code will request an excessively large memory allocation without verification. This could lead to resource exhaustion (CWE-770) as the system might run out of memory or crash.

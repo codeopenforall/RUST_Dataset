@@ -1,0 +1,1 @@
+In the corrected version, the compute method now includes an explicit check for a zero divisor before performing the division. If the divisor is zero, the method returns the original numeral value instead of attempting the division. This fix avoids undefined behavior and runtime panics, aligning the division handling with safe practices against CWE-369.

@@ -1,0 +1,1 @@
+This snippet creates a thread that executes an unsafe FFI-simulated function which checks a raw pointer and panics when it is null. The panic isn’t caught within the thread, and the subsequent join call propagates the panic back to the main thread. As a result, any panic causes abnormal termination without proper handling, exemplifying CWE-248.

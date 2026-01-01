@@ -1,0 +1,5 @@
+The vulnerability stems from an unsafe cryptographic signature verification routine that bypasses
+essential checks if the signature's first byte is 0x00. This allows an attacker to craft a malicious
+signature that is incorrectly accepted, undermining the intended data integrity check. Additionally,
+the use of unsafe pointer writes and concurrent threading mimics real-world low-level coding patterns,
+increasing the risk of unforeseen errors.

@@ -1,0 +1,1 @@
+In the corrected version the authentication function securely compares the entire token string against the stored secret using mutex protection and direct string equality. This eliminates the unsafe pointer manipulation and the flawed length-only check, ensuring that only a token matching exactly "s3cr3t" is accepted.

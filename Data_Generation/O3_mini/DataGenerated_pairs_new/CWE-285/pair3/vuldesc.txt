@@ -1,0 +1,1 @@
+The vulnerability arises from improper authorization. Although the update API accepts a token, it completely ignores it, and performs an unsafe pointer conversion in the process. This means any caller—authorized or not—can modify the resource even in a multi-threaded context.

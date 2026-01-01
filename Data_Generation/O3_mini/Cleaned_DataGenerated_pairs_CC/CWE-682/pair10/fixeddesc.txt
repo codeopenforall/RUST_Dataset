@@ -1,0 +1,4 @@
+The fixed version corrects the calculation error by adjusting the grouping of operands. Instead of performing 
+(*ptr_base) * (*ptr_multiplier) + addition, it now correctly computes (*ptr_base) * ((*ptr_multiplier) + addition). 
+This change resolves the incorrect arithmetic evaluation while keeping the unsafe blocks, concurrency, and smart 
+pointer usage intact to reflect realistic Rust programming patterns seen in security advisories.

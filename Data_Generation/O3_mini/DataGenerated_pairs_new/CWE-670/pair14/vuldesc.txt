@@ -1,0 +1,5 @@
+The vulnerability lies in the flawed control flow inside the token verification function.
+The intended logic should authorize the "admin" token; however, due to an inversion in the match arms,
+the code returns false for "admin" and true for all other tokens. This misdirected logic causes the secure,
+unsafe operation to be bypassed when it should be executed, and vice versa, potentially leading to erroneous
+or insecure behavior in a concurrent setting.

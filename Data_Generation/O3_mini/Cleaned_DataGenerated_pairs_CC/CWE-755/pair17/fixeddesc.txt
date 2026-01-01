@@ -1,0 +1,1 @@
+In the corrected version the conversion function now properly propagates parsing errors. Instead of swallowing failures with unwrap_or_default(), the code returns a Result type and conveys errors explicitly. This ensures that invalid configurations, such as non-numeric input, are detected and correctly handled rather than being converted silently into a default value.

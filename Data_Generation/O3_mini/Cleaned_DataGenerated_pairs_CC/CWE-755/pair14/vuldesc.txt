@@ -1,0 +1,5 @@
+The vulnerable code creates an Engine that performs an integer division based on a divisor obtained
+by parsing a string input. Instead of handling the potential parsing error properly, it uses
+unwrap_or_default(), which silently converts any parse failure into 0. This leads to a division by
+zero in the unsafe block, causing a runtime panic. Additionally, concurrent execution via threads
+amplifies the unpredictability of error propagation.

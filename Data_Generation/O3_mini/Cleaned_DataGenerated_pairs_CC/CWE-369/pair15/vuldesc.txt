@@ -1,0 +1,1 @@
+This code defines an Engine struct with a method exec that performs an arithmetic division inside an unsafe block without checking if the divisor is zero. When a divisor of zero is passed (as in the concurrent thread in main), the arithmetic division triggers a division by zero panic (CWE-369), leading to an abrupt termination.

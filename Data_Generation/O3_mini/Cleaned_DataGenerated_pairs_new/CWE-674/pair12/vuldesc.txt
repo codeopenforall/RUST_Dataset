@@ -1,0 +1,4 @@
+This vulnerable code demonstrates an uncontrolled recursive descent without any bounds-checking on the recursion depth. 
+It uses an unsafe block to perform pointer arithmetic on a byte slice, reading each byte and recursively processing it 
+if it is an opening parenthesis '('. A deeply nested or malicious input triggers an unbounded recursion that eventually leads 
+to a stack overflow, a manifestation of CWE-674 Uncontrolled Recursion. The use of thread spawning does not mitigate the risk.

@@ -1,0 +1,5 @@
+In this corrected version, the sensitive secret is encrypted with a simple XOR-based algorithm 
+before any transmission occurs. Although XOR is not secure for production use, it serves to illustrate 
+the proper practice of encrypting sensitive data (CWE-311). A similar unsafe block is used for low‐level 
+pointer arithmetic; however, the key improvement is that the sensitive information is never transmitted 
+in cleartext.

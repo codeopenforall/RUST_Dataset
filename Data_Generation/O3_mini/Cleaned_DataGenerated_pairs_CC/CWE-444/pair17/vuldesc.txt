@@ -1,0 +1,5 @@
+The above code unsafely calculates the request body location using pointer arithmetic
+and relies solely on the Content-Length header even if the Transfer-Encoding header 
+specifies chunked encoding. This inconsistency between header interpretation can allow 
+an attacker to craft a request that is parsed differently by a proxy and backend server,
+enabling HTTP request smuggling (CWE-444).

@@ -1,0 +1,1 @@
+In the corrected version, the Buffer struct’s copy_from method no longer performs an off-by-one write. The unsafe block now copies the input bytes starting from the exact beginning of the allocated memory (using dest.add(i) rather than dest.add(i+1)). This proper bounds-respecting operation prevents memory corruption and fixes the memory safety issue described in CWE-119.

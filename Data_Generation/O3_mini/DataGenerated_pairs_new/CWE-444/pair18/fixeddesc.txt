@@ -1,0 +1,1 @@
+This code revises the HTTP header parsing routine by eliminating unsafe pointer arithmetic and only selecting the first encountered "Content-Length" header when duplicates appear. This change aligns with standard safe practices and reduces the risk of request smuggling through inconsistent header interpretation.

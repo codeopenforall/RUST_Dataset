@@ -1,0 +1,1 @@
+In the fixed version, the update method’s control flow is corrected. The unsafe block now maps an input greater than 100 to the Allowed state and less than or equal to 100 to the Blocked state. This change ensures that when valid input (150) is provided, concurrent updates correctly set the flag to Allowed, resulting in a secure and expected outcome.

@@ -1,0 +1,1 @@
+The corrected version securely performs authentication by comparing the provided token with the expected token using an exact equality check. It eliminates the unsafe global state and concurrency issues found in the vulnerable version, thereby ensuring that only valid credentials are granted access.

@@ -1,0 +1,5 @@
+The corrected version adds explicit bounds checking before performing the unsafe memory copy.
+It verifies that the destination index plus the number of elements does not exceed the allocated vector length 
+and also ensures that the source slice is large enough.
+If either check fails, the function returns an error rather than executing the unsafe code,
+thereby preventing out‐of‐bounds writes.

@@ -1,0 +1,5 @@
+In this corrected version, the HTTP request is parsed using safe Rust functions.
+All occurrences of the "Content-Length" header are collected and required to have the same value.
+If duplicate headers with conflicting values are found or if the body length does not match the header,
+the request is rejected. This eliminates the vulnerability to request smuggling that arises from
+inconsistent header interpretation.

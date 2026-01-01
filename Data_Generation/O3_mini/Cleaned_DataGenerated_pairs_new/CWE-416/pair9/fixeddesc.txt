@@ -1,0 +1,4 @@
+In the corrected version, the vulnerability is fixed by replacing the unsafe use of raw pointers with safe, reference-counted 
+smart pointers (Arc). The structure “Processor” now owns an Arc<u32> that keeps the data alive across various scopes and 
+threads. This ensures that memory is not freed until all references are dropped and eliminates the use-after-free issue. The 
+pattern is idiomatic in Rust for scenarios requiring shared ownership and thread-safety.

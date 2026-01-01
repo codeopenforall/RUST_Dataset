@@ -1,0 +1,4 @@
+The vulnerable code silently ignores errors when reading and parsing the configuration file by using unwrap_or_default(). 
+If the file is missing or contains invalid data, it results in a default factor value of 0. Consequently, any computations 
+using this configuration yield an incorrect result (typically 0), leading to subtle logic errors. The use of unsafe blocks 
+and concurrency further mimics complex real-world applications where such error masking can hide critical faults.

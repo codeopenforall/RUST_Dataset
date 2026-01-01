@@ -1,0 +1,4 @@
+This snippet demonstrates a classic fencepost error where the vector’s length is erroneously set to n+1 instead of n,
+resulting in one extra uninitialized element. The code uses unsafe blocks and concurrent thread spawning to emulate real-world 
+scenarios in systems programming. Such an off-by-one error (CWE-193) may lead to undefined behavior, memory corruption,
+or potential security vulnerabilities when the uninitialized element is later accessed.

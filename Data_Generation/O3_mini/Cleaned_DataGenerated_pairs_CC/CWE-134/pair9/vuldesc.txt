@@ -1,0 +1,5 @@
+The vulnerable code uses an unsafe FFI call to the C function snprintf, passing a user-supplied string as the format
+specifier. This pattern represents CWE-134: Use of Externally-Controlled Format String, where an attacker could craft a
+format string that improperly reads from the stack or memory, potentially leading to information disclosure. Additionally,
+the use of unsafe blocks and concurrency further complicates the control flow, closely emulating real-world scenarios
+reported in RustSec advisories.

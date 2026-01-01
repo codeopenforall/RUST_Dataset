@@ -1,0 +1,6 @@
+The fixed version replaces unwrap_or_default() with proper error propagation. The operate()
+method uses map_err() to capture any parsing errors and returns an explicit error message.
+Additionally, it checks for a zero divisor and returns an error instead of performing a division.
+This change ensures that exceptional conditions are handled correctly rather than being silently
+ignored. The overall control flow remains similar and concurrent behavior is preserved, but now
+the underlying issues are eliminated.

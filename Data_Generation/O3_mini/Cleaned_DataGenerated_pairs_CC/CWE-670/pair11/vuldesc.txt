@@ -1,0 +1,5 @@
+The code above demonstrates a flawed state transition mechanism. Within the unsafe block,
+the program aims to shift an internal state from Init to Running upon receiving positive input.
+However, a logic error in the match arm incorrectly sets the state to Completed. This always
+prevents the intended transition to Running, exemplifying CWE-670 (Always-Incorrect Control Flow Implementation).
+Such vulnerabilities can misdirect program logic under concurrent, unsafe manipulations.

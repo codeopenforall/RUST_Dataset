@@ -1,0 +1,4 @@
+This vulnerable code incorrectly computes the buffer size by using mem::size_of_val on the String field.
+Since mem::size_of_val returns the size of the String (typically 24 bytes on 64-bit systems) rather than
+the dynamic byte-length of its contents, a message longer than that will be truncated during copy.
+This miscalculation exemplifies CWE-131.

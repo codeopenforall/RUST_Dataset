@@ -1,0 +1,6 @@
+This code demonstrates an insecure XML parser implementation that improperly resolves external entities.
+When the XML input contains a declaration for an external entity (via SYSTEM identifier), the parser unsafely
+dereferences the provided file name using an unsafe block and reads the file content without validation.
+This simulates CWE-611 where external entities can be exploited to leak local file contents.
+The use of raw pointer manipulation in the unsafe block, along with concurrent processing, reflects realistic
+patterns seen in reported vulnerabilities.

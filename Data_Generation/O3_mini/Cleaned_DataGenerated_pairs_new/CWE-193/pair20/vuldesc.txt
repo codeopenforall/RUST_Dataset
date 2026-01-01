@@ -1,0 +1,5 @@
+This code exhibits a classic off-by-one error in its unsafe block within the load_data function.
+During the copy loop, it incorrectly reads src[i+1] for every iteration.
+When i reaches the last valid index (src.len() - 1), src[i+1] accesses memory beyond the allocated slice,
+resulting in undefined behavior, potential memory corruption, or panics. The issue is masked by the manual
+set_len call and improper loop indexing.

@@ -1,0 +1,4 @@
+This snippet demonstrates a vulnerability corresponding to CWE-134 (Externally-Controlled Format String). 
+It uses an unsafe block to invoke libc’s sprintf with a user-supplied string serving directly as the format specifier.
+Without controlling the format string, an adversary can embed format specifiers (e.g., "%x") into the input,
+potentially leading to unintended memory reads or other side-effects.

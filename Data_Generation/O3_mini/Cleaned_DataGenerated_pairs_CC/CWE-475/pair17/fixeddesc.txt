@@ -1,0 +1,4 @@
+In this corrected version the aggregate method properly constructs a slice using the given valid length.
+It calls std::slice::from_raw_parts with self.len, ensuring that only the intended memory is read.
+This fix satisfies the API preconditions and prevents undefined behavior resulting from an out‐of‐bounds
+access.

@@ -1,0 +1,1 @@
+This code suffers from an integer underflow vulnerability (CWE-191). The decrease method uses an unsafe block to subtract an amount from an unsigned integer without any check. When the cumulative subtraction exceeds the original value, the value underflows and wraps around due to unchecked arithmetic, which is especially dangerous when run concurrently.

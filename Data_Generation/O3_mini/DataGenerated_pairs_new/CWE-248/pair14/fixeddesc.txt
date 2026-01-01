@@ -1,0 +1,4 @@
+In the fixed version the unsafe computation is encapsulated within a call to panic::catch_unwind,
+ensuring that any panic triggered by a negative input is caught. Additionally, the computation itself
+is modified to return a Result, thereby eliminating the use of panic for error signaling. The main application 
+now gracefully handles the error condition instead of crashing, meeting the required exception handling contract.

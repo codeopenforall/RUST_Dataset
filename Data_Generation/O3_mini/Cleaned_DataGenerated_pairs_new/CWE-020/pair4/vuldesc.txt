@@ -1,0 +1,2 @@
+This code improperly trusts user-controlled parameters for offset and length when extracting a substring from a fixed data buffer.
+By using an unsafe block with from_raw_parts and from_utf8_unchecked without verifying that the computed range lies within DATA’s bounds, the code is vulnerable to out‐of‐bounds memory reads (CWE-020).

@@ -1,0 +1,4 @@
+In this corrected version the allocation size is properly computed using input.len(), which returns the
+actual number of bytes in the string. This ensures that the memory allocated is sufficient to store the entire
+string contents, avoiding buffer underallocation and subsequent memory corruption. The copy operation now transfers
+the full content as intended, thereby eliminating the vulnerability.

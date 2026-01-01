@@ -1,0 +1,3 @@
+The corrected version introduces proper authorization by verifying that the caller matches the owner stored in the resource.
+If the caller is not authorized, the modify() function returns an error and does not update the secret.
+This fix preserves the original concurrency and unsafe block usage while ensuring that only the legitimate owner (e.g., "admin") can modify the secret.

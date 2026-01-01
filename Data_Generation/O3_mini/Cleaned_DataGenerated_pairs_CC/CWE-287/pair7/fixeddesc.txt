@@ -1,0 +1,4 @@
+In this fixed version, the authentication function has been corrected by removing the special case
+that accepted the bypass key ("test_key"). Now, the function uses only an unsafe byte-for-byte comparison
+to validate that the input exactly matches the securely stored token ("super_secret"). This change
+eliminates the vulnerability and ensures that only the legitimate token is authenticated.

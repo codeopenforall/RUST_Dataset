@@ -1,0 +1,7 @@
+This vulnerable code uses an unsafe memory copy (std::ptr::copy_nonoverlapping)
+to copy bytes from a source buffer to a destination buffer. The destination buffer
+is intended to hold only 5 valid bytes, with an extra byte allocated as a marker.
+However, the function uses the user-provided length directly without verifying
+that it does not exceed the destination capacity. When a copy of more than 5 bytes
+is requested, the extra byte (marker) gets overwritten, resulting in undefined behavior.
+This violation of the API preconditions is a typical example of CWE-475.

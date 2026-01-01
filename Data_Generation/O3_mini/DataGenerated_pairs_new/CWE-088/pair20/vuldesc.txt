@@ -1,0 +1,4 @@
+This implementation directly passes unsanitized user input to a shell command using an unsafe block.
+Because it converts the input via a raw pointer and uses it in a shell command (via "sh -c"),
+an attacker may inject additional commands (e.g., "safe; echo injected").
+This mimics a real-world OS command injection flaw reported in CWE-088.

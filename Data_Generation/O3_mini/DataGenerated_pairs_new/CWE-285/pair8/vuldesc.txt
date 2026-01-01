@@ -1,0 +1,4 @@
+This version uses an unsafe block within Sensitive::reveal that unsafely returns a pointer to its internal data.
+Moreover, the authorization check in Service::handle incorrectly permits both "admin" and "user" roles, thereby 
+allowing insufficiently privileged access (CWE-285). The lack of proper role verification is compounded by the use 
+of unsafe code and concurrent threads, mimicking patterns found in real-world vulnerable Rust APIs.

@@ -1,0 +1,5 @@
+The fixed version addresses the vulnerability by replacing unwrap_or_default() with proper error propagation.
+The constructor now returns a Result and uses map_err to capture and forward parsing errors. As a result,
+when provided with invalid input (such as "invalid"), the function returns an error rather than a default value.
+The improved error handling ensures that exceptional conditions are not silently overlooked, and the program can react appropriately.
+Concurrency and unsafe blocks remain for realistic complexity but no longer mask errors.

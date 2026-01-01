@@ -1,0 +1,1 @@
+This code is vulnerable to improper authentication (CWE-287) because it uses an unsafe block with a flawed logic: instead of comparing the token’s actual content, it simply accepts any token whose length is greater than 4. The unsafe pointer operations are misused to simulate real-world risky practices and may lead to unpredictable behavior.

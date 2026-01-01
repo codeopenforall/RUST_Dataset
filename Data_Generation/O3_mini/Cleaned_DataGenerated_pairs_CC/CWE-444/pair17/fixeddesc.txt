@@ -1,0 +1,5 @@
+In this corrected implementation, the parser checks for the presence of 
+the "Transfer-Encoding" header and, when set to "chunked", invokes a dedicated 
+chunked body parser. This parser reads the hexadecimal chunk sizes and accumulates 
+the corresponding data, safely ignoring any mismatched Content-Length. This 
+ensures consistency between different intermediaries and addresses the vulnerability.

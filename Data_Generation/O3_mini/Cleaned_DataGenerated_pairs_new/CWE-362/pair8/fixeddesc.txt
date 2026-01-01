@@ -1,0 +1,1 @@
+This corrected implementation resolves the race condition by replacing unsafe interior mutability with atomic types (AtomicBool and AtomicU32). The compare_exchange operation guarantees that only one thread can perform the initialization, thereby ensuring that the initialization counter is incremented exactly once.

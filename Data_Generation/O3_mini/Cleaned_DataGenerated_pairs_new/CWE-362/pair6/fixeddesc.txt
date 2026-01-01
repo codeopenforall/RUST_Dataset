@@ -1,0 +1,3 @@
+The fixed code addresses the race condition by replacing the unsynchronized UnsafeCell with a Mutex-protected integer.
+Shared access to the counter is then managed by an Arc, ensuring that each thread locks the counter before modification.
+This guarantees atomic and synchronized updates, producing the expected final counter value.

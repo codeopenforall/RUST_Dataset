@@ -1,0 +1,5 @@
+This code demonstrates a race condition vulnerability (CWE-362) where two threads 
+unsafely check a shared flag and then update it without proper synchronization. 
+The use of UnsafeCell and unsafe blocks bypasses Rust's normal guarantees, allowing 
+both threads to observe the count as zero and both increment it, potentially violating 
+the invariant that the operation should execute only once.

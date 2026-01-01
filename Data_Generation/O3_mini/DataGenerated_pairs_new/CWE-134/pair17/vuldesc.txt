@@ -1,0 +1,5 @@
+The vulnerable code uses a foreign function interface (FFI) to call the C library function snprintf,
+passing a user-supplied string directly as the format string. This externally-controlled format string
+can lead to unexpected behavior (reading from the stack or other memory) if the input contains
+format specifiers (e.g., "%x", "%s"). This mimics real-world vulnerabilities (CWE-134) when user-controlled
+data is used directly in formatting functions without sanitization.

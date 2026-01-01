@@ -1,0 +1,7 @@
+This vulnerable implementation mishandles XML external entities by processing the XML input and
+automatically resolving any encountered entity reference (&xxe;) using an unsafe function. The
+unsafe_fetch function converts the file name to a C-style string and then reads the file without
+any validation or restriction on the file path. Additionally, the use of concurrent threads to
+perform the file read introduces further complexity, making the code resemble real-world unsafe
+concurrent XML parsers. As a result, attackers could supply XML with malicious external entity
+declarations to read local or remote files.

@@ -1,0 +1,1 @@
+The code above demonstrates an improper authorization check. The method that grants access to secure data fails to verify that a caller is privileged, allowing any user—including non-administrative users—to retrieve sensitive information. An unsafe block is used to simulate complex operations, but the core issue is that the user parameter is not validated.

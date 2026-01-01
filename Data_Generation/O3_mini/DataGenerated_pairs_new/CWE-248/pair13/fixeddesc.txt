@@ -1,0 +1,1 @@
+In this corrected version, the unsafe invocation of the callback is wrapped in a panic::catch_unwind block. If the callback panics (which it does for the input "trigger"), the panic is caught and the function returns None, thereby preventing the panic from propagating across thread boundaries. This change addresses the uncaught exception vulnerability described in CWE-248.

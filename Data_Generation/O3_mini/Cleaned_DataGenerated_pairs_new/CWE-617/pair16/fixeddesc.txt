@@ -1,0 +1,6 @@
+In this revision, the use of a global unsafe pointer is eliminated in favor of using Rust’s safe
+concurrency primitives (Arc and Mutex). By validating the input before instantiating the configuration,
+the code rejects any attacker-supplied value that does not satisfy the invariant (threshold must be less than 100).
+This approach prevents the reachable assertion from being triggered. Concurrency is managed safely and the
+use of debug_assert (instead of assert) ensures invariant checking only in debug mode, thereby reducing the risk
+of production DoS while still catching issues during development.

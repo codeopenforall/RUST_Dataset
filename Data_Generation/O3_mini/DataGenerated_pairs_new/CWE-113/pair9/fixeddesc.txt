@@ -1,0 +1,1 @@
+In this secure version the responder sanitizes the user-supplied input by filtering out carriage returns ('\r') and line feeds ('\n') before incorporating it into the HTTP header. Although an unsafe block is still used to mirror low-level operations, the dangerous characters that enable CRLF injection are removed, mitigating the HTTP header splitting vulnerability.

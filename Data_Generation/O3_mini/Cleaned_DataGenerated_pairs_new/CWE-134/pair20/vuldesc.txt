@@ -1,0 +1,5 @@
+The above code accepts a user-supplied format string and directly uses it to substitute
+a secret string whenever it encounters the placeholder "{}". The unsafe block casts the
+input without validation, effectively treating external input as format specifiers. If an attacker
+supplies a crafted format string, they may manipulate the output to leak or misrepresent sensitive data.
+This pattern mimics CWE-134, where externally-controlled format strings can lead to unintended behavior.

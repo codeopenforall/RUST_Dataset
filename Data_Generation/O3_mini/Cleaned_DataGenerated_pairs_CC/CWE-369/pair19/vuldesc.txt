@@ -1,0 +1,2 @@
+In this version, the compute method uses an unsafe block to perform division without prior validation of the divisor.
+When a zero is provided as the divisor, the unsafe division causes a division-by-zero panic (CWE-369). The concurrency aspect via thread spawning and using Arc simulates real-world usage where unchecked arithmetic within unsafe blocks may be executed in a multithreaded context.

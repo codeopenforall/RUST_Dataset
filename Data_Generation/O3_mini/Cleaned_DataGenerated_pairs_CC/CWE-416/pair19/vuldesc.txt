@@ -1,0 +1,1 @@
+This code exhibits a use‐after‐free vulnerability. A memory block is allocated and its raw pointer is stored. After dropping the owner (which frees the memory), the code unsafely writes to the freed memory and then reads it back. This use-after-free access mimics real-world unsafe aliasing issues, potentially leading to data corruption or undefined behavior.

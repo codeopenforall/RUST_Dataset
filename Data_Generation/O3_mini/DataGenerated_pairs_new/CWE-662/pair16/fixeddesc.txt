@@ -1,0 +1,1 @@
+This corrected code resolves the race condition vulnerability by replacing the UnsafeCell with a Mutex-protected integer. All accesses to the shared counter occur while holding a lock, ensuring exclusive access during read-modify-write sequences. As a result, concurrent threads properly synchronize, and the final counter reflects the correct cumulative sum.

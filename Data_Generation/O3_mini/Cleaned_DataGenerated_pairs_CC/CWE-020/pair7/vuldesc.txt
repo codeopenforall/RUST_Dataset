@@ -1,0 +1,1 @@
+This version obtains input from the user and uses it as an index into a vector of 10 integers. It employs an unsafe block to add the index offset to the vector’s base pointer without verifying that the index is within bounds. As a result, an out‐of‐range index (controlled by user input) will lead to undefined behavior—a clear instance of CWE-020 (Improper Input Validation).

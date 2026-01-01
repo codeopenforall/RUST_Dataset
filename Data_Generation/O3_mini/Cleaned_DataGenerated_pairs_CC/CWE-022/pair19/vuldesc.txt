@@ -1,0 +1,4 @@
+The vulnerable code above uses a naive joining of a user-supplied filename with a base directory using PathBuf::join. 
+This approach does not verify that the resulting path is within the intended directory, allowing a potential attacker 
+to supply a specially crafted input (e.g., "../secret.txt") to perform a directory traversal attack, thereby accessing 
+files outside the allowed directory. An unsafe block is included to mimic complex low-level operations and concurrency issues.

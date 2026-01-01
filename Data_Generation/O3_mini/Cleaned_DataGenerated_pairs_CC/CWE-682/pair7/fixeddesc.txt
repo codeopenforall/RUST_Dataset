@@ -1,0 +1,5 @@
+In this corrected version, the arithmetic expression has been rearranged so that multiplication
+and division occur first, yielding the correct interest amount before being added to the base balance.
+The unsafe block remains to simulate scenarios involving low-level memory operations, and threading
+with Arc ensures realistic concurrency practice. Consequently, with a balance of 100 and an interest
+rate of 10, the computation now properly yields 110.

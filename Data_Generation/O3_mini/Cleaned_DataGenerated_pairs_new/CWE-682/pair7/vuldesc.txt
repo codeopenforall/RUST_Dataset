@@ -1,0 +1,8 @@
+This code computes an updated account balance by applying an interest rate to the current balance.
+Due to an arithmetic miscalculation, the intended formula:
+    new_balance = balance + ((balance * rate) / 100)
+is mistakenly implemented as:
+    new_balance = (balance + (balance * rate)) / 100.
+For example, with a balance of 100 and a rate of 10, the correct result should be 110 (i.e. 100 + 10),
+but the vulnerable code computes (100 + 1000)/100 = 11. This error mimics a common logic flaw (CWE-682)
+found in real-world code where operator precedence and rounding error can lead to critical miscalculations.

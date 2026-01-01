@@ -1,0 +1,4 @@
+In this corrected version, the vulnerability has been mitigated by replacing the
+user-controlled format string with a fixed literal. The sensitive secret data is no longer inserted
+into the formatted output. Instead, any external input from the user is treated as plain data, not as a format specifier.
+This approach adheres to safe coding practices and ensures that external input cannot be exploited for format string attacks.

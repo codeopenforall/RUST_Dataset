@@ -1,0 +1,1 @@
+This corrected implementation prevents HTTP response splitting by sanitizing the untrusted input. The sanitizer removes any carriage return (CR) and line feed (LF) characters so that malicious payloads cannot inject extra headers. The rest of the logic, including unsafe memory operations and concurrent thread usage, remains unchanged to mimic the original execution context.

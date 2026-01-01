@@ -1,0 +1,4 @@
+The fixed version rectifies the control flow flaw by separating the handling of input values explicitly.
+When the input is 1, it now follows a safe, well-defined branch that updates the state without resorting to any
+unsafe pointer arithmetic. Each valid case is handled in its dedicated match arm, thereby eliminating the undefined
+behavior present in the vulnerable version.

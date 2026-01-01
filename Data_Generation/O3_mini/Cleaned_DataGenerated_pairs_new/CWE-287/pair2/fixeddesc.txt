@@ -1,0 +1,4 @@
+In the corrected code, the unsafe code block and unnecessary concurrency (thread spawn) have been removed. 
+The validate function now reliably compares the provided token to the stored secret using Rust’s built-in 
+string equality. This prevents improper authentication by ensuring that only a token matching the exact secret 
+("SuperSecret") is accepted, thereby mitigating the vulnerability.

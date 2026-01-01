@@ -1,0 +1,4 @@
+In this corrected version the function return values are checked properly.
+Worker::new is called within a match statement so that if the initialization fails (for example, when the input is negative leading to a size of 0), the error is logged and a graceful error code (-1) is returned without panicking.
+Similarly, during concurrent updates, any error in the update operation is logged and the thread returns normally, rather than misinterpreting the error by unwrapping it.
+By handling errors explicitly and avoiding unsafe unwraps in error branches, the code now robustly distinguishes between success and failure, eliminating the CWE-253 issue.

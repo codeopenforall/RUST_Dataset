@@ -1,0 +1,5 @@
+In this corrected version, the authentication function "verify" has been fixed by replacing the
+unsafe pointer arithmetic with a straightforward and safe string equality check. The full token is 
+compared against the expected value "secret", eliminating the vulnerability where only a prefix of 
+the token was being validated. The concurrent and structural aspects of the code remain unchanged,
+ensuring realistic simulation of a multi-threaded authentication scenario.

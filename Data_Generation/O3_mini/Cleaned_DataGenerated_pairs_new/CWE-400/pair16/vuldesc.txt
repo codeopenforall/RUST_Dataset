@@ -1,0 +1,1 @@
+The vulnerable code lacks restrictions on the number of spawned threads, which can lead to uncontrolled resource consumption (DoS). It also uses an unsafe block to perform unchecked raw pointer arithmetic. When a very high iteration count is provided as input, the system may run out of resources due to an unbounded number of threads being created.

@@ -1,0 +1,1 @@
+The code above presents an out‐of‐bounds read vulnerability. In the compute method, a raw pointer is computed using pointer arithmetic and later used to construct a slice via std::slice::from_raw_parts without any bounds check. If the sum of the starting index and count exceeds the actual length of the buffer, this results in an out‐of‐bound memory read with undefined behavior.

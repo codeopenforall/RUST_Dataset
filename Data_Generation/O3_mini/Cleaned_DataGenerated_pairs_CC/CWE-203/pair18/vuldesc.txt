@@ -1,0 +1,1 @@
+This vulnerable version of the authentication module discloses sensitive internal state information by including a secret debug token in the error message when a user enters an incorrect password. The unsafe block explicitly dereferences a pointer to the user's secret, leading to a CWE-203: Information Exposure vulnerability.

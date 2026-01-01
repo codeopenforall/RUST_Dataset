@@ -1,0 +1,1 @@
+This version demonstrates a use‐after‐free vulnerability (CWE-416). A resource is allocated in a Box and its raw pointer is obtained via Box::into_raw. Immediately afterward, the resource is deallocated by converting the raw pointer back to a Box (thus dropping the memory). Subsequent dereferencing of the now-dangling pointer leads to undefined behavior.

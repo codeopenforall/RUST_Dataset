@@ -1,0 +1,5 @@
+In this corrected version, the buffer is safely initialized using the resize method so that
+its length exactly matches the intended number of elements. In addition, the update method now
+checks whether the given index is within bounds before performing any write, returning an error
+if an out-of-bound attempt is made. This prevents the potential memory corruption from unsafe
+pointer arithmetic, addressing CWE-787.

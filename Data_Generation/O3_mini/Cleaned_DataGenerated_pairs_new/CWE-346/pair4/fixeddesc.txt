@@ -1,0 +1,1 @@
+In the corrected code, the unsafe conversion via CStr::from_ptr is removed. Instead, a safe check is introduced that verifies the header does not contain any embedded null bytes before comparing it directly with the trusted origin string. This prevents attackers from exploiting null byte injection to bypass security validations.

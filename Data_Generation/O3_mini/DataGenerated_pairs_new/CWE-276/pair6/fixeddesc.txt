@@ -1,0 +1,1 @@
+The revised version corrects the vulnerability by eliminating the unsafe block and ensuring that files are created with restricted permissions (mode 0o600), granting read and write access solely to the owner. The same concurrent pattern is maintained using Arc and threads, but the file is now securely created in accordance with the principle of least privilege.

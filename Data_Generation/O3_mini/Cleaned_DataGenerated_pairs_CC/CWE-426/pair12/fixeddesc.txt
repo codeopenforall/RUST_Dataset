@@ -1,0 +1,1 @@
+The patched code mitigates the CWE-426 vulnerability by hardcoding an absolute path ("/usr/local/bin/helper_program") when executing the command. This eliminates reliance on the system search path and removes the unsafe pointer manipulation, thereby securing the command invocation.

@@ -1,0 +1,4 @@
+This code demonstrates an OS command injection vulnerability (CWE-088). 
+It accepts untrusted user input from the command line and directly concatenates it into a shell command string used with "sh -c". 
+The unsafe block is used to simulate integration with lower‐level APIs and the code also employs concurrency via threads and a shared smart pointer, mimicking real-world complexity. 
+An attacker can exploit this flaw by injecting shell metacharacters (e.g., ";", "&&") to execute arbitrary commands.

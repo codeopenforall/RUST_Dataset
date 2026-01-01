@@ -1,0 +1,1 @@
+The fixed version removes the unnecessary and dangerous unsafe block and avoids using a shell to execute commands. It directly invokes the "echo" binary, passing the untrusted input as a single argument. This prevents the shell from interpreting metacharacters embedded in the input, effectively mitigating the OS command injection vulnerability.

@@ -1,0 +1,3 @@
+This version uses unsafe code to create a configuration object by partially initializing its fields.
+Specifically, the 'timeout' field remains uninitialized and is later read in a concurrent context.
+This mimics a use of an uninitialized resource (CWE-908), leading to undefined behavior.

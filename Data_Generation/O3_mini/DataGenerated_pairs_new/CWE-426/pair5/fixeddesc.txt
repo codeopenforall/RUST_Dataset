@@ -1,0 +1,3 @@
+The corrected version addresses the untrusted search path vulnerability by enforcing that the executable's path is absolute.
+In the constructor, if the supplied path is not absolute, the program panics, thereby preventing the inadvertent use of relative paths that might be manipulated.
+This design aligns with safer system programming practices and mitigates the risk of DLL preloading and executable hijacking.

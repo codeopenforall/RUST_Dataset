@@ -1,0 +1,16 @@
+#[cfg(test)]
+mod tests {
+    use super::IdentityManager;
+    use std::sync::Arc;
+
+    #[test]
+    fn test_authentication() {
+        // Setup IdentityManager with a secure secret.
+        let manager = IdentityManager::new("S3cr3t".to_string());
+        // A malicious token that shares the first character 'S' but is not the valid secret.
+        // With proper authentication, this should be rejected (i.e., validate returns false).
+        let malicious_token = "S3abcd";
+        let result = manager.validate(malicious_token);
+        assert!(!result, "Authentication bypass vulnerability detected.");
+    }
+}

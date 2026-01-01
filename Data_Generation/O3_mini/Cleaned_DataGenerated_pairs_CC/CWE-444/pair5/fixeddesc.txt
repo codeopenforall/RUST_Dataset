@@ -1,0 +1,6 @@
+The corrected version addresses the vulnerability by modifying the logic in the unsafe block:
+• When the "Transfer-Encoding" header indicates chunked encoding, it ignores the "Content-Length" header
+and returns the actual body.
+• If only "Content-Length" is provided, it verifies that the length does not exceed the actual body size.
+This prevents unsafe memory access beyond the allocated buffer.
+The use of concurrency and smart pointers remains unchanged, preserving the production-like usage style.

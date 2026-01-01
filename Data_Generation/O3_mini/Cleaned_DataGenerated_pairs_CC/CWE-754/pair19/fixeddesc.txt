@@ -1,0 +1,3 @@
+The corrected version resolves the vulnerability by properly handling the exceptional conditions.
+Instead of misinterpreting a timeout as a safe condition, it explicitly matches on the timeout error case and returns a proper error.
+No unsafe blocks are used, ensuring that uninitialized memory is not dereferenced, thereby eliminating the CWE-754 vulnerability.

@@ -1,0 +1,4 @@
+The vulnerability arises from the unsafe construction of a configuration object using MaybeUninit.
+Only the numeric field ("count") is explicitly initialized while the string field ("name") is left uninitialized.
+Since the program later calls a method that uses the uninitialized "name" (by invoking is_empty()),
+this leads to undefined behavior and potential crashes, as reported by CWE-908 (Use of Uninitialized Resource).

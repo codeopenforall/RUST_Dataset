@@ -1,0 +1,1 @@
+In the corrected version, a bounded (synchronous) channel is used to limit the number of messages in flight, and an explicit check is added before appending data to the vector. This prevents the vector and counter from growing without bound, thus mitigating the risk of uncontrolled resource consumption (DoS).

@@ -1,0 +1,5 @@
+This version demonstrates CWE-426 Untrusted Search Path by launching an executable 
+using a relative path ("untrusted_binary") without verifying its full path. In a real-world 
+scenario, an attacker may insert a malicious executable into a directory earlier in the PATH, 
+leading to unexpected behavior. The use of unsafe blocks and concurrency emulates realistic 
+complexity found in production Rust systems.

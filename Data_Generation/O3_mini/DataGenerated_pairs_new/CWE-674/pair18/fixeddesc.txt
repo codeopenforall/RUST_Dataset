@@ -1,0 +1,5 @@
+The corrected code adds an explicit depth counter to the recursive function safe_parse_helper.
+Before each recursive call, the function verifies that the current depth does not exceed the defined MAX_DEPTH.
+If it does, an error is returned instead of recursing further, thus preventing a stack overflow. 
+This change mitigates CWE-674 by controlling recursion depth, while still using unsafe pointer access 
+to remain realistic in performance-critical parsing routines.

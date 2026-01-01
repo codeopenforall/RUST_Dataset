@@ -1,0 +1,6 @@
+The above code demonstrates an externally-controlled format string vulnerability (CWE-134). 
+It accepts a user-provided string (for example, via a command-line argument) and passes it directly 
+as the format string to an unsafe FFI call to libc's sprintf. If an attacker supplies a malicious 
+format (e.g., including extra specifiers like “%x” or “%s”), it can lead to unintended behavior such as 
+memory disclosure or crashes. This vulnerability is exacerbated by the unsafe block and concurrent 
+execution.

@@ -1,0 +1,4 @@
+This version contains a miscalculation of the buffer size. Instead of using the actual length of the string (input.len()),
+it incorrectly uses mem::size_of_val(&input), which measures the size of the string’s metadata. For strings longer than
+this fixed metadata size, the allocated buffer is too short, causing an incorrect memory copy and potential memory corruption.
+This pattern mimics real-world unsafe usage where padding or termination considerations are mistakenly ignored.

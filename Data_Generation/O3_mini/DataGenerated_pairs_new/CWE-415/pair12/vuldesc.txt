@@ -1,0 +1,4 @@
+This version allocates a heap-based resource and then manually deallocates it using raw pointer conversion.
+Due to a flawed design, the deallocation routine is called twice on the same pointer; the second call
+results in a double free condition (CWE-415). A global flag is used to simulate detection by triggering a panic
+upon the duplicate deallocation, which in real-world unsafe code would cause undefined behavior.

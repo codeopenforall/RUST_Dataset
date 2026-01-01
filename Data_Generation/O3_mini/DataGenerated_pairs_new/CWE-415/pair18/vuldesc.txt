@@ -1,0 +1,3 @@
+The vulnerability exists because the function that manually releases the resource deallocates the memory without
+invalidating its internal pointer. When the instance subsequently goes out of scope, its Drop implementation
+deallocates the memory a second time. This double free (CWE-415) can corrupt memory and lead to undefined behavior.

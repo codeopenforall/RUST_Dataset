@@ -1,0 +1,3 @@
+The corrected implementation eliminates the vulnerability by explicitly verifying that the index is less than the
+length of the valid slice before attempting access. This bounds-check ensures that any attempt to read beyond the
+allowed range is gracefully handled by returning an error instead of performing an unsafe memory read.

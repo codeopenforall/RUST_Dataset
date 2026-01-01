@@ -1,0 +1,4 @@
+The code creates a Buffer by unsafely setting the length of a vector using set_len,
+and then performs an unchecked pointer write in the assign method. When an out‐of‐bounds
+index (e.g. index 10 for a buffer of length 10) is provided, it writes memory outside the 
+allocated region, causing memory corruption. This behavior emulates CWE-787.

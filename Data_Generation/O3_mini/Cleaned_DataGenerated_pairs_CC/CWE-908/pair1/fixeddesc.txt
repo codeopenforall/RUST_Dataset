@@ -1,0 +1,2 @@
+The corrected code eliminates the unsafe usage of uninitialized memory by replacing the unsafe block with a safe and explicit initialization of all fields in the configuration structure. 
+By ensuring both 'timeout' and 'retries' are properly set prior to any use—even in a concurrent context—this fix reliably addresses the vulnerability.

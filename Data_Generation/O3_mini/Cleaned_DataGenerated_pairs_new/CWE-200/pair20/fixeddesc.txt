@@ -1,0 +1,1 @@
+The fixed code addresses CWE-200 by redacting sensitive information in the Debug and Display implementations. Instead of directly printing the password, the Debug output now shows "[REDACTED]", and error messages exclude any sensitive details. This prevents leaking secrets via logs or panics, while keeping the complex structure with unsafe blocks and concurrency intact.

@@ -1,0 +1,5 @@
+This vulnerable implementation suffers from CWE-611: Improper Restriction of XML External Entities.
+It fails to disable or properly restrict external entity resolution. When the input XML contains an external entity declaration,
+the code unsafely spawns a thread that loads sensitive data into a global variable using unsafe Rust constructs.
+This design mimics real-world vulnerabilities where external entities are resolved (e.g., accessing file:///etc/passwd),
+exposing secret data.

@@ -1,0 +1,4 @@
+In the corrected version, the code mitigates the untrusted search path vulnerability by validating that the executable path is absolute.
+The unsafe external execution function now examines the command string using std::path::Path, and if the path is not absolute it refuses to execute, returning an error code.
+This prevents attackers from substituting a malicious executable via the process search path.
+Concurrent and unsafe patterns remain similar to mimic realistic use while addressing the vulnerability.

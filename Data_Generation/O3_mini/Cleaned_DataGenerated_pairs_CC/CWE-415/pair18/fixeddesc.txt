@@ -1,0 +1,4 @@
+In the corrected code the double free vulnerability is fixed by nullifying the internal pointer after manual deallocation.
+This change ensures that the Drop implementation’s check (testing against a null pointer) prevents a second,
+erroneous free of the same memory. The fix maintains safe resource deallocation by guaranteeing that memory is freed
+exactly once.

@@ -1,0 +1,3 @@
+This vulnerable implementation violates XML external entity restrictions (CWE-611) by processing external entity declarations found in the input XML.
+It uses an unsafe function to resolve external entities – reading file paths from untrusted XML content – which can lead to arbitrary file reads or sensitive data disclosure.
+The use of unsafe pointer operations and lack of proper input validation make it prone to exploitation through crafted XML inputs.

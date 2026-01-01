@@ -1,0 +1,3 @@
+The corrected code fixes the synchronization vulnerability by ensuring both functions acquire locks in the same order.
+Both op1 and op2 now lock 'lock_a' first, then 'lock_b', eliminating the risk of a deadlock.
+This proper ordering guarantees consistent lock acquisition among threads, addressing CWE-662.

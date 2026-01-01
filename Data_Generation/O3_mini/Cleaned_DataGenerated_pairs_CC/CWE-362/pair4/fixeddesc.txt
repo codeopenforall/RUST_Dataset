@@ -1,0 +1,1 @@
+The corrected code addresses the race condition by replacing the unsafely shared UnsafeCell with a Mutex-wrapped value. The update method now acquires a lock to ensure that increments are performed atomically. This eliminates the interleaving issues that caused the race condition in the previous version, guaranteeing that the final counter value is as expected.

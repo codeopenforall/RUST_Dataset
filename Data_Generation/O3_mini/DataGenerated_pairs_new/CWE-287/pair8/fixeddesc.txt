@@ -1,0 +1,3 @@
+This revised version fixes the vulnerability by ensuring that the entire secret is compared with the user-supplied token.
+The unsafe block has been removed, and the check now compares the full byte slices of both the stored secret and the input.
+An exact match is required for authentication, effectively mitigating the CWE-287 vulnerability.

@@ -1,0 +1,3 @@
+This code contains a failure to check the return value of an unsafe function (write_data).
+When an empty byte slice is passed, write_data returns an error but the code ignores the Result.
+This unchecked error can lead to unexpected behavior and security issues, making it vulnerable under CWE-252.

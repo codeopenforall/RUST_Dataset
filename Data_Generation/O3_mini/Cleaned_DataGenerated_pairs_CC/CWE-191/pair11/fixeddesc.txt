@@ -1,0 +1,3 @@
+The fixed code introduces a guard in the get_at method that checks if the input is less than 5.
+If it is, an error is returned instead of performing the subtraction. This prevents the integer 
+underflow that leads to an unsafe memory access, ensuring that only validated indices are used.

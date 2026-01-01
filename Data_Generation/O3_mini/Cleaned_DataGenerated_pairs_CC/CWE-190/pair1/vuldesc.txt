@@ -1,0 +1,4 @@
+This vulnerable code uses an unsafe block to perform unchecked wrapping addition on an 8‐bit integer.
+When 10 is added to 250, the resulting value wraps around to 4 instead of detecting an overflow.
+The design mimics real-world concurrency and unsafe pointer usage found in some RustSec reports,
+and it may lead to logic errors in production systems (CWE-190: Integer Overflow/Wraparound).

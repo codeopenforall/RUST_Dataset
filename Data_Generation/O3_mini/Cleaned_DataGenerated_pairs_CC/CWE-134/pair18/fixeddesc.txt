@@ -1,0 +1,1 @@
+In this corrected version the vulnerability is fixed by never using the externally provided input directly as the format string. Instead, a fixed format string ("%s") is used and the user input is passed as an argument. This prevents any unintended format specifiers in the user input from being interpreted, thereby neutralizing the externally-controlled format string risk.

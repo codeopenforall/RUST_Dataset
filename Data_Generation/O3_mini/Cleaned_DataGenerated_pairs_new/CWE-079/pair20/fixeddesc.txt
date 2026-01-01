@@ -1,0 +1,4 @@
+In this secure implementation the untrusted input is processed with an HTML escaping function before being inserted.
+By replacing the unsafe byte copy with a safe escape mechanism, any dangerous characters (like '<', '>', and '&')
+are converted into harmless HTML entities. This prevents the browser from interpreting them as executable code,
+thereby mitigating the Cross-Site Scripting (CWE-079) vulnerability.

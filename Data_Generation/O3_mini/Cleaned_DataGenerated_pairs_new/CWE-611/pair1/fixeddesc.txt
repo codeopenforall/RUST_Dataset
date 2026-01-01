@@ -1,0 +1,1 @@
+In this secure version, external entity resolution is explicitly disabled by setting the configuration flag to false. The process method now checks for the presence of any external entity declarations and returns an error rather than resolving them. This eliminates the unsafe pointer manipulation and file access paths, mitigating CWE-611.

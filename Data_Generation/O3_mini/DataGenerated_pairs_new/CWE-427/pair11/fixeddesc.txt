@@ -1,0 +1,4 @@
+This version addresses the uncontrolled search path vulnerability by removing the unsafe block and explicitly overriding the PATH
+environment variable with a trusted value ("/usr/bin:/bin") before spawning the external command.
+By doing so, it prevents an attacker from injecting a malicious directory into the search path.
+The overall structure using concurrency and smart pointers is maintained, ensuring functional equivalence while significantly enhancing security.

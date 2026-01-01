@@ -1,0 +1,3 @@
+In the corrected code, the exceptional condition (timeout) is properly handled by checking the error from recv_timeout.
+Instead of misinterpreting the timeout and proceeding with unsafe operations, the function now returns an error ("operation timed out").
+This change ensures that downstream logic receives correct failure signals and prevents the use of unsafe, fabricated values.

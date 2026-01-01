@@ -1,0 +1,5 @@
+In the corrected code, the subtraction method checks whether the input value is negative.
+If a negative value is detected, the method returns early, thereby avoiding an unsafe cast
+and the subsequent underflow. This change prevents the vulnerability while leaving the API
+and concurrent structure unaltered, ensuring that legitimate non-negative subtractions work
+as intended.

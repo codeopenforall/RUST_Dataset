@@ -1,0 +1,4 @@
+The corrected code addresses the off-by-one error by properly setting the vector’s length to the expected value 
+using unsafe { set_len(size) } rather than size + 1. The iteration now runs from 0 to size, ensuring that no extra 
+element is accessed. This change eliminates the fencepost mistake and restores safe memory access, preventing the 
+potential out-of-bounds write observed in the vulnerable version.

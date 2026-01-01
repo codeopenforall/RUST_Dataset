@@ -1,0 +1,1 @@
+This corrected version encapsulates the shared Counter within an Arc<Mutex<_>>, ensuring that every update to the counter is guarded by a lock. The Mutex guarantees atomic, mutually exclusive access, thus eliminating the race condition found in the unsynchronized version. As a result, the final count consistently matches the expected value.

@@ -1,0 +1,1 @@
+The above code exhibits an Origin Validation Error. It unsafely accesses the vector of headers using raw pointers and then performs a vulnerable substring check on the "Origin" header. By accepting any header that contains "example.com" within its value, an attacker can supply a malicious header (e.g., "http://malicious.example.com") and bypass origin restrictions.

@@ -1,0 +1,1 @@
+The corrected code eliminates the unsafe block and performs a direct, safe comparison of the entire token string. This ensures that only an exact match with the stored valid token ("supersecrettoken") will authenticate successfully, thereby mitigating the vulnerability.

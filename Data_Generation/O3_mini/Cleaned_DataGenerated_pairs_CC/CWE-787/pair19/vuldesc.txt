@@ -1,0 +1,2 @@
+Description:
+This code defines a BufferManager which maintains a vector of 10 u8 values. The vulnerability lies in the “apply” method where unsafe pointer arithmetic is used incorrectly: the expression “idx + 1” is used instead of “idx”. When the function is invoked with the highest valid index (9), it writes to index 10 – beyond the allocated bounds of the vector – causing an out‐of‐boundary write (CWE-787). This bug is exacerbated in concurrent execution when multiple threads update the shared resource.

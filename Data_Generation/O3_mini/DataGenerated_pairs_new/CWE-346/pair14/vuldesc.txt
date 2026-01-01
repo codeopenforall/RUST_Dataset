@@ -1,0 +1,5 @@
+The vulnerability arises because the code uses an unsafe block to check 
+the "X-Forwarded-Host" header. If the header is present, it blindly trusts it 
+by verifying a raw pointer rather than validating its content. This logic mistakenly 
+permits requests when a malicious "X-Forwarded-Host" header is injected (e.g., "https://evil.com"),
+bypassing the intended origin validation and leading to a potential Cross-Site Request Forgery (CSRF) or SSRF pivot.

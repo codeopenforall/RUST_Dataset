@@ -1,0 +1,4 @@
+In this corrected version the withdrawal method verifies that the account balance is sufficient 
+before subtracting the requested amount. This avoidance of unchecked arithmetic prevents 
+an integer underflow. By returning an error when insufficient funds are present, the code 
+ensures the account balance remains valid, even when accessed concurrently.

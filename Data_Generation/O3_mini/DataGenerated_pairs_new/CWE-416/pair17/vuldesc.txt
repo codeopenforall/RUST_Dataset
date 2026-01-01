@@ -1,0 +1,4 @@
+This code exhibits a use‐after‐free vulnerability. A heap‐allocated object is freed via Box::from_raw(),
+and then its memory is deliberately overwritten using ptr::write. Subsequent dereference of the raw pointer
+accesses memory that has been freed (and tampered with), mimicking real-world unsafe aliasing issues.
+Such bugs have been documented (e.g., CWE-416) and can lead to unpredictable behavior.

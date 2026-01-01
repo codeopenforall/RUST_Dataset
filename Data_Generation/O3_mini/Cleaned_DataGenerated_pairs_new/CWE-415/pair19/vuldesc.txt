@@ -1,0 +1,6 @@
+This code demonstrates a double free vulnerability (CWE-415) via unsafe manual deallocation.
+A Resource is allocated on the heap, and its raw pointer is stored without any bookkeeping.
+The "release" method unsafely frees the heap memory using a custom deallocation function.
+However, because the Drop implementation also calls the same deallocation routine, 
+the same memory is freed twice when the object goes out of scope, resulting in a double free.
+A global atomic counter in custom_release panics upon a second free to simulate the error.

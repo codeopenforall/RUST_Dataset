@@ -1,0 +1,1 @@
+The corrected version addresses the vulnerability by eliminating reliance on untrusted input. Instead of reading the "MALICIOUS_PATH" environment variable, the code sets the PATH to a fixed, secure value. Additionally, the unsafe block and raw pointer manipulation are removed. This ensures that command execution uses only known safe directories, mitigating CWE-427.

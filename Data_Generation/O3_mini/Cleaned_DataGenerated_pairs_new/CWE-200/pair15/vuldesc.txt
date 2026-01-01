@@ -1,0 +1,4 @@
+This implementation suffers from CWE-200 Exposure of Sensitive Information. 
+Sensitive credentials are inadvertently logged in full when an error occurs. 
+The use of unsafe blocks with raw pointer dereferences in the log-generation function 
+and in the concurrent error simulation exacerbates the risk by bypassing typical safety checks.

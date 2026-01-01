@@ -1,0 +1,1 @@
+The corrected code allocates a vector with a capacity equal to the number of input elements. By setting the vector’s length to the full input length, the subsequent pointer-based writes occur entirely within the allocated bounds. This adjustment prevents the out-of-bounds memory access and eliminates the vulnerability.

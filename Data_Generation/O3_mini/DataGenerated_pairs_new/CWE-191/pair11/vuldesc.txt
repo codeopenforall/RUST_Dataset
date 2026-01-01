@@ -1,0 +1,3 @@
+This program contains an integer underflow flaw. In the method get_at, the subtraction 
+(pos.wrapping_sub(5)) is performed without verifying that pos is at least 5. When pos is less than 5, 
+the subtraction underflows and wraps around, causing unsafe, out-of-bounds memory access via get_unchecked.

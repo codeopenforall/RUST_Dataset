@@ -1,0 +1,1 @@
+The corrected version removes the unsafe partial comparison and replaces it with a full, safe string equality check. By comparing the complete header value against the trusted constant, it prevents attackers from bypassing validation by adding extraneous data. This adherence to proper, safe string handling removes the origin validation error.

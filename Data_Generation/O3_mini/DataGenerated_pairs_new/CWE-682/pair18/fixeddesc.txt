@@ -1,0 +1,1 @@
+The corrected version fixes the order of operations by multiplying the base with the multiplier first before dividing by the divisor. This change correctly computes the intended value of (base * multiplier) / divisor. In addition, the unsafe pointer manipulation has been removed as it provided no benefit and added risk, making the calculation both safer and logically correct.

@@ -1,0 +1,1 @@
+In this corrected version, the subtraction operation is guarded by a runtime check that ensures the current value is not less than the amount to be subtracted. If the subtraction would lead to an underflow, the method returns an error instead of performing the operation. This change eliminates the integer wraparound vulnerability by preventing invalid arithmetic operations.

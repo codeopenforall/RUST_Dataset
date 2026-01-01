@@ -1,0 +1,1 @@
+This code processes a sensitive configuration and writes the secret to a file in plain text. It uses an unsafe block to convert the secret string to a raw byte slice without any validation or encryption, and then writes it concurrently in a spawned thread. The secret is stored unencrypted at rest, which exposes it to potential attacker access (CWE-311).

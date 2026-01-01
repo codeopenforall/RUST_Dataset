@@ -1,0 +1,4 @@
+In this revised implementation the code uses safe parsing functions and enforces proper HTTP parsing rules.
+When both "Content-Length" and "Transfer-Encoding" headers are present, it correctly detects the use of
+chunked encoding and decodes the complete body accordingly. This eliminates the risk of inconsistent
+interpretation that could otherwise be exploited for request smuggling.

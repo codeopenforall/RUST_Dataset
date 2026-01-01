@@ -1,0 +1,3 @@
+The correction involves using the proper pointer offset when writing the new byte. Instead of computing the target address as
+"base_ptr + len + 1", the fixed version correctly uses "base_ptr + len". This change ensures that the new byte is appended at
+the precise end of the initialized region and that the vector’s length is updated accordingly, thus eliminating the off-by-one vulnerability.

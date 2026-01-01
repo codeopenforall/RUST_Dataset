@@ -1,0 +1,4 @@
+The vulnerability in this code lies in the function that interprets the result of the update function. 
+Even though the update function returns an Err when an error condition occurs (i.e. a negative counter value), 
+the perform function incorrectly treats any Err as a success. This flaw could allow the program to continue 
+under erroneous conditions, potentially leading to undefined behavior or corrupted state in a real system.

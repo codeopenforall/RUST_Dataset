@@ -1,0 +1,3 @@
+In the corrected version the buffer size is properly calculated using input.len(), ensuring that the allocated memory
+precisely fits the content of the input string. This fix prevents buffer overflow by aligning the allocated size with the
+actual byte-length of the string, thereby eliminating the risk of memory corruption.

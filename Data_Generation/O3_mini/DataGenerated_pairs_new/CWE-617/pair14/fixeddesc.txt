@@ -1,0 +1,5 @@
+In the fixed version the vulnerability is mitigated by sanitizing the input before it is used to initialize shared state.
+If the user-supplied value is equal to or exceeds the THRESHOLD, it is clamped to THRESHOLD - 1 ensuring that the
+assertion in operate() is never triggered. Consequently, this prevents an attacker from forcing a panic and denying
+service. The overall structure with concurrency, unsafe initialization, and shared smart pointers is preserved to mimic
+real-world code patterns, while the dangerous unchecked assumption is eliminated.

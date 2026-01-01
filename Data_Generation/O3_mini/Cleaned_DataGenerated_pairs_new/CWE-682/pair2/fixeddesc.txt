@@ -1,0 +1,5 @@
+The corrected code fixes the incorrect arithmetic by using the proper grouping in the discount calculation.
+It now computes the discounted price per unit as (price - (price * discount_rate / 100)) and then multiplies by quantity. 
+The unsafe block and concurrent design remain identical to mimic a real-world scenario, but the math error is resolved.
+Under the same test input (price=100, quantity=2, discount_rate=15), each thread correctly computes 85, 
+resulting in an aggregate of 680.

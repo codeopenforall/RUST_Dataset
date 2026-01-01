@@ -1,0 +1,7 @@
+The fixed version addresses the vulnerability by correctly checking the return value from the unsafe function.
+Since the unsafe_adjustment (formerly unsafe_modification) function returns 0 for success,
+the adjust function now only reports success (Ok) when the return value is exactly 0.
+Any nonzero value is correctly interpreted as an error,
+and the caller is informed via an Err result.
+Additionally, the fixed code initializes the state with a nonzero value to allow the operation to proceed as intended.
+This correction ensures proper error propagation and avoids misinterpreting error conditions as successful operations.

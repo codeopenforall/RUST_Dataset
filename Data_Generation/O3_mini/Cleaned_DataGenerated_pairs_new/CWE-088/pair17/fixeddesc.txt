@@ -1,0 +1,5 @@
+The fixed code removes the unsafe access to raw pointers and directly locks the Mutex to obtain
+a safe clone of the input string. More importantly, instead of constructing a command string for
+a shell execution ("sh -c"), it directly invokes the echo command with the untrusted string as an argument.
+This ensures that the shell does not parse the input for metacharacters, thereby mitigating OS
+command injection vulnerabilities.

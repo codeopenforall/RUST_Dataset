@@ -1,0 +1,5 @@
+In this corrected version the computation is made safe by replacing the unchecked multiplication 
+with the checked_mul method and verifying that the result does not exceed u16::MAX. If the multiplication 
+would overflow or if the product is too large to convert to u16, the function returns an error instead 
+of producing an incorrect result. This approach prevents the type cast from silently wrapping the integer 
+value.

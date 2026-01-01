@@ -1,0 +1,5 @@
+This code suffers from an improper authentication vulnerability where the authentication function
+"verify" erroneously compares only the first three characters of the provided token against the expected
+credential "secret". An attacker can bypass proper authentication by supplying any token that starts with
+"sec", for example "secXXX", which will incorrectly authenticate. The use of unsafe pointer arithmetic
+exacerbates the issue by reducing the check to a minimal subset of the token's bytes.

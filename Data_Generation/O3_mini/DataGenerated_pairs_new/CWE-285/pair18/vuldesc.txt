@@ -1,0 +1,2 @@
+The above code suffers from CWE-285 (Improper Authorization) as it fails to validate the caller’s privileges before returning sensitive data.
+The get_data method accepts a token but does not check whether it matches an expected value (e.g., "admin"). This oversight allows unauthorized callers (like those using "user") to access the secret.

@@ -1,0 +1,4 @@
+The corrected code introduces a guard in the debit method to ensure that the wallet has sufficient funds
+before performing the subtraction. If the requested debit amount exceeds the current balance,
+the function returns an error instead of proceeding with the operation. This defensive check prevents
+integer underflow and maintains the integrity of the wallet's balance.

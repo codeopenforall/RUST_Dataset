@@ -1,0 +1,4 @@
+The vulnerability exists in the compute_sum function where an unsafe block is used to sum elements
+by directly dereferencing raw pointers. No check is performed to ensure that the provided count
+does not exceed the length of the underlying vector. Passing a count larger than buf.len() results in reading
+uninitialized or unrelated memory, leading to undefined behavior corresponding to CWE-475.

@@ -1,0 +1,1 @@
+In the fixed code, the multiplication to compute the buffer size is performed on the original usize values using the checked_mul method. This prevents a wraparound error by either returning the correct product or panicking on overflow. Thus, the allocation size is correctly computed and subsequent memory writes are confined within the allocated buffer.

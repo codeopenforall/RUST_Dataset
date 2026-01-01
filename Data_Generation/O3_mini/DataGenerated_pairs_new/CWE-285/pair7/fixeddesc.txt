@@ -1,0 +1,1 @@
+The corrected version removes the unnecessary unsafe construct and implements a proper authorization mechanism. The get_data function now checks that the provided username exactly matches the resource owner. This change prevents unauthorized users from accessing the resource, thereby resolving the CWE-285 vulnerability.

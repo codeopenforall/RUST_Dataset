@@ -1,0 +1,4 @@
+This code implements a resource allocation routine that spawns an unbounded number of threads based on user input,
+and within each thread executes an unsafe memory operation. No limits or authorization checks are in place,
+thus allowing a user to specify an arbitrarily high number of threads, potentially exhausting system resources (CWE-863).
+The missing resource caps make it vulnerable to misuse, leading to denial-of-service conditions.

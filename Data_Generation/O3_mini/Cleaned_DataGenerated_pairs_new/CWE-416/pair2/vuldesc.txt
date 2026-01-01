@@ -1,0 +1,1 @@
+The code deliberately creates a use‐after‐free scenario by converting a Box to a raw pointer and then freeing the memory using drop. Later, the code dereferences the same raw pointer to access the field “value”, leading to undefined behavior. Such patterns mimic real-world vulnerabilities in unsafe Rust code where ownership is lost and memory is re‐used.

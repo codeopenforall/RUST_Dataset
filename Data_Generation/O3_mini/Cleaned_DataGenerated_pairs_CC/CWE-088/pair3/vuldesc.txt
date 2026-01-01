@@ -1,0 +1,1 @@
+This code erroneously builds a shell command by directly embedding untrusted input into a command string within an unsafe block. By converting the raw pointer into a string without any sanitization, an attacker can supply metacharacters (e.g., “;”, “&”, “|”) causing additional commands to be executed. This is an OS command injection vulnerability (CWE-088).

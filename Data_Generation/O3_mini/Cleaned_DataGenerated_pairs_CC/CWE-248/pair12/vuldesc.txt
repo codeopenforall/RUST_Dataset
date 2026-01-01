@@ -1,0 +1,5 @@
+This version features an unsafe operation within a concurrent context where a negative input leads to an unchecked panic.
+The panic within the unsafe block is not caught using std::panic::catch_unwind, allowing it to propagate across thread 
+boundaries unexpectedly. In real-world systems (e.g., FFI boundaries or critical multi-threaded environments), such behavior 
+can lead to abnormal termination and potential security issues (CWE-248 - Uncaught Exception). The use of unwrap on the thread 
+join exacerbates the issue by not handling the error state gracefully.

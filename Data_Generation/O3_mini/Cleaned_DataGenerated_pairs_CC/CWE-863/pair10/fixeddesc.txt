@@ -1,0 +1,1 @@
+In this corrected version the number of tasks spawned is capped by a constant (MAX_TASKS). This prevents a malicious or erroneous input from spawning an excessive number of threads. The code still uses an unsafe block to mimic realistic legacy patterns, but the underlying resource allocation is now bounded and secure, addressing CWE-863.

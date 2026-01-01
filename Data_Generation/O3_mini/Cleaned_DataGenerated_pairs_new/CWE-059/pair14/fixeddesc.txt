@@ -1,0 +1,4 @@
+The corrected code removes the unsafe block and performs canonicalization in a safe manner,
+then checks if the resulting path is under the allowed root directory. If the canonicalized path 
+does not begin with the expected root, it returns a PermissionDenied error. This prevents attackers 
+from exploiting symbolic link resolution to access files outside the designated directory, thus fixing the vulnerability.

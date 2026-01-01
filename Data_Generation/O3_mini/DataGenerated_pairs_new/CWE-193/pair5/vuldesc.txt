@@ -1,0 +1,3 @@
+This code unsafely appends a byte into a vector by directly manipulating its raw pointer.
+Due to an off-by-one error, it writes to the memory location at index "len + 1" instead of "len", thereby corrupting
+the memory layout of the vector. This fencepost mistake can lead to undefined behavior and is representative of CWE-193.

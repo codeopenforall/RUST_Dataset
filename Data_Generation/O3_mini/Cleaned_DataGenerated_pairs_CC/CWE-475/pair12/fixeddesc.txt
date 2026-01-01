@@ -1,0 +1,5 @@
+The fixed version addresses the vulnerability by validating the user-supplied copy length.
+It clamps the requested length to the allowed buffer capacity (5 bytes) before performing the
+unsafe memory operation. As a result, even if a value greater than 5 is provided, only the
+permitted number of bytes are copied, and the marker remains unmodified. Concurrency is preserved
+by executing the copy in a dedicated thread, while the bounds check prevents undefined behavior.

@@ -1,0 +1,4 @@
+The corrected code disables the vulnerability by inspecting the XML input for DOCTYPE declarations that contain
+SYSTEM references. Upon detecting an external entity request, it immediately returns an error message instead of
+attempting to resolve and include external content. This removes the unsafe behavior and prevents XXE attacks,
+effectively mitigating CWE-611.

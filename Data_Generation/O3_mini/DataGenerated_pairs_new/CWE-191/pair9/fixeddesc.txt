@@ -1,0 +1,6 @@
+In this corrected version, the subtraction method has been modified to use Rust's 
+checked subtraction API (checked_sub). This method returns an Option, which allows us 
+to detect if an underflow would occur. In such a case, the implementation uses unwrap_or(0) 
+to assign a safe default value of 0. The unsafe block has been removed so that the code 
+remains in the safe Rust domain, ensuring that no unchecked pointer arithmetic is performed.
+Concurrent behavior is maintained via Arc and Mutex to mimic real-world usage.

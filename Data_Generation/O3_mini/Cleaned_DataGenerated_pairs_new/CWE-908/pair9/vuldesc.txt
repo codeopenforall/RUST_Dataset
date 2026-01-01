@@ -1,0 +1,1 @@
+The vulnerable code allocates a Resource structure using MaybeUninit and then explicitly initializes only the "number" field inside an unsafe block. The "description" field of type String is left uninitialized, which later leads to undefined behavior when accessed from multiple threads. This mimics real-world issues reported in RustSec for use of uninitialized resources.

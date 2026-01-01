@@ -1,0 +1,1 @@
+In this corrected version, the manual disposal function now nullifies the raw pointer after deallocation. By setting the pointer to null, the Drop implementation no longer attempts to free an already freed resource. This simple but crucial change avoids the double free vulnerability, ensuring that the memory is deallocated exactly once.

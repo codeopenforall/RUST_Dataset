@@ -1,0 +1,1 @@
+The code defines a Resource structure holding a secret string. Its obtain_secret method is marked as unsafe and accepts a request identifier; however, it completely ignores this parameter and always returns the secret. This design flaw—improper authorization or missing access control check—represents CWE-285, as it allows unauthorized users to retrieve sensitive data.

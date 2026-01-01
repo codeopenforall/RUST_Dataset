@@ -1,0 +1,4 @@
+This code demonstrates an improper memory operation vulnerability (CWE-119) where unsafe pointer arithmetic is used 
+to write and read from a buffer without proper bounds checking. When a boundary value (input equal to the size of the buffer) 
+is used, the code writes outside the allocated memory. Concurrent access via threads further complicates the issue, 
+potentially leading to memory corruption.

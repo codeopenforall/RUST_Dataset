@@ -1,0 +1,5 @@
+In the corrected version the vulnerability is fixed by eliminating the use of user-controlled input 
+as the format specifier. Instead, a constant (safe) format string is used ("%s %d") and the user input 
+is passed as a literal string argument. This prevents any embedded format specifiers in the user input 
+from being interpreted by sprintf, thereby mitigating CWE-134. The overall structure and concurrency 
+remain unchanged to mimic realistic usage patterns.

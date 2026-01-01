@@ -1,0 +1,6 @@
+This vulnerable code allocates an instance of Object on the heap and obtains a raw pointer to it.
+A Handler is then created that stores this raw pointer.
+Immediately after, the memory is freed by converting the raw pointer back into a Box (which drops the object),
+leaving the raw pointer dangling.
+Subsequently, the Handler's fetch() method unsafely dereferences the dangling pointer,
+leading to a Use-After-Free vulnerability (CWE-416) that can result in unpredictable behavior.

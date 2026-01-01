@@ -1,0 +1,1 @@
+The code above is vulnerable because it prints the sensitive secret value in the Debug implementation of the Data struct and includes it in the panic message within the process_data function. An attacker may exploit this by triggering the panic and reading the secret from log files or output, leading to an exposure of sensitive information (CWE-200).

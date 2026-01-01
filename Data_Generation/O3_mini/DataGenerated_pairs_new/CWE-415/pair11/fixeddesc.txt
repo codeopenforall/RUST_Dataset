@@ -1,0 +1,4 @@
+In this corrected code, once the resource is deallocated the internal pointer is set to null.
+This simple fix prevents a subsequent call from attempting to free the already deallocated memory.
+As a result, the global free counter increments only once and the process function returns Ok, 
+thereby resolving the double free vulnerability (CWE-415).

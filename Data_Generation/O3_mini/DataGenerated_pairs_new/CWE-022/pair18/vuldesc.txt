@@ -1,0 +1,4 @@
+The above vulnerable code accepts a user-supplied file path and naively concatenates it with a fixed base directory 
+using PathBuf::join without canonicalizing or validating the resulting path. This allows an attacker to supply inputs 
+like "../secret.txt" to read files outside of the intended directory. The code also uses an unsafe block for pointer 
+arithmetic, mirroring patterns found in real-world RustSec issues.

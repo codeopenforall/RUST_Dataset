@@ -1,0 +1,4 @@
+In the corrected variant, the unsafe unchecked addition is replaced by a checked_add call on u32.
+If the addition would overflow, checked_add returns None, and the function returns an error ("Overflow occurred").
+This approach prevents erroneous wraparound and ensures that callers can detect when arithmetic exceeds type limits.
+The concurrency design is preserved, but any overflow in a thread is now gracefully reported.

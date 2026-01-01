@@ -1,0 +1,1 @@
+This implementation unsafely modifies a shared counter using an UnsafeCell without any proper synchronization. Multiple threads concurrently call the update() method without mutual exclusion, leading to a classic race condition (CWE-362) where updates can be lost due to data races.

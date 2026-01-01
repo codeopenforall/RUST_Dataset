@@ -1,0 +1,1 @@
+The corrected code removes the double free vulnerability by ensuring that the raw pointer is converted back into a Box only once. This guarantees that the resource’s destructor is invoked exactly one time, thereby preventing multiple deallocations and ensuring proper memory safety.

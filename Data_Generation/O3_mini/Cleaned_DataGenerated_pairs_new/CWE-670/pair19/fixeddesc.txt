@@ -1,0 +1,1 @@
+The revised code corrects the control flow in the Task::run method. Each match arm now correctly reflects the intended computation: a High-level task multiplies the input by 2, while a Low-level task adds 5. The unsafe block remains, simulating low-level memory access, but with proper branch logic ensuring correct arithmetic even under concurrent execution.

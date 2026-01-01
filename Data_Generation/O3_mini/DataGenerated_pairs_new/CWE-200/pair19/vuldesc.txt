@@ -1,0 +1,1 @@
+In this code, an unsafe block is used to perform an unchecked memory access when the provided index exceeds the length of a sensitive string. The panic message is constructed using the sensitive secret information, thus inadvertently exposing the secret when a runtime error occurs. This mirrors CWE-200 by leaking sensitive information through error messages.

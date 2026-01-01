@@ -1,0 +1,4 @@
+In the secure implementation, the header parsing is accomplished with safe string search methods eliminating the unsafe pointer arithmetic.
+Moreover, the request processing function now actively inspects for the malicious header ("X-Extra: exploit")
+and correctly rejects the request if it is present. This explicit check prevents inconsistent interpretation,
+thereby mitigating the risk of request smuggling.

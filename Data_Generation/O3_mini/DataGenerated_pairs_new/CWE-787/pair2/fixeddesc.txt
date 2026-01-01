@@ -1,0 +1,1 @@
+In the corrected code the flaw has been remedied by replacing the unsafe write with a boundary check. The update() function now verifies that the given index is less than the current length of the vector before performing the write. This change ensures that an out-of-bounds update is gracefully handled by returning an error instead of corrupting memory.

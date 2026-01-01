@@ -1,0 +1,1 @@
+This code first uses fs::metadata to obtain file information, which follows symlinks, and then after a deliberate delay (simulating a race window) it opens the file. An attacker may exploit this delay by replacing the file with a symlink to a sensitive file between the check and use, leading to a CWE-059 Link Following vulnerability.

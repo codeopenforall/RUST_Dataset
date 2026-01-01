@@ -1,0 +1,4 @@
+The fixed code resolves the vulnerability by replacing the unsafe, partial token comparison
+with a complete, constant-time verification using a byte-by-byte comparison of the entire token.
+It no longer employs unsafe unchecked indexing, ensuring that only an input matching the entire secret is granted access.
+Concurrency and shared state remain intact, but the authentication now strictly compares both tokens.

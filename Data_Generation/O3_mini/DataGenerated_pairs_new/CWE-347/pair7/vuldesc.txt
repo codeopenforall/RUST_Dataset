@@ -1,0 +1,1 @@
+This version suffers from Improper Verification of Cryptographic Signature (CWE-347). Instead of performing a full cryptographic check on the signature, it merely compares the length of the data and signature and runs an unsafe dummy volatile read. As a result, any signature that matches the length of the message is erroneously accepted as valid.

@@ -1,0 +1,4 @@
+This snippet simulates a resource manager that should restrict access to a sensitive resource.
+Due to an improper authorization check (the check is missing entirely), any caller regardless of role
+can retrieve the secret value. The unsafe block is used to access the resource directly. This mimics
+real-world scenarios where neglecting proper access control can lead to unauthorized data disclosure, as seen in CWE-285.

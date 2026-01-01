@@ -1,0 +1,5 @@
+The fixed code mitigates the TOCTOU vulnerability by calling std::fs::canonicalize on the provided file path,
+which resolves any symlinks immediately and obtains the absolute path of the target file. This prevents an attacker
+from swapping the symlink between the check and use phases. The file is then reopened using the canonical path,
+guaranteeing that the originally intended file is accessed. The delay and unsafe operations remain to emulate realistic
+complexity, but they no longer compromise file integrity.

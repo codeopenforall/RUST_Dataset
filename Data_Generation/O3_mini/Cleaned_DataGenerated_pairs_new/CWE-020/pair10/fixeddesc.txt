@@ -1,0 +1,4 @@
+In the corrected code, an explicit bounds check is performed before entering the unsafe block.
+If the user-supplied number exceeds the size of the underlying buffer, the function returns an error.
+This prevents the unsafe use of std::slice::from_raw_parts with an invalid length.
+Furthermore, the code uses std::str::from_utf8 rather than its unchecked counterpart, ensuring that only valid UTF-8 strings are produced.

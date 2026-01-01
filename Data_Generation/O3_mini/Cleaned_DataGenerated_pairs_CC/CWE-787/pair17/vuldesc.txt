@@ -1,0 +1,5 @@
+This code defines a Buffer struct holding a vector of u32.
+Its method fill_data performs an unsafe write loop over indices 0 to len inclusive.
+The out-of-bounds write occurs when i equals the buffer length and then set_len is
+called to falsely extend the vector’s length. This results in CWE-787: Out-of-Bounds Write,
+which can lead to memory corruption and undefined behavior.

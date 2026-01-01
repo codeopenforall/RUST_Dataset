@@ -1,0 +1,1 @@
+In the corrected version the Settings structure is safely initialized using a conventional constructor. All the fields (addr, port, and max_conn) are provided explicit values so that no field retains an undefined value. This ensures that subsequent computations (via calc()) are deterministic and eliminates any risk of undefined behavior associated with uninitialized memory.

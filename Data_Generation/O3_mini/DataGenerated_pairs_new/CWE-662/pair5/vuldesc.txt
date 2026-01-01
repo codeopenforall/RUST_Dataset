@@ -1,0 +1,1 @@
+This code unsafely drops the lock after obtaining a raw pointer from a Mutex‐protected object, and then uses that raw pointer to update the counter without synchronization. This improper synchronization leads to a data race (CWE-662), making the shared state vulnerable to concurrent modification errors.

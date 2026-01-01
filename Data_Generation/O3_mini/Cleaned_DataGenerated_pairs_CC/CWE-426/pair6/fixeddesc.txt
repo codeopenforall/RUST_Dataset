@@ -1,0 +1,4 @@
+In this corrected version, the vulnerable use of a relative command name has been eliminated by resolving the target 
+executable's full absolute path through the function absolute_path(). This prevents the possibility of an attacker 
+injecting a malicious binary by manipulating the search path. The rest of the design, including the unsafe block and 
+concurrent execution, remains intact to mimic realistic real-world usage patterns in Rust.

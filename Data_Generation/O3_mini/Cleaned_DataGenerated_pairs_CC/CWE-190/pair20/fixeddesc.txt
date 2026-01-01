@@ -1,0 +1,3 @@
+In this corrected implementation the update method now uses checked arithmetic.
+When adding a value, checked_add is invoked, and if the operation would exceed u32::MAX,
+the accumulator is explicitly set to u32::MAX. This prevents wrap-around and ensures that the sum remains valid.

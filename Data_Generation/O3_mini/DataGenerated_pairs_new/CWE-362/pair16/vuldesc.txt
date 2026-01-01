@@ -1,0 +1,5 @@
+This vulnerable version simulates a race condition by using an UnsafeCell<bool> to manage a one-time resource flag.
+The try_use() method unsafely reads and writes the flag without atomic operations or proper synchronization.
+Due to the "time-of-check to time-of-use" window widened by an artificial delay,
+multiple threads may concurrently perceive the flag as set, leading to more than one thread “using” the resource.
+This mirrors CWE-362 where a race condition permits the misuse of shared state.

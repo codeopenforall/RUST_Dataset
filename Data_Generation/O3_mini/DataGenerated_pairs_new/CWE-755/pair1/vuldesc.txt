@@ -1,0 +1,4 @@
+In the above vulnerable code, an unsafe function performs a low‐level computation that should return an error
+when given a negative integer. However, the error is silently swallowed by using unwrap_or_default(),
+resulting in a default value (0) for erroneous inputs. This practice of swallowing errors without proper handling
+is a real-world issue (CWE‑755) where exceptional conditions are improperly suppressed.

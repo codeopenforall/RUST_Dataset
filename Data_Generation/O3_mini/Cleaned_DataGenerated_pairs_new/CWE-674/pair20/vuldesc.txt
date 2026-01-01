@@ -1,0 +1,4 @@
+The vulnerable code implements a recursive descent parser that processes a string containing expressions with parentheses.
+It directly recurses on encountering an opening parenthesis with no control on the recursion depth (see the recursive call on line 14).
+This uncontrolled recursion exposes the program to a potential stack overflow when processing deeply nested inputs.
+Unsafe blocks are used to perform unchecked byte array accesses, further mimicking common patterns in real-world unsafe Rust code.

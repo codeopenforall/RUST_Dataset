@@ -1,0 +1,4 @@
+This code defines a Buffer struct that holds a vector of u32 values and provides a method to read
+an element using pointer arithmetic in an unsafe block. The method subtracts 1 from the pointer offset
+without verifying that the resulting pointer remains in bounds. When invoked with index 0, this results in
+an underflow and an out‐of‐bounds memory read (CWE-125), a pattern observed in real-world unsafe Rust code.

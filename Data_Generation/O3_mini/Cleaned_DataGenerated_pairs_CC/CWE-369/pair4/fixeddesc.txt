@@ -1,0 +1,5 @@
+This corrected version adds a check before performing the unsafe division.
+The Calculator::compute function now verifies that the divisor isn’t zero, returning
+an error if it is. The public function perform_division wraps this result, returning a
+fallback value (0) rather than panicking.
+In the threaded context, the error is reported and the computation continues safely.

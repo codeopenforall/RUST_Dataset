@@ -1,0 +1,1 @@
+This code demonstrates an out-of-bound write vulnerability (CWE-787). A structure managing a vector uses an unsafe function to write values using raw pointer arithmetic. The loop iterates from 0 to count inclusive, meaning that it writes one element beyond the intended range. This off‐by‐one error causes memory corruption by writing outside the allocated buffer boundaries.

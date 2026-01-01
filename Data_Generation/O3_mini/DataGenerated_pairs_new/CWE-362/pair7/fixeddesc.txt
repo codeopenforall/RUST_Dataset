@@ -1,0 +1,3 @@
+In this corrected version the shared counter is protected by a Mutex.
+Each thread safely locks the counter before performing its increment operation, which prevents any race conditions.
+The synchronized access ensures that the counter is correctly incremented to the expected total, avoiding CWE-362.

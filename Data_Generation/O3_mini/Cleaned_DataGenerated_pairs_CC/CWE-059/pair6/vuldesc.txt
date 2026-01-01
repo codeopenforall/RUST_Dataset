@@ -1,0 +1,5 @@
+This version suffers from CWE-059: Failure to properly validate or restrict symbolic link resolution.
+Specifically, it blindly converts the user-provided file path to a C string within an unsafe block
+and then writes to that path without verifying that the final, resolved path remains within the allowed
+directory. An attacker can thus supply a symbolic link pointing outside the permitted directory, causing
+unauthorized file access or modification.

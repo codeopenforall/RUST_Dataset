@@ -1,0 +1,1 @@
+This version improperly swallows errors from the initialization routine by using unwrap_or_default. When an invalid input (zero) is provided, Data::new returns an error ("Zero size") but the error is ignored, and a default instance (with a null pointer and size 0) is used. Subsequent operations (like write) on this invalid state can lead to unexpected behavior or memory errors.

@@ -1,0 +1,4 @@
+The updated code fixes the improper authentication vulnerability by replacing the unsafe,
+partial byte-wise comparison with a full, safe string comparison. Instead of only checking the
+first byte via an unsafe pointer dereference, the function now compares the full token to ensure
+that only an exact match ("valid_token123") is accepted.

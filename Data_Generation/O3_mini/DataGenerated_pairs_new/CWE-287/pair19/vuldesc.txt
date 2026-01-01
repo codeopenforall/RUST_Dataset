@@ -1,0 +1,1 @@
+This version contains an improper authentication mechanism. The check function uses an unsafe block to compare only the first three bytes of the provided token against the expected key ("TopSecret"). As a result, tokens like "TopCow" or "TopBanana" are incorrectly accepted as valid credentials, exposing a vulnerability akin to CWE-287.

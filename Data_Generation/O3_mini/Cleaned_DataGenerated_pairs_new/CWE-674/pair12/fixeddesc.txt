@@ -1,0 +1,5 @@
+The fixed version addresses the vulnerability by introducing a recursion depth counter and enforcing a maximum recursion limit. 
+Each recursive call increments the depth counter and compares it against a preset limit (set at 1000). If the limit is exceeded, 
+the function returns a controlled error rather than continuing the recursion. This design prevents uncontrolled recursion and 
+avoids stack overflow, thereby mitigating CWE-674. The rest of the implementation remains similar, including the use of unsafe 
+blocks for pointer arithmetic and a threaded execution model.

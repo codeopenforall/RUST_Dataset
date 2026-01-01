@@ -1,0 +1,3 @@
+In this corrected version the unsafe block has been removed. Regardless of any environment variables,
+the bypass flag is set to false, ensuring that the authentication check properly verifies credentials.
+This eliminates the alternate debug-based path that allowed unauthorized access.

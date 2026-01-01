@@ -1,0 +1,1 @@
+The above code implements an identity check using an unsafe block that incorrectly compares only the first byte of the provided token to the secret stored internally. This flaw (CWE-287: Improper Authentication) allows any token that starts with the same character as the secret to be mistakenly accepted.

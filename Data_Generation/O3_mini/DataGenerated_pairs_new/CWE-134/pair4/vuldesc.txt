@@ -1,0 +1,6 @@
+This code demonstrates a format string vulnerability (CWE-134) by using an externally provided
+string as the format specifier in a call to the unsafe C function sprintf. The user input is taken 
+directly, converted to a C string, and passed as the format without any validation, which can lead 
+to unexpected behavior (or worse, memory corruption) if the input contains malicious formatting 
+directives. Concurrency is added via threads to mimic real-world usage where shared data might be 
+processed concurrently.

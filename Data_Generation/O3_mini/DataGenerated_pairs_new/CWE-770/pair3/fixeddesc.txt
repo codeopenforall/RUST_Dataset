@@ -1,0 +1,1 @@
+The fixed implementation introduces a maximum allowable count (MAX_ALLOWED) and checks the user-supplied number before proceeding. If the input exceeds this cap, process returns an error instead of performing any allocations. This measure prevents unbounded resource allocation, mitigating the risk of exhausting system resources.

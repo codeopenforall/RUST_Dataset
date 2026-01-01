@@ -1,0 +1,5 @@
+This version accepts an arbitrary number of tasks without enforcing any limit. 
+Inside the heavy_work method, a new thread is spawned for every task, and an unsafe memory allocation 
+is performed in each thread based on the task index. No checks are applied to the incoming task count; 
+if the input is too high, it can lead to resource exhaustion (excessive thread creation and memory allocations), 
+potentially triggering a Denial-of-Service (DoS) condition.

@@ -1,0 +1,4 @@
+In the fixed version the unsafe unchecked multiplication is replaced with checked_mul,
+which returns an Option. If the multiplication would overflow, the function returns an error.
+This prevents further processing on an invalid capacity. The rest of the computation remains
+concurrent and structured similarly, preserving realistic design patterns while ensuring safety.

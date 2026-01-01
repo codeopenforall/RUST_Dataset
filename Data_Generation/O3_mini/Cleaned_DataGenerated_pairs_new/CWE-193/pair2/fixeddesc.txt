@@ -1,0 +1,1 @@
+In this corrected version the off-by-one error has been eliminated. Instead of using unsafe indexing to access an element with an index equal to the vector's length, the code safely retrieves the last element using the standard last() method. Furthermore, vector initialization is done via push, ensuring that the vector’s length properly reflects its initialized memory.

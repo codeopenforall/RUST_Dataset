@@ -1,0 +1,5 @@
+The above vulnerable code suffers from an always-incorrect control flow issue (CWE-670). Although it
+intends to execute a safe branch when the input is 1, the use of a pattern "1 | _" forces the unsafe branch
+to be taken for all inputs except 2. In that branch, a pointer to the internal shared state is offset by 1
+and dereferenced unsafely. This miscomputation can lead to undefined behavior or wrong results, which mimics
+real vulnerabilities as reported in RustSec advisories.

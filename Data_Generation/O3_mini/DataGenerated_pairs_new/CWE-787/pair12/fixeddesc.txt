@@ -1,0 +1,5 @@
+In the corrected version, the buffer is allocated with a fixed size and initialized so that 
+its length equals its capacity. The “write_data” function first checks whether the intended 
+write (offset plus input length) would exceed the buffer’s bounds. If the check fails, it 
+panics immediately rather than performing an unsafe memory copy and adjusting the length. 
+This ensures that no out-of-bound memory is written, effectively mitigating the vulnerability.

@@ -1,0 +1,5 @@
+In this corrected version, the Resource struct includes an atomic boolean flag that 
+indicates whether the memory has already been released. The release method checks this flag 
+and only performs the deallocation on the first call, while the Drop implementation respects 
+the flag and avoids freeing the memory again. This change prevents the double free vulnerability 
+by ensuring that the custom deallocation function is invoked only once.

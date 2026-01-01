@@ -1,0 +1,1 @@
+The code in the fill() method of the Buffer struct has an off-by-one error. The loop iterates over 0..=size, which writes one element beyond the allocated memory (since valid indices run from 0 to size-1). This can lead to undefined behavior including memory corruption, resembling a fencepost error that has been observed in real-world vulnerabilities.

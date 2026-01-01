@@ -1,0 +1,1 @@
+In the corrected version, the authorization check in sensitive_action is fixed by requiring both that the provided key matches and that the context is flagged as privileged (i.e. authorized). By initializing the context with privileged set to true and using a logical AND condition, the code now properly denies access to unauthorized callers.

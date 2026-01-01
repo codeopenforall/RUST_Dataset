@@ -1,0 +1,5 @@
+In the fixed version, the unsafe shared flag has been replaced with an AtomicBool.
+The try_use() method now leverages the atomic compare_exchange operation which atomically checks
+whether the flag is true and sets it to false if so. This guarantees that only one thread can succeed,
+eliminating the race condition.
+The use of proper atomic ordering ensures that the resource is used exactly once, thereby addressing CWE-362.

@@ -1,0 +1,4 @@
+The corrected implementation uses safe Rust functions to convert the request into a string,
+and it explicitly checks for duplicate Content-Length headers. If more than one header is found,
+the function returns an error indicating an ambiguous header instead of silently overwriting the value.
+This change prevents inconsistent interpretations between proxy components and mitigates request smuggling risks.

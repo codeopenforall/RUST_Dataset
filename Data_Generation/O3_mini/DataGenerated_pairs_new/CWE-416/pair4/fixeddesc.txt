@@ -1,0 +1,4 @@
+The fixed version eliminates the use-after-free vulnerability by replacing the raw pointer with an
+Rc (reference-counted smart pointer). In this design, both the creator and the handler share ownership
+of the data. The data remains valid until all references are dropped, so the handler's access is safe.
+This pattern follows community idioms for safe shared data access in Rust.

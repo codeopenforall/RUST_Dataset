@@ -1,0 +1,5 @@
+The vulnerable code simulates a server authentication service where, if the debug flag is enabled,
+an unsafe function called via an unsafe block bypasses the actual secret validation logic. In this
+alternate (debug) path (lines 15-16), the unsafe function unconditionally returns true, leading
+to an authentication bypass vulnerability (CWE-288). This error mimics real-world issues where
+debug endpoints or alternate flows inadvertently disable proper authentication.

@@ -1,0 +1,1 @@
+In the corrected version, the insecure file mode has been fixed by creating the file with a secure mode (0o600), ensuring that only the file owner has read and write permissions. Additionally, the unsafe blocks have been removed since they were unnecessary after fixing the file creation process. This change directly addresses CWE-276 by preventing overly permissive file access.

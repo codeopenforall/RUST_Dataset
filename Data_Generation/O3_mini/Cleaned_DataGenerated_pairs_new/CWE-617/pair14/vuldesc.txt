@@ -1,0 +1,4 @@
+The vulnerable code unsafely creates a shared Data object using an attacker-supplied value without proper validation. 
+The method operate() contains an assertion that the contained value is less than a constant threshold (1000). 
+Because the input is attacker-influenced, providing a value of 1000 or higher triggers the assertion, leading to a panic (DoS).
+This pattern has been seen in real-world reports where unchecked parameters allowed attackers to force application failure.

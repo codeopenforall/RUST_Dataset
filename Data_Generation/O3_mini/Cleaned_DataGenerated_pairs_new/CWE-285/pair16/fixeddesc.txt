@@ -1,0 +1,1 @@
+The revised code adds an explicit authorization check in the sensitive data retrieval method by verifying the user's admin status. If the user is not an administrator, the function returns an Unauthorized error. This proper check prevents unprivileged users from accessing sensitive data while still using unsafe blocks only for low-level operations.

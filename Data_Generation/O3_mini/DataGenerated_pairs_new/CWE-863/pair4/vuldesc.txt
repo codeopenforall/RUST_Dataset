@@ -1,0 +1,1 @@
+This implementation lacks any throttling or cap on the resource allocation. The function execute_request blindly spawns as many threads as requested, updating a global counter through an unsafe block without thread synchronization. As a result, it may lead to uncontrolled resource exhaustion (CWE-863) if an excessively large number is provided.

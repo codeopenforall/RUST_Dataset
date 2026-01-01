@@ -1,0 +1,1 @@
+In the corrected version the Debug implementation for Data redacts the sensitive secret value by replacing it with "<redacted>" in its output. As a result, any panic that includes the debug output (such as in process_data) no longer leaks the sensitive information. This mitigates the CWE-200 exposure of sensitive information.

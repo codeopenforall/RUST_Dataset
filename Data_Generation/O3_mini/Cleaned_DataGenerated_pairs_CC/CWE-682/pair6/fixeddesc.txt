@@ -1,0 +1,1 @@
+In the corrected code, the miscalculation is resolved by dividing the sum by the correct total count of elements, 'len', rather than (len - 1). This ensures that the computed average reflects the true arithmetic mean of the input data. The unsafe block and concurrent execution remain unchanged to reflect realistic usage patterns while isolating the vulnerability.

@@ -1,0 +1,1 @@
+The code above inadvertently bypasses authentication when a request includes an "X-Debug" header with the value "true". An unsafe block is used to dereference a raw pointer to a temporary boolean, which always evaluates as true. This flawed logic allows an attacker to access authenticated functionality without providing the correct token.

@@ -1,0 +1,3 @@
+The code improperly authenticates caller privileges. The function that performs a sensitive operation
+fails to check whether the caller is authorized, allowing any role—including non-privileged users—to
+modify sensitive data. This may lead to unauthorized actions, violating access control (CWE-285).

@@ -1,0 +1,6 @@
+This vulnerable code implements an XML parser that inadequately restricts external entity resolution. 
+By naively extracting the SYSTEM identifier from the XML's DOCTYPE and passing it into an unsafe block 
+that converts a Rust string to a C-style string without proper null termination checks or validation, 
+the design permits an attacker to supply a crafted XML input referencing sensitive local files (CWE-611). 
+In addition, the use of concurrency with thread-spawning further complicates correctness and thread safety, 
+mimicking real-world vulnerabilities found in some RustSec/CVE reports.

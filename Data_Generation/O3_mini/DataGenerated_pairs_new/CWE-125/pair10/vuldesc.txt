@@ -1,0 +1,3 @@
+The vulnerability arises from an unchecked subtraction (idx - 1) in an unsafe block when accessing the buffer.
+If the provided index is 0, the subtraction underflows (due to wrapping in usize), resulting in an out‐of‐bounds
+memory access. This mimics CWE-125, as it reads from memory outside the intended buffer boundaries.

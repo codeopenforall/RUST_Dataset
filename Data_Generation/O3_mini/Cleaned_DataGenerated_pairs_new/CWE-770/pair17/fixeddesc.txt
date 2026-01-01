@@ -1,0 +1,1 @@
+In this corrected version the allocation is properly throttled: before any memory allocation or unsafe operations, the code checks that the input does not exceed a predefined limit. This prevents unbounded resource allocation and eliminates the unsafe out‐of‐bounds write. The function now gracefully returns an error if the input is too high, avoiding potential memory corruption.

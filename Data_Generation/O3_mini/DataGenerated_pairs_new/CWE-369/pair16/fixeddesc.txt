@@ -1,0 +1,1 @@
+The revised code mitigates the divide-by-zero vulnerability by introducing an explicit check for a zero denominator. Instead of performing an unchecked division within an unsafe block, the function now returns an Option that is None when the divisor is zero. This change prevents runtime panics and ensures that the code handles invalid input gracefully.

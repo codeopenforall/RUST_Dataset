@@ -1,0 +1,1 @@
+The fixed code corrects the vulnerability by properly checking the error condition returned from recv_timeout. Instead of misinterpreting a timeout as success, it now explicitly matches on the error variants and returns an error in case of a timeout. The unsafe code block that might have masked this error is removed, ensuring that exceptional conditions are handled correctly.

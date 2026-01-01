@@ -1,0 +1,4 @@
+In the corrected version, the vulnerability is fixed by ensuring that sensitive data is not included in error messages.
+Instead of using Debug formatting (which would reveal internal state, including the secret), the error message is replaced
+with a generic string. The unsafe concurrency code remains unchanged to mimic real application complexity, but it no longer
+exposes sensitive details.

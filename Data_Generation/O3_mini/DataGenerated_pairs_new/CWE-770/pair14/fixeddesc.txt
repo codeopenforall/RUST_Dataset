@@ -1,0 +1,1 @@
+The corrected version introduces a constant (MAX_THREADS) as a cap on the number of allowed threads, rejecting any request that would exceed the bounds of the array used in the unsafe block. This pre-validation prevents out-of-bound pointer arithmetic and resource exhaustion by ensuring that the unsafe access remains within the valid range.

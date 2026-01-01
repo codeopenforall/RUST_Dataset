@@ -1,0 +1,1 @@
+In the corrected version, the off-by-one error has been fixed by using an exclusive range (0..size) in the loop within the fill() method. This ensures that only the valid indices of the allocated vector are written to. The rest of the API and concurrency usage remains unchanged, preserving the intended design while eliminating the vulnerability.

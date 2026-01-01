@@ -1,0 +1,1 @@
+This code simulates a server that creates a file with dangerously permissive permissions (0o777). The use of an unsafe block for file creation coupled with the use of Unix-specific APIs without proper mode restrictions (CWE-276) may result in unauthorized access or modification by other users. The vulnerability is located at the setting of file mode in the unsafe block.

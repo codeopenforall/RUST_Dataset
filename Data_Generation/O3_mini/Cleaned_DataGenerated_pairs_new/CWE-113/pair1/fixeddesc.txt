@@ -1,0 +1,4 @@
+This version fixes the HTTP response splitting vulnerability by first sanitizing the untrusted input.
+It removes all carriage return and line feed characters from the provided header value before copying it into a fixed buffer.
+The unsanitized unsafe block remains, but since the input is cleaned, it no longer poses a security risk.
+All operations and the overall API remain similar to the vulnerable version to mimic realistic application refactoring.

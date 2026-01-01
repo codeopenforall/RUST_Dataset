@@ -1,0 +1,3 @@
+In the corrected code, the buffer size is accurately computed by using the actual length of the message
+(via record.message.len()) instead of the size of the String structure. Consequently, the full content is
+copied into the allocated memory, avoiding the truncation vulnerability.

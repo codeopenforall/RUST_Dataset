@@ -1,0 +1,3 @@
+The fixed version eliminates unsafe operations and global mutable state. It validates HTTP headers properly by rejecting requests with multiple Content-Length headers.
+All operations are performed using safe Rust constructs and explicit checks are made to verify that the body length exactly matches the declared Content-Length.
+By doing so, it prevents inconsistent request interpretations (and hence request smuggling vulnerabilities) seen in the vulnerable version.

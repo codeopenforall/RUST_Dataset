@@ -1,0 +1,5 @@
+This code simulates a service with concurrent updates where an unsafely handled multiplier
+from an external source (or attacker) may cause the internal counter to exceed a predetermined
+threshold. The assertion (assert!(self.value < THRESHOLD, ...)) is directly reachable and may
+be triggered by a malicious multiplier design (e.g., 150 instead of a safe value). This demonstrates
+a reachable assertion vulnerability (CWE-617) which may be used for a denial of service attack.

@@ -1,0 +1,3 @@
+This vulnerable code insecurely handles sensitive data by storing the secret key as plaintext and using an unsafe block to obtain a raw view of the memory
+holding the key. The secret is then transmitted “as is” over an unencrypted channel. These practices expose the sensitive data, consistent with CWE-311,
+and they mimic real-world issues where unsafe concurrency and pointer manipulation lead to inadvertent secret leakage.

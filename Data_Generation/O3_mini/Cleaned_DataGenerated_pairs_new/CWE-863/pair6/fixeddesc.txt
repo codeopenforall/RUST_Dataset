@@ -1,0 +1,5 @@
+In the corrected version, a constant MAX_TASKS is defined to limit the number of tasks.
+Before any unsafe operations or thread spawning occurs, the function checks that the input
+value does not exceed this safe threshold. This prevents excessive resource allocation and thread
+creation, thereby mitigating the risk of resource exhaustion. The remaining operations are the same
+as in the previous version but are now executed only when the input is within acceptable bounds.

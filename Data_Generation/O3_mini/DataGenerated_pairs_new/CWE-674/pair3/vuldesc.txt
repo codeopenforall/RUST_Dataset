@@ -1,0 +1,1 @@
+This code implements a recursive descent parser that processes nested parentheses using an unsafe block for pointer arithmetic. The recursive function process_nested lacks a recursion depth limit; thus, it may trigger a stack overflow when facing deeply nested inputs. This resembles real-world scenarios where uncontrolled recursion leads to vulnerabilities.

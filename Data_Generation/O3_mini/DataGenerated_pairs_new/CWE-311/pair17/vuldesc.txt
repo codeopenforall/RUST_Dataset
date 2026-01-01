@@ -1,0 +1,4 @@
+This code demonstrates a vulnerability where a sensitive secret is read from configuration 
+and transmitted in cleartext without any encryption or protection. An unsafe block is used 
+to directly copy the secret’s memory via raw pointers (simulating a network send), 
+thus making it prone to interception or misuse. This aligns with CWE-311.

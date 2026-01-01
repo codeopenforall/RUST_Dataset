@@ -1,0 +1,4 @@
+The corrected code propagates the timeout error without attempting to recover from it. 
+Instead of checking for a Timeout error and then unsafely reading the shared value, 
+the fixed version directly returns the error from the channel, ensuring that exceptional 
+conditions are handled correctly. This prevents the scenario where a timeout is misinterpreted as success.

@@ -1,0 +1,4 @@
+In the corrected version the vulnerability has been addressed by removing the unsafe block 
+and implementing proper validation logic. When the "X-Forwarded-Host" header is supplied, its value 
+is explicitly checked against the trusted origin ("https://trusted.com"). If it doesn't match, the request is rejected.
+This prevents attackers from exploiting header forgery to bypass origin verification.

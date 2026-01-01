@@ -1,0 +1,1 @@
+The above code insecurely creates a file using overly permissive default permissions (mode 0o777). In a concurrent context, multiple threads may create or access files with these overly lax permissions, exposing the system to unauthorized access. The unsafe blocks and direct manipulation exemplify complex real‐world usage patterns that contribute to CWE-276.

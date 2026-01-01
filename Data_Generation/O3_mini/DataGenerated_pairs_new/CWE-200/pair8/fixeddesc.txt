@@ -1,0 +1,1 @@
+The fixed code avoids leaking sensitive information by implementing a custom Debug trait for the credentials structure that redacts the password. Additionally, the unsafe block is removed in favor of safe and explicit redaction of the sensitive field.

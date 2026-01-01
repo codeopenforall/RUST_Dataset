@@ -1,0 +1,4 @@
+In this corrected version, sensitive information is no longer exposed in error messages.
+The unsafe block performing a raw pointer dereference has been removed. Instead of including the secret
+in the error output, a generic error message is returned, thereby preventing CWE-200 (Exposure of Sensitive Information).
+The overall concurrency and structure remain similar to ensure realistic usage patterns.

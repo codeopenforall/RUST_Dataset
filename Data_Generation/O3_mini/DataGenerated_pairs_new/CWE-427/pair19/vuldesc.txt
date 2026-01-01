@@ -1,0 +1,4 @@
+The above code exhibits a CWE-427 vulnerability by reading an attacker-controlled environment variable ("MALICIOUS_PATH")
+and using its value to override the PATH environment variable for a spawned command. The conversion from bytes to string is done
+within an unsafe block without proper validation. Malicious input may force the application to search for executables in a directory
+controlled by an attacker.

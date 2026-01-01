@@ -1,0 +1,5 @@
+In the corrected code the control flow in the process_input method has been fixed.
+Now, when the special flag is set to true, the function correctly adds 50 to the input value,
+and when false it multiplies the input by 2. This fixes the always-incorrect control flow vulnerability.
+The rest of the code architecture – including the unsafe pointer manipulation and concurrent updates –
+remains identical to mimic real-world codebases, but with the critical branch logic error resolved.

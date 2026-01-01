@@ -1,0 +1,4 @@
+In this corrected version the code properly checks the return value of the unsafe arithmetic operation.
+If an error occurs (for example, due to an arithmetic overflow), the error is propagated to the caller
+after ensuring that allocated memory is cleaned up. This prevents the misinterpretation of errors as valid
+results, thus eliminating the vulnerability associated with CWE-253.

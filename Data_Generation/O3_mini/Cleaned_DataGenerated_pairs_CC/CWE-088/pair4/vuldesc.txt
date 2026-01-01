@@ -1,0 +1,4 @@
+The above code directly incorporates untrusted input into a shell command string and executes it using "sh -c". 
+An unsafe block is used to perform low-level memory operations on the command string, further obfuscating the 
+flow and making the injection vulnerability harder to detect. An attacker-controlled input containing shell meta‑characters 
+(such as a semicolon) may force the execution of unintended commands, demonstrating CWE-088: Execution with Untrusted Input.

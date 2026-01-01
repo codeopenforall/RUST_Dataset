@@ -1,0 +1,1 @@
+The corrected code eliminates the extra byte created by the off-by-one mistake. In the unsafe block the call to set_len now uses input.len() so that only the bytes explicitly initialized by the copy operation are included in the vector’s length. This adjustment avoids reading or interpreting uninitialized memory and thus fixes the vulnerability.

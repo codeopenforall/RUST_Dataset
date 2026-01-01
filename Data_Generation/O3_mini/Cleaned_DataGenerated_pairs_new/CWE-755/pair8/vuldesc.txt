@@ -1,0 +1,5 @@
+This code demonstrates a vulnerability where exceptional conditions are improperly handled.
+In scenarios such as an empty dataset, a division-by-zero operation is forced,
+but the use of unwrap_or_default() masks the error by returning a default value (0).
+This improper swallowing of errors may lead to misleading outputs,
+especially in concurrent contexts where unsafe operations further complicate state.

@@ -1,0 +1,4 @@
+The corrected implementation eliminates the vulnerability by rejecting invalid configuration input rather than
+defaulting silently. In the process function, parse errors are now captured and returned as part of a Result using
+map_err. This ensures that the engine is only initialized with a valid configuration and that any parsing error is
+immediately propagated, thereby preventing the system from operating on an unintended default value.

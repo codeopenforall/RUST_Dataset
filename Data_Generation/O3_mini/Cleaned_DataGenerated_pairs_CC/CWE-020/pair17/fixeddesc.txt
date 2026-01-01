@@ -1,0 +1,4 @@
+The fixed code adds an explicit check to ensure that the user-supplied length does not exceed the actual length of the data.
+By returning an error when the supplied length is too large, the code prevents an unsafe out-of-bounds slice,
+therefore mitigating the vulnerability. The use of concurrency and smart pointers remains unchanged,
+but the critical unsafe block is now guarded by proper input validation.

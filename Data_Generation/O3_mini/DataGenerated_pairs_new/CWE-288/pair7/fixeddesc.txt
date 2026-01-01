@@ -1,0 +1,1 @@
+This revised version removes the alternate authentication path by eliminating the unsafe block and any debug-based bypass. Regardless of the presence of the debug header, the request is now authenticated solely by comparing the provided token with the valid token.

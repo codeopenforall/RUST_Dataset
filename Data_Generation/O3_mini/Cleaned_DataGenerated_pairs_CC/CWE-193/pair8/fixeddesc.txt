@@ -1,0 +1,1 @@
+In the corrected version, extra capacity is allocated (len + 1) and the trailing element is explicitly initialized to zero before updating the vector's length. This ensures that all bytes in the resulting vector, including the appended one, are valid and avoids an off-by-one error that could lead to reading uninitialized memory.

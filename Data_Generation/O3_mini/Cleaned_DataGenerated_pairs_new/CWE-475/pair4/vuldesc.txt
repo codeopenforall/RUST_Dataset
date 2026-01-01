@@ -1,0 +1,6 @@
+The vulnerability arises in the transfer function where an unsafe copy is performed using
+ptr::copy_nonoverlapping. The code intentionally adds 10 to the source length (line 16) without
+validating that the destination (a fixed-size buffer) is large enough, or that the source buffer
+contains that many bytes. This violation of the API preconditions for copy_nonoverlapping triggers
+undefined behavior (CWE-475) and may corrupt memory. Furthermore, the use of concurrency via
+threads exacerbates the risk by concurrently performing the out‐of‐bounds copy.

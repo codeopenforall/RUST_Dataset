@@ -1,0 +1,1 @@
+The corrected code addresses the vulnerability by using secure file permissions (0o600) during both file creation and update operations. This ensures that only the owner can read or modify the file. Additionally, unsafe raw pointer arithmetic is replaced with safe slice access using Rust’s safe indexing, ensuring memory safety in concurrent execution.

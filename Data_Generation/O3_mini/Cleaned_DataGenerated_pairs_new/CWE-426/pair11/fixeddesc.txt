@@ -1,0 +1,4 @@
+The fixed code addresses the untrusted search path vulnerability by computing an absolute path to the helper executable.
+It uses env::current_exe() to determine the installation directory and then appends a trusted subdirectory ("trusted") to it.
+Thus, even if an attacker plants a malicious "helper" in the working directory, the application will ignore it and load the executable from the secure directory.
+This approach mitigates the CWE-426 risk while preserving the overall architecture involving unsafe operations and concurrent execution.

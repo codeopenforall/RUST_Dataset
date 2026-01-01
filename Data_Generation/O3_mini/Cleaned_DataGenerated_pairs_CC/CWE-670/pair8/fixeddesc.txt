@@ -1,0 +1,4 @@
+The corrected code fixes the control flow flaw in the validation method by revising the match arms.
+Now, if the input is below the defined threshold, the authorization flag is explicitly set to false.
+This change ensures that unauthorized inputs are properly rejected. The unsafe block remains to mimic a real-world environment,
+but the branch logic now adheres to the intended security policy.

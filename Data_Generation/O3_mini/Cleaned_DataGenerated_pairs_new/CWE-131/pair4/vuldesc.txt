@@ -1,0 +1,4 @@
+This code incorrectly computes the buffer size when copying data from an input string.
+It allocates an array of 16 bytes, copies 16 bytes from the input, and then writes a null terminator at index 16.
+However, since valid indices are 0–15, the null terminator is written out-of-bounds, leading to a classic CWE-131 incorrect buffer size calculation vulnerability.
+The use of unsafe code and thread spawns models realistic usage patterns from reported issues.

@@ -1,0 +1,1 @@
+In the corrected version the design flaw is addressed by introducing an additional field (max_length) which represents the actual allocation size. Before converting the raw pointer into a slice, the code checks that the requested length does not exceed the known allocated size, thereby ensuring the precondition is met and eliminating the undefined behavior.

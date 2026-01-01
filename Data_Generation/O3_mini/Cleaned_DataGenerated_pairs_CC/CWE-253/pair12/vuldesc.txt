@@ -1,0 +1,1 @@
+This vulnerable code demonstrates CWE-253 through an incorrect check of a function’s return value. In the process method, when the unsafe compute function returns an error for a negative input value, the error is misinterpreted and replaced by a default Ok(0) result. This error-masking can lead to incorrect processing of invalid inputs in concurrent environments.

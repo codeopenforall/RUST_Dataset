@@ -1,0 +1,1 @@
+In the corrected version the authentication function now performs a proper full-string comparison. The removal of the unsafe block and comparing all characters of the input token against the stored secret ("TopSecret") fixes the vulnerability, ensuring that only the exact correct credentials are accepted.

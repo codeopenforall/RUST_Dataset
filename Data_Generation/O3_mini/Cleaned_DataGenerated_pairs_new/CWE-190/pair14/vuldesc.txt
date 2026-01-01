@@ -1,0 +1,5 @@
+The above code is vulnerable to an integer overflow. The unsafe block in the calculate method multiplies 
+the input by a factor and then casts the 64-bit result to a 16-bit integer. When the product (e.g., 140000 
+for input=70000 and factor=2) exceeds u16::MAX, the cast truncates the value causing wraparound, leading 
+to an incorrect and potentially exploitable computation. Concurrency adds additional uncertainty in real-world 
+applications.

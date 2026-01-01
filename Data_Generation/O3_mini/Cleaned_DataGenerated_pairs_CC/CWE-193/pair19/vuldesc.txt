@@ -1,0 +1,4 @@
+This code suffers from an off-by-one error during the initialization of its internal vector. In the constructor, 
+the unsafe block calls set_len(size + 1) on a vector allocated with capacity "size", and subsequently the loop writes 
+values from index 0 through size (inclusive). This fencepost mistake may lead to overwriting unallocated memory 
+and unpredictable behavior, mirroring real-world vulnerabilities observed in unsafe Rust code.

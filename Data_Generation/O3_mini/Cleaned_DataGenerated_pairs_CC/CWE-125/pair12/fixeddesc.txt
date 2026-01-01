@@ -1,0 +1,4 @@
+In the secure version, the get_item method is corrected by adding an explicit bounds-check. Before performing any access,
+the method verifies if the provided index is less than the length of the data vector. If the index is out-of-range,
+an error is returned instead of attempting an unsafe memory read. This eliminates the possibility of an out-of-bounds read
+(CWE-125) and conforms with safe Rust practices, while preserving the realistic concurrent usage pattern.

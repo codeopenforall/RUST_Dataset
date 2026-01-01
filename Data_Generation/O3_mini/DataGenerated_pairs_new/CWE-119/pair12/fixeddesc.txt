@@ -1,0 +1,4 @@
+In the corrected version, a boundary check is added in the update method before performing the unsafe memory operation.
+By verifying that the provided index is strictly less than the length of the data array, any attempt to write outside
+the array's bounds is safely bypassed. This prevents unintended corruption of the adjacent `flag` field and thereby
+eliminates the CWE-119 style memory safety error.

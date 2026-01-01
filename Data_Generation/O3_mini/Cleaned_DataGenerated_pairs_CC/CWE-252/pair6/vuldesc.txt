@@ -1,0 +1,3 @@
+This implementation uses an unsafe memory copy function that returns a Result when the provided data does not fit into the allocated buffer.
+However, the call within the spawned thread ignores the error value returned (by using “let _ = …”), causing a CWE-252 vulnerability.
+In real-world scenarios, such unchecked return values can lead to silent failures and potentially undefined behavior.

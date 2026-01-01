@@ -1,0 +1,1 @@
+The fixed code addresses the uncontrolled resource consumption by checking if the provided iteration count exceeds a predefined safe threshold (MAX_LIMIT). If it does, the function immediately returns an error instead of creating excessive threads. Also, the unsafe raw pointer manipulation is replaced with safe arithmetic operations, reducing potential undefined behavior.

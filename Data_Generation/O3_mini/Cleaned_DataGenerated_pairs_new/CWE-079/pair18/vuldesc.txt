@@ -1,0 +1,1 @@
+The vulnerable code accepts untrusted input and directly embeds it into an HTML template without any escaping. An unsafe block is used to convert raw bytes into a string, bypassing validation checks. Combined with concurrent execution using threads and mutexes, this mirrors a real-world scenario where XSS can be introduced, as reflected input is directly incorporated into HTML.

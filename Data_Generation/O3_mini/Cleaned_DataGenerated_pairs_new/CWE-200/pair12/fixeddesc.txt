@@ -1,0 +1,3 @@
+The corrected code eliminates the unsafe pointer usage and ensures that no sensitive information is disclosed during an authentication failure.
+Instead of printing the expected secret in the error message, it returns a generic error message,
+thus safeguarding confidential data from potential exposure in logs or panic messages.

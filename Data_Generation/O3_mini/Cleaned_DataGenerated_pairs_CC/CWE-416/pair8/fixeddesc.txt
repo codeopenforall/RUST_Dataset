@@ -1,0 +1,1 @@
+In the corrected version, the DataHolder struct encapsulates its raw pointer in an Option to track whether it’s still valid. The release() method now retrieves the stored value before deallocating the memory and then sets the internal pointer to None. This ensures that no further access to freed memory occurs, thereby eliminating the use‐after‐free vulnerability.

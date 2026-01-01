@@ -1,0 +1,4 @@
+This code loads a sensitive secret and then uses an unsafe block to extract its raw bytes,
+transmitting them directly over an insecure channel (simulated by returning the plaintext).
+The unsafe block and direct memory access bypass proper abstraction and encryption,
+leaving the secret exposed (CWE-311: Missing Encryption of Sensitive Data).

@@ -1,0 +1,4 @@
+The corrected code adds explicit bounds-checking before performing pointer arithmetic.
+If the requested index is 0 (which would cause an underflow) or beyond the valid range,
+the method returns a default safe value (0). Thus, it prevents an out‐of‐bounds read
+and aligns with safe Rust usage patterns while retaining concurrency and shared pointer idioms.

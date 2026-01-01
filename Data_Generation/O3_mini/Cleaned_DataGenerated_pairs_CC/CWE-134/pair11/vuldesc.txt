@@ -1,0 +1,5 @@
+This code demonstrates CWE-134 by accepting a user-supplied format string and using it directly in a format! macro 
+inside an unsafe block. The unsafe block reinterprets the internal String as a &str without proper checks and then 
+uses it as the format string. If the input contains mismatched placeholders (for example, extra format specifiers), 
+this may lead to panics or unintended behavior. Additional unsafe constructs and concurrency usage mimic real-world 
+RustSec patterns.

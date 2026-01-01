@@ -1,0 +1,1 @@
+This corrected version introduces a helper function to escape special HTML characters before incorporating user input into the page. By converting characters such as '<', '>', '&', '"' and '\'' to their corresponding HTML entities, the rendering process prevents raw script injection, thus mitigating the XSS vulnerability observed in the earlier version.

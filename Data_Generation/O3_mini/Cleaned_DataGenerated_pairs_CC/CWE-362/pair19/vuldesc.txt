@@ -1,0 +1,4 @@
+This vulnerable code suffers from a race condition (CWE-362) because it uses an unsynchronized read-modify-write 
+on a globally shared counter via a raw pointer inside unsafe blocks. Multiple threads concurrently read, update, 
+and write the counter value without any locking or atomic guarantees, causing data races and inconsistent state 
+(e.g. the final counter might be less than 10000).

@@ -1,0 +1,3 @@
+In this corrected version, any XML input that contains an external entity declaration is immediately rejected.
+This eliminates the unsafe code path that resolved the external entity, preventing unauthorized file access.
+The fix adheres to best practices by explicitly disallowing external entity expansion rather than attempting to safely resolve it.

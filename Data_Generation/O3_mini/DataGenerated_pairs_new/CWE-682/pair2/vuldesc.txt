@@ -1,0 +1,5 @@
+This code simulates a real-world math logic error (CWE-682) in a concurrent setting. 
+It uses an unsafe block to dereference a raw pointer to the Product struct and spawns multiple threads 
+to compute a total based on a discount calculation. The calculation is implemented incorrectly because 
+of misplaced parentheses: it computes “price - ((price * discount_rate / 100) * quantity)” rather than the intended 
+“(price - (price * discount_rate / 100)) * quantity”. Under test input (price=100, quantity=2, discount_rate=15), each thread returns 70 resulting in an aggregate of 280, whereas the correct calculation should return 85 per thread (total 680).

@@ -1,0 +1,4 @@
+In the corrected version, the XML parser is modified to detect and reject any use of external entity
+declarations. Instead of resolving the entity (and thereby exposing the risk of XXE), the parser simply
+returns the original XML input as-is. This eliminates the unsafe pointer manipulation and file I/O operations,
+removing the external entity resolution vulnerability (CWE-611). The concurrency structure remains unchanged.

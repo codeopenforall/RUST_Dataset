@@ -1,0 +1,3 @@
+This vulnerable code features a race condition (CWE-362) caused by concurrent unsynchronized access to a shared counter.
+The method responsible for incrementing the counter uses an unsafe block to perform a read-modify-write operation without any locking mechanism.
+Multiple threads increment the counter concurrently, which can lead to lost updates and an incorrect final count.

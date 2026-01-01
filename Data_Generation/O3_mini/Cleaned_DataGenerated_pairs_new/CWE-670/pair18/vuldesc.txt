@@ -1,0 +1,7 @@
+The vulnerable code implements an executor that uses an unsafe block to update a shared integer value concurrently.
+The core issue lies in the control flow within the process_input method: the match arms are inverted.
+When the special flag is true (which should trigger the special behavior by adding 50 to the input),
+the code incorrectly multiplies the input by 2. Conversely, when the flag is false,
+it erroneously adds 50 instead of multiplying by 2.
+This always-incorrect control flow leads to unexpected results and violates the intended algorithm,
+triggering CWE-670 (Always-Incorrect Control Flow Implementation).

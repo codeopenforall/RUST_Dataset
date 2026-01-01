@@ -1,0 +1,7 @@
+This code incorrectly calculates the memory allocation size
+by using std::mem::size_of_val(&input) rather than the actual input length.
+For inputs longer than the size of a pointer (typically 16 bytes on 64-bit systems),
+this miscalculation leads to an allocation that is too small.
+As a result, the unsafe block's call to ptr::copy_nonoverlapping copies too many bytes,
+resulting in a potential buffer overflow vulnerability (CWE-131).
+Concurrency is used via threads and a shared Mutex to mimic a real-world scenario.

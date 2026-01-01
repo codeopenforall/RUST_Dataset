@@ -1,0 +1,4 @@
+In the corrected code the computation inside the spawned thread is wrapped within a call to panic::catch_unwind.
+This ensures that any panic (for example, triggered by a division by zero when input is zero) is intercepted and turned
+into an Err value rather than propagating and causing abnormal termination. Additionally, the thread join result is safely
+handled without an unguarded unwrap, satisfying the proper handling of exceptions and mitigating CWE-248.

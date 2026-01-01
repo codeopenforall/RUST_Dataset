@@ -1,0 +1,3 @@
+In the revised implementation the error messages are homogenized. Regardless of whether a username is missing or the password is
+incorrect, the method returns "Authentication failed". This removes the observable discrepancy that could be exploited to
+determine the existence of a user account, thereby mitigating the CWE-203 vulnerability.

@@ -1,0 +1,1 @@
+In the fixed version, after converting the raw pointer back to a Box and dropping it, the pointer is immediately set to null. Additionally, the read method checks for a null pointer before dereferencing it, returning a sentinel value (-1) if the memory has been freed. This change prevents any access to freed memory, effectively mitigating the use-after-free vulnerability.

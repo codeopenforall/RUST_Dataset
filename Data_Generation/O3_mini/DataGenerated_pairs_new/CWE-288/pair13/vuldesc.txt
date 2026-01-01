@@ -1,0 +1,5 @@
+This code implements an API with token-based authentication. However, it contains a critical flaw: an unsafe block
+checks for the presence of an "X-Debug" header and immediately returns sensitive debug information if present,
+thus bypassing all normal authentication. Although a debug key exists in the data structure, it is completely ignored
+in the authentication process. This vulnerability enables an attacker to access secret data by simply adding an
+"X-Debug" header to their request.

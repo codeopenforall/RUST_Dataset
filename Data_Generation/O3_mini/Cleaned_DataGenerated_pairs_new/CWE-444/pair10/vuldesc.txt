@@ -1,0 +1,4 @@
+This version features an unsafe header parser that scans for the CRLFCRLF sequence using raw pointer arithmetic.
+Due to a misinterpretation, if the HTTP request contains the malicious header "X-Extra: exploit",
+the function erroneously accepts the request rather than rejecting it.
+This inconsistent interpretation of the HTTP headers can allow a request smuggling attack.

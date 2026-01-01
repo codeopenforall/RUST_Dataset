@@ -1,0 +1,4 @@
+In this corrected version, the unsafe block and pointer manipulation have been removed.
+Instead of including the sensitive secret in the error message, the function now returns a generic error message.
+This change prevents the accidental disclosure of sensitive information, thereby mitigating CWE-200 (Exposure of Sensitive Information).
+By avoiding unsafe operations and directly embedding secrets into error logs, the code adheres to secure coding practices.

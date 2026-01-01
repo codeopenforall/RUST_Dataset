@@ -1,0 +1,5 @@
+In the fixed code, the unsafe function is still used, but its potential to panic is
+mitigated by wrapping its call in panic::catch_unwind. This means that if a panic occurs,
+it is caught, and an error is returned rather than letting the panic propagate to the thread
+join handle. This design avoids an uncaught exception via the thread’s join and conforms to 
+the secure practice of handling abnormal terminations gracefully.

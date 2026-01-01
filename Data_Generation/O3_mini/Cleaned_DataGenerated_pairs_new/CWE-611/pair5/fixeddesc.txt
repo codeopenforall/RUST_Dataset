@@ -1,0 +1,5 @@
+This corrected code eliminates the XXE vulnerability by completely disabling external entity resolution.
+Instead of attempting to extract and resolve any SYSTEM identifiers from the DOCTYPE, the process
+method inspects the XML content and immediately returns an error if an external entity declaration is found.
+There are no unsafe blocks or raw pointer dereferences in this version, ensuring that an attacker
+cannot trigger unauthorized file reads via XML input.

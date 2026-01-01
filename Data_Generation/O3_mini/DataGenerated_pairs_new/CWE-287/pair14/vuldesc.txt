@@ -1,0 +1,1 @@
+The vulnerable code employs an unsafe block to compare a supplied token with the expected one by taking only a prefix of the valid token (matching the length of the supplied token). This leads to an authentication bypass: an adversary can provide a proper prefix of the expected token (e.g., "supersecret" for "supersecrettoken") and be authenticated, demonstrating CWE-287.

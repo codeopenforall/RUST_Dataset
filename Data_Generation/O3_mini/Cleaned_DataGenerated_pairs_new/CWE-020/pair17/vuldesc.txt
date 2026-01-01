@@ -1,0 +1,4 @@
+This vulnerable code fails to properly validate the user-supplied length before slicing the internal string buffer.
+It uses an unsafe block with std::str::from_utf8_unchecked coupled with unchecked subslicing (&bytes[..user_len]).
+If an attacker provides a length greater than the actual data length, the code will panic,
+potentially leading to unexpected denial-of-service or other memory safety issues.

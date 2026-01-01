@@ -1,0 +1,1 @@
+The code above exhibits an XSS vulnerability (CWE-079) by directly incorporating untrusted user input into an HTML template without proper escaping. The unsafe block in the render method bypasses UTF-8 validation, and the concurrent processing further complicates the control flow. Attackers can inject malicious scripts that get reflected back in the response.

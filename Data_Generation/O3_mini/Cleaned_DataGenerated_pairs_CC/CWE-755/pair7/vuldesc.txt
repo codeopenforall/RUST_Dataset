@@ -1,0 +1,4 @@
+This vulnerable implementation erroneously handles exceptional conditions by using unwrap_or_default() to silently
+ignore parse errors when converting a configuration string to an integer. Instead of signaling an error when the input
+is invalid (e.g. "bad"), the code defaults to 0. In a concurrent, unsafe context, this improper error handling may lead
+to incorrect initialization and subtle logic errors, thus representing a CWE-755 vulnerability.

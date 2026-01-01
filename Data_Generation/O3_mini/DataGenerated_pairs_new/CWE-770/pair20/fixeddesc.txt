@@ -1,0 +1,1 @@
+This modified version introduces a boundary check using a constant MAX_ALLOWED. Before performing any allocation, it validates that the requested count does not exceed the safe threshold. This prevents attackers from triggering excessive memory allocation, thereby mitigating CWE-770.

@@ -1,0 +1,3 @@
+The corrected version initializes every field in the Config structure. 
+After creating uninitialized memory with MaybeUninit, the code explicitly writes to both the 'value' field and the 'message' field (using std::ptr::write for the latter) before calling assume_init. 
+This guarantees that no uninitialized memory is accessed, thus permanently mitigating the vulnerability (CWE-908) while preserving the concurrent pattern.

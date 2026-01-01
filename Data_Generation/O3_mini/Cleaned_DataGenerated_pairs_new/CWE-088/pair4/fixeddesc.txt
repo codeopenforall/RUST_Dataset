@@ -1,0 +1,4 @@
+The corrected code sanitizes the input by filtering out non-alphanumeric and non-whitespace characters. 
+Instead of using an unsafe block to reinterpret the string and passing it to "sh -c", the code directly calls 
+the "echo" command with the sanitized input. This approach eliminates the possibility of shell meta‑character injection, 
+thereby mitigating the OS command injection vulnerability.

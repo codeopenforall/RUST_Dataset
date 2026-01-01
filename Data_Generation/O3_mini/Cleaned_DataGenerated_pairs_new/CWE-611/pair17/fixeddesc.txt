@@ -1,0 +1,5 @@
+The corrected implementation mitigates the XXE vulnerability by completely disabling external
+entity resolution. Before any processing is performed, the parser inspects the input XML for markers
+like "&xxe;" or the "<!ENTITY" declaration. If any such markers are found, it immediately returns
+an error rather than attempting an unsafe read of any external content. This prevents attackers from
+leveraging external entity declarations to access or leak sensitive resources.

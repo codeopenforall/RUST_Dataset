@@ -1,0 +1,1 @@
+This code reads a sensitive secret from a configuration object and, through an unsafe raw pointer block, transmits it directly in plaintext. There is no encryption applied before the data is sent out, exposing the secret to interception or unauthorized access. This vulnerability directly leads to CWE-311, where sensitive data is neither encrypted during transmission nor at rest.

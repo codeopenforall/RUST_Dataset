@@ -1,0 +1,3 @@
+In the corrected version, the load_conf method has been reworked to explicitly propagate errors encountered during file reading by using the ? operator.
+Additionally, the unsafe block and raw pointer usage have been removed, and the configuration is directly assigned.
+Thus, if the file cannot be read, an error is returned rather than silently defaulting to an empty configuration.

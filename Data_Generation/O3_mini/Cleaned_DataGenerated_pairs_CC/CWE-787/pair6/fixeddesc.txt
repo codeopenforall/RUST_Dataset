@@ -1,0 +1,4 @@
+The corrected code initializes the vector using resize, which properly sets both the capacity and length.
+It also modifies the assign method to perform explicit bounds checking and return a Result.
+If an out-of-bounds index is used, an error is returned instead of blindly performing pointer arithmetic.
+This approach prevents out-of-bound writes and resolves CWE-787.

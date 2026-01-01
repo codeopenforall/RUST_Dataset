@@ -1,0 +1,1 @@
+In this revised version the sensitive secret is encrypted before transmission. A simple XOR-based encryption function is applied to the secret ("SuperSecretPassword") prior to sending. This ensures that the transmitted data is not in cleartext, mitigating the CWE-311 risk and protecting sensitive information even if intercepted.

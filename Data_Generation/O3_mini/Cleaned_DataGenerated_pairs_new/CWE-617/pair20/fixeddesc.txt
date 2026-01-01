@@ -1,0 +1,4 @@
+In the corrected version, the unsafe block and raw pointer manipulation have been removed.
+A safe update function (secure_update) checks the input and clamps the threshold value to a
+maximum of 10 if necessary, ensuring that the reachable assertion is no longer triggered by any
+attacker-controlled input. The overall concurrency structure remains unchanged.

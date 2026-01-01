@@ -1,0 +1,2 @@
+This snippet allocates a heap–based resource, then unsafely converts the pointer back into a Box twice, resulting in two independent owners of the same memory.
+When both Boxes go out of scope, the destructor frees the same memory twice. A global atomic flag is used to simulate detection by panicking in case of a second free. This emulates a double free vulnerability (CWE-415), as reported in real-world RustSec/CVE advisories.

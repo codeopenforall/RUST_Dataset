@@ -1,0 +1,4 @@
+The code above demonstrates an authentication mechanism that uses unsafe blocks and concurrent threads.
+It leaks sensitive state by returning distinct error messages ("User does not exist" vs "Incorrect password")
+depending on whether the username is found in the internal HashMap.
+This discrepancy allows an attacker to probe for valid usernames, thereby exposing sensitive information (CWE-203).

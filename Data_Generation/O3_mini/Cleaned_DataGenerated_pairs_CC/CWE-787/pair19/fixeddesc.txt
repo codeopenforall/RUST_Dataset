@@ -1,0 +1,2 @@
+Description:
+In this corrected version, the BufferManager’s “apply” method has been updated to correctly use the provided index without applying an off-by-one offset. A bounds check ensures that only indices within the vector’s length are modified. This prevents out-of-bound writes and conforms to safe Rust idioms while still using a Mutex-protected shared instance that is accessed concurrently by multiple threads.

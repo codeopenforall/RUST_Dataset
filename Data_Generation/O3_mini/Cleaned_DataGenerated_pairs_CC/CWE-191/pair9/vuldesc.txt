@@ -1,0 +1,6 @@
+The implementation above suffers from CWE-191 (Integer Underflow) where subtracting 1 
+from 0 (an unsigned 32-bit integer) leads to a wraparound to u32::MAX. The code 
+uses an unsafe block to perform pointer arithmetic, bypassing Rust's normal safety 
+checks, and does not verify whether the subtraction would result in an underflow. 
+Due to this vulnerability, concurrent use of this method can lead to critical logic 
+errors in real-world applications.

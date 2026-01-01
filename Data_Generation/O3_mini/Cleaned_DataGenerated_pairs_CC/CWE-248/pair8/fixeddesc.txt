@@ -1,0 +1,4 @@
+In the corrected code, a new Manager struct is used where the unsafe operation in the thread is wrapped within a call to catch_unwind.
+This prevents the panic from propagating uncontrollably. Moreover, the thread’s join result is explicitly matched, converting any panic 
+into a controlled error that is subsequently handled (i.e., printed) in run_system. This fix addresses the CWE-248 vulnerability by ensuring 
+that unexpected panics in unsafe code do not lead to abnormal termination.

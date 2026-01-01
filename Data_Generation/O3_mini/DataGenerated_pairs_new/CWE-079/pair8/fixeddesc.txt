@@ -1,0 +1,1 @@
+In the corrected implementation, any user input is sanitized by passing it through an escaping function before being embedded into the HTML template. This prevents any malicious script from being executed in the browser. The unsafe block is removed, and the entire input processing is done safely, ensuring the rendered HTML does not contain raw script tags.

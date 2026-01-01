@@ -1,0 +1,4 @@
+This corrected implementation introduces an explicit authorization check in the function that
+performs the sensitive operation. It verifies that only callers with an administrative role can
+access the sensitive functionality. Unauthorized callers now receive an error, preventing the
+sensitive resource from being tampered with.

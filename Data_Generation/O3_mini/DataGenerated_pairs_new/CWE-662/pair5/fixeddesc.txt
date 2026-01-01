@@ -1,0 +1,1 @@
+The corrected code eliminates the unsafe unsynchronized raw pointer usage. By holding the lock for the entire duration of the update (i.e. updating the counter within the Mutex guard scope), the code ensures that modifications to the shared state are properly synchronized. This prevents the data race and adheres to proper concurrency practices.

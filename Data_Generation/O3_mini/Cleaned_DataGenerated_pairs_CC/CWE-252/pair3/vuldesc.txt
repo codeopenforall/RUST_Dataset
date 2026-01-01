@@ -1,0 +1,4 @@
+This code demonstrates a vulnerability related to CWE-252 (Unchecked Return Value) by ignoring the result of a critical write operation.
+Multiple threads are spawned, and inside an unsafe block each thread attempts to open and write to a file determined by an environment variable.
+If the file operation fails (for instance when SIM_FAILURE is set forcing an invalid path), the error from write_all is discarded.
+This unchecked failure may lead to a missed error, causing insecure behavior in real-world scenarios.

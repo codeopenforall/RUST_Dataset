@@ -1,0 +1,1 @@
+The corrected code removes the unsafe block and the flawed trust in any provided header. It securely validates the request by directly comparing the request's origin with a preconfigured allowed origin. This proper comparison ensures that only requests coming from the trusted domain are approved, thereby preventing possible CSRF/SSRF exploits.

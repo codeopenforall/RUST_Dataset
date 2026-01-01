@@ -1,0 +1,4 @@
+In the corrected code the exceptional condition is properly handled. The call to recv_timeout()
+now explicitly matches on the returned error variants. In case of a timeout (or disconnection), 
+the function returns an error instead of substituting a default value. This change prevents the unsafe 
+block from manipulating an unintended default value and ensures that only a genuine reading is processed.

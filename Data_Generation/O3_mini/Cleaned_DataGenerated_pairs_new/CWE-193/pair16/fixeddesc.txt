@@ -1,0 +1,4 @@
+In this corrected version, the off-by-one vulnerability is fixed by setting the vector's length equal to the number
+of elements that have actually been written (n), rather than n+1. This change ensures there is no extra uninitialized 
+memory element, eliminating the potential undefined behavior described in CWE-193. The overall structure, including the unsafe 
+block and concurrent execution, remains as it emulates realistic application patterns.

@@ -1,0 +1,1 @@
+The corrected code uses std::sync::Once to guarantee that the global resource is created only once even when multiple threads invoke "acquire_resource" concurrently. This eliminates the race condition by ensuring that the initialization closure is executed exactly once in a thread-safe manner, thus preserving singleton semantics.

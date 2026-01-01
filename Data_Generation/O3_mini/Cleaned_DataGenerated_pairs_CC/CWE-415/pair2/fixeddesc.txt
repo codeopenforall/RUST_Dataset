@@ -1,0 +1,1 @@
+In the corrected code the double free vulnerability is fixed by ensuring that the raw pointer is only converted back into a Box once, resulting in a single deallocation. This eliminates the risk of double freeing the same memory (CWE-415) and upholds proper resource management.

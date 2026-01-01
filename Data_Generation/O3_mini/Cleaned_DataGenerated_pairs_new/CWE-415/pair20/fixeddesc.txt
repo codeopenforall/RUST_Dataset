@@ -1,0 +1,1 @@
+The corrected version replaces manual memory management with an Arc (atomic reference-counted pointer). By wrapping the data in an Arc, cloning becomes safe because the Arc internally manages the reference count. Thus, the memory is only deallocated when the final owner goes out of scope. This eliminates the possibility of a double free.

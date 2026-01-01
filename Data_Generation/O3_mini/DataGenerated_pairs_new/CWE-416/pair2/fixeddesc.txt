@@ -1,0 +1,1 @@
+The corrected code removes the unsafe manipulation by retaining ownership of the allocated memory. Instead of converting the box into a raw pointer (which was later used after being freed), the fixed version simply accesses the data via a safe reference while the Box remains in scope. This eliminates the use‐after‐free vulnerability.

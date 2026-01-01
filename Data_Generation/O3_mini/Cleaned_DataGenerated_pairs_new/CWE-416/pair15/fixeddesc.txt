@@ -1,0 +1,1 @@
+The corrected version removes the unsafe raw pointer usage and instead employs an Arc for shared ownership of the data. By doing so, the heap allocation is not manually freed, and concurrent access is safely managed. The integer value is cloned into the spawned thread, ensuring that no use‐after‐free can occur and that the expected result is consistently produced.

@@ -1,0 +1,1 @@
+The revised code introduces a depth counter as an additional parameter in the process_nested function. If the recursion depth exceeds 1000, an error is returned, thereby preventing uncontrolled recursion and potential stack overflow. This modification preserves the intended parsing functionality while mitigating the vulnerability.

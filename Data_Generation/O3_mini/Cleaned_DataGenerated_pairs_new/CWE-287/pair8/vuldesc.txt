@@ -1,0 +1,4 @@
+This implementation accepts a token from the command line and checks it against the stored secret using an unsafe memory comparison.
+The vulnerability is that it compares only the first N bytes (where N is the length of the input token) of the secret.
+Thus, providing a proper prefix (e.g. "pass" for "password") results in successful authentication.
+This improper verification (CWE-287) can allow bypassing authentication.

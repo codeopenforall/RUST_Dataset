@@ -1,0 +1,1 @@
+This corrected implementation eliminates the double free vulnerability by modifying the clone method to perform a deep copy. Instead of merely copying the raw pointer, the clone method now allocates new heap memory and copies the inner value. As a result, each instance owns its own allocation and the drop method safely deallocates memory without risking a double free.

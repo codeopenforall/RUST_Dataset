@@ -1,0 +1,5 @@
+The corrected code introduces a simple boundary check in the update method.
+Before performing the unsafe memory write, the index is compared against the allowed range.
+If it is out-of-range (i.e. greater than or equal to the capacity), the write is skipped,
+thereby preserving the sentinel byte. This prevents out-of-bounds memory operations, effectively
+eliminating the vulnerability.

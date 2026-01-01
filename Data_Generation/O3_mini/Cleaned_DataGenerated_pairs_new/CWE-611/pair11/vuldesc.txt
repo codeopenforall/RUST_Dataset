@@ -1,0 +1,5 @@
+This code unsafely processes XML input by allowing the resolution of external entities.
+It locates an external entity declaration in the XML input and then, within an unsafe block
+inside a spawned thread, it directly reads the file specified by the SYSTEM identifier.
+This exposes the application to XML External Entity (XXE) attacks (CWE-611), as an attacker
+could craft malicious XML to read arbitrary files.

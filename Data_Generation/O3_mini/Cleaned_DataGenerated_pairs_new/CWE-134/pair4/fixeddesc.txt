@@ -1,0 +1,5 @@
+In the corrected version the unsafe sprintf call is still performed, but a constant format string 
+("%s") is used rather than the user-controlled input. This ensures the user input is treated 
+exclusively as data (an argument) rather than a format specifier, eliminating the CWE-134 vulnerability. 
+The overall structure—with threads, smart pointers (Arc), and unsafe blocks—remains as in the original 
+to simulate realistic application code.

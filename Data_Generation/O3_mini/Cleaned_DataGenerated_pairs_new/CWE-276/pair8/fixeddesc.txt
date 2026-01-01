@@ -1,0 +1,1 @@
+The corrected code creates the log file using a more restrictive permission mode (0o600), which ensures that only the file owner can read and write to it. This change mitigates the risk of unauthorized access to sensitive logs. The overall structure, including the use of unsafe blocks and concurrency primitives, remains the same, but the file access permission issue is fixed.

@@ -1,0 +1,4 @@
+The fixed code corrects the vulnerability by canonicalizing the file path obtained by joining the base 
+directory with the user-supplied input. It then verifies that the canonicalized candidate path starts with 
+the canonical base path. If this check fails, the function returns a PermissionDenied error, effectively 
+preventing path traversal attacks. The unsafe block is retained to simulate realistic usage scenarios.

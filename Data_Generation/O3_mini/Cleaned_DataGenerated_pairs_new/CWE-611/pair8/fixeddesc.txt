@@ -1,0 +1,5 @@
+In this corrected implementation the parser’s behavior has been hardened against XXE attacks by completely 
+disabling external entity resolution. Instead of blindly extracting and processing an external file referenced 
+by the XML input, the code now detects the presence of an external entity and sanitizes the input by removing 
+it. This eliminates the unsound use of unsafe conversions and thread-driven external file loading, ensuring 
+that malicious XML inputs cannot force the application to read or process sensitive files.

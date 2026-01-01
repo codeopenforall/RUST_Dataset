@@ -1,0 +1,5 @@
+The fixed code eliminates the use‐after‐free vulnerability by avoiding raw pointer manipulation entirely.
+Instead of converting the Box into a raw pointer, it immediately extracts and stores the needed value
+while the Box is still valid. Concurrent operations are preserved but no longer have any effect on the
+memory holding the critical data. This approach follows safe Rust idioms and ensures that memory is
+accessed only while valid.

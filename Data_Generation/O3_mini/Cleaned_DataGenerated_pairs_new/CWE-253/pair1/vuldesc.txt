@@ -1,0 +1,6 @@
+This vulnerable code incorrectly checks the return value from an unsafe arithmetic operation.
+Specifically, when attempting to add a value that causes an overflow (e.g. adding 1 to i32::MAX),
+the unsafe function returns an error. However, the calling code misinterprets this error
+(by checking res.is_err() and then returning a default success value of 9999) rather than propagating it.
+This mistake is a classic example of CWE-253 (Incorrect Check of Function Return Value), which may
+mask critical arithmetic errors and lead to unexpected application behavior.

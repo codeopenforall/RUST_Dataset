@@ -1,0 +1,5 @@
+This code demonstrates a pattern where an external command is invoked using the search path taken directly from the environment.
+It unsafely reads the PATH environment variable (via an unsafe block and raw pointer access) and passes it unvalidated to the spawned process.
+If an attacker controls the PATH variable (for example, by injecting a directory containing a malicious "ls"),
+the program could execute unintended code. The concurrency and use of smart pointers mimic real-world patterns but,
+combined with the unsanitized environment variable, lead to CWE-427: Uncontrolled Search Path Element.

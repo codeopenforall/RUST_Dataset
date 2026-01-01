@@ -1,0 +1,4 @@
+The corrected version eliminates unsafe memory aliasing by using Arc to share ownership of the data.
+Rather than obtaining a raw pointer and dropping the allocation prematurely, the code creates an Arc<Data>
+that guarantees the data remains valid for every access. Once the Arc is cloned and used across threads or
+functions, the data is only freed when the last reference is dropped, thus preventing use‐after‐free (CWE-416).

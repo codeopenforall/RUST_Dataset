@@ -1,0 +1,1 @@
+The vulnerable code insecurely validates the request's origin header by employing an unsafe block that mimics a C string conversion. Instead of properly comparing the header with the allowed origin, it simply trusts any non-empty header value. This flaw can be exploited in scenarios such as CSRF or SSRF attacks where an attacker forges the header to bypass security checks.

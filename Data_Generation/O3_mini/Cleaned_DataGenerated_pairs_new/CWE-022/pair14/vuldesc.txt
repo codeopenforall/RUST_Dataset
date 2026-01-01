@@ -1,0 +1,1 @@
+This code demonstrates a CWE-022 (Path Traversal) vulnerability by naively joining a user‐provided file path to a fixed base directory using PathBuf::join without canonicalizing or validating the result. An attacker can provide inputs such as "../secret.txt" to escape the designated directory. An unsafe block is also used to simulate real-world usage of unsafe constructs.

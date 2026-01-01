@@ -1,0 +1,3 @@
+In the corrected version, the vulnerability is remedied by replacing the unsafe raw pointer with an AtomicU32 
+wrapped in an Arc. The use of fetch_add with sequentially consistent ordering ensures that all increments are 
+performed atomically and the final counter reliably equals 10000. This eliminates any race condition.

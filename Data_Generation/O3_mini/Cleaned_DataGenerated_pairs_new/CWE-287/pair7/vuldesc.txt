@@ -1,0 +1,5 @@
+This vulnerable code suffers from CWE-287 (Improper Authentication) as it mistakenly treats the hardcoded
+bypass credential ("test_key") as valid. The unsafe block used for byte‐wise comparison is acceptable,
+but the unconditional acceptance of "test_key" creates an authentication flaw that an attacker could exploit.
+Additionally, the use of unsynchronized shared state combined with unsafe pointer arithmetic mimics patterns
+seen in real-world vulnerabilities.

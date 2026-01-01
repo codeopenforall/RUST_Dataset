@@ -1,0 +1,1 @@
+In this corrected version the code disables external entity processing by checking for any occurrence of "&ext;" and immediately returning an error; the unsafe raw pointer conversion and file access have been removed. This prevents the XML parser from processing external entities, thereby mitigating the risk of an XXE attack.

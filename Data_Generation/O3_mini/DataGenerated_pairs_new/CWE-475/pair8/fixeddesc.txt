@@ -1,0 +1,4 @@
+The corrected code computes the correct length of the data buffer (data.len()) and uses it when calling
+std::slice::from_raw_parts. This ensures that the conversion from pointer to slice adheres to the API’s
+requirements, eliminating the risk of undefined behavior. The unsafe block remains but now operates within
+well-defined bounds, even in a concurrent context.

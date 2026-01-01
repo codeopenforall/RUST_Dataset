@@ -1,0 +1,5 @@
+This version contains a critical flaw related to uncontrolled resource consumption.
+Specifically, the Engine::run_input method does not restrict high load input values.
+If an input greater than 100 is supplied, it proceeds to execute an unsafe block that intentionally
+panics, simulating an unbounded resource consumption scenario (CWE-400). The lack of proper
+backpressure or validation allows an attacker to trigger a denial-of-service directly.

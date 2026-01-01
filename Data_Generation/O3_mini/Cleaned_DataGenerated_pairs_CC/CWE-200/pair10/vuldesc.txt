@@ -1,0 +1,4 @@
+This version inadvertently exposes a sensitive secret in its logs.
+It uses an unsafe block to manipulate a raw pointer into the secret string and then includes that string in the error message,
+and the Debug implementation for the credentials also prints the secret in clear text.
+This pattern could lead to sensitive information being disclosed in production environments.

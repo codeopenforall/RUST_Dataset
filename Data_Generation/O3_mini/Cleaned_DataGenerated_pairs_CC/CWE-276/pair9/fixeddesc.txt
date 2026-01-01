@@ -1,0 +1,3 @@
+In the secure version the file is created with mode 0o600 instead of 0o777. This change restricts the file’s read and write access solely 
+to the owner, preventing unauthorized access by other users. The unsafe block and concurrency design remain intact to closely mirror real-world usage patterns,
+but the critical fix addressing CWE-276 (Incorrect Default Permissions) has been applied.

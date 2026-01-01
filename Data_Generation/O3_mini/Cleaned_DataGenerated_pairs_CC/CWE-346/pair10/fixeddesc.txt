@@ -1,0 +1,1 @@
+In the corrected version, the header value is safely retrieved and validated using only standard Rust string methods. The unsafe block and dangerous conversion have been removed. The function now properly rejects requests that do not exactly match the expected allowed origin ("https://secure.example.com"), thus fixing the logical flaw and the origin-trust vulnerability.

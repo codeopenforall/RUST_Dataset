@@ -1,0 +1,5 @@
+The fixed version removes any use of unsafe pointer arithmetic by initializing the vector safely
+and using safe Rust methods for updating its elements. When an update is requested at an index
+beyond the current length, the vector is resized using the built-in resize() method before
+performing the update. This guarantees that any write operation remains within valid bounds, thereby
+eliminating the out-of-bounds write vulnerability.

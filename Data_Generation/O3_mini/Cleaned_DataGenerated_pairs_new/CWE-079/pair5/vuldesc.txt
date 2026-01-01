@@ -1,0 +1,1 @@
+In this version, the application directly incorporates unsanitized user input into an HTML template. Within an unsafe block, it converts the input into a slice without performing proper HTML escaping. This careless reflection allows an attacker to inject malicious scripts, causing a Cross-Site Scripting (CWE-079) vulnerability.

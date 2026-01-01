@@ -1,0 +1,1 @@
+The secure implementation eliminates the separate metadata check and delay—both of which create a window for race conditions—by opening the file immediately. It then retrieves the file’s metadata using the file handle, ensuring that the file being read is the same one that was validated. This approach mitigates the CWE-059 symlink (TOCTOU) vulnerability.

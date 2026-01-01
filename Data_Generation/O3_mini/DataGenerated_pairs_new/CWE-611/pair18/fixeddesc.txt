@@ -1,0 +1,1 @@
+The corrected code disables the unsafe resolution of external XML entities. It simply checks for the presence of an external entity declaration in the DOCTYPE and prevents any resolution from taking place, leaving the entity reference unchanged. By removing the unsafe block and concurrent resolution logic, the fixed version mitigates CWE-611.

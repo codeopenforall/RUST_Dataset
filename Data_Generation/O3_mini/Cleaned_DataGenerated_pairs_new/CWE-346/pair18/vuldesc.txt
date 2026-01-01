@@ -1,0 +1,5 @@
+The insecure version implements an unsafe header validation routine that solely checks 
+if the header string pointer is non-null, rather than verifying that the header’s content 
+matches a trusted origin (e.g. "http://example.com"). This oversight can lead to accepting 
+malicious origins provided by an attacker, facilitating CSRF or SSRF pivots. The unsafe 
+pointer usage and concurrent validation mimic real-world misuse patterns.

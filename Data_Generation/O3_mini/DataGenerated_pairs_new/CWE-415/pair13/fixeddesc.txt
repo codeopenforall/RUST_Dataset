@@ -1,0 +1,4 @@
+In the corrected snippet the logic ensures that the resource is deallocated exactly once.
+Only one Box is created from the raw pointer and no duplicate ownership occurs.
+Thus, the double free vulnerability is removed. The resource is safely used and freed.
+The return value remains consistent (20) so that downstream logic is unchanged.

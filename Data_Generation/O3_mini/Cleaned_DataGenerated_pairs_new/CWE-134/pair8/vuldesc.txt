@@ -1,0 +1,3 @@
+This code accepts a user-controlled string from the command-line which is then used directly as a format string in a formatting macro inside an unsafe block.
+By feeding specially crafted inputs (e.g., extra format specifiers like "User: {} extra {}"), an attacker can trigger a panic or unexpected behavior.
+The use of unsafe code to convert raw pointers to slices does not mitigate the issue, and the externally controlled format string introduces a classic CWE-134 vulnerability.

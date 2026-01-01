@@ -1,0 +1,1 @@
+The corrected code replaces the unsafe subtraction with a safe operation that uses checked subtraction via the built-in method checked_sub. If the subtraction would result in an underflow, it returns None and the unwrap_or(0) ensures that the container’s value is set to 0. This prevents the wraparound behavior and maintains correct arithmetic even in concurrent usage.

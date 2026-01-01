@@ -1,0 +1,4 @@
+The vulnerable code uses an unsafe block to subtract an i32 value from an unsigned counter.
+When a negative number (e.g. -1) is provided, the value is cast to u32 without validation,
+resulting in a wraparound. This creates an integer underflow vulnerability (CWE-191).
+In concurrent scenarios, such unchecked arithmetic may lead to unpredictable state.

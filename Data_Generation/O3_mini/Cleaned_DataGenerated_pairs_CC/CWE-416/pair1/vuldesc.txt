@@ -1,0 +1,5 @@
+This snippet demonstrates a CWE-416 use-after-free vulnerability. A resource is allocated 
+and its raw pointer is extracted via Box::into_raw. The resource is then erroneously 
+freed by reconstructing and dropping the Box. In a concurrent context, a separate thread 
+allocates new memory, which may re-use the freed space. Later, the code unsafely dereferences 
+the dangling pointer to access memory that has already been freed, leading to undefined behavior.

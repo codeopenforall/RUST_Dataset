@@ -1,0 +1,4 @@
+This implementation reveals sensitive information through its error messages.
+When a login fails due to an incorrect password versus a non-existent user, 
+the error messages ("Incorrect password" vs. "User not found") leak the existence 
+of the user. The unsafe pointer usage further compounds the risk.

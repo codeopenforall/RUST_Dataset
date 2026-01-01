@@ -1,0 +1,5 @@
+The above code defines a structure holding an unsigned 32-bit integer wrapped in an UnsafeCell.
+Its subtraction method directly subtracts a value within an unsafe block without verifying whether
+the operation would cause an integer underflow. When the subtraction results in a value below u32::MIN,
+the computed result wraps around to a very high value, exemplifying CWE-191 (Integer Underflow). This design,
+especially in a multithreaded context, mirrors real-world vulnerabilities documented in RustSec and CVE reports.

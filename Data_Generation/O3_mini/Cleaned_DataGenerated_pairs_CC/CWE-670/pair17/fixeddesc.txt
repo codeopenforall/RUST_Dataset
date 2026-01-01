@@ -1,0 +1,6 @@
+The fixed version encapsulates the control flow decision (the function pointer)
+inside a Regulator struct protected by a Mutex. An update to the function pointer
+can only succeed if the caller presents the correct authorization token ("secret_token"),
+thus preventing unauthorized modifications. By serializing updates and accesses,
+the approved branch (doubling the input) is reliably executed. This corrects the
+improper control flow integrity issue found in the vulnerable code.

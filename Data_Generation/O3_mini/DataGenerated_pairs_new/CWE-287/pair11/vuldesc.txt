@@ -1,0 +1,5 @@
+The vulnerable code implements an identity checker that is supposed to authenticate a token.
+However, in the verify method it uses an unsafe block to compare only the first byte
+of the stored token and the input token, thereby bypassing full authentication.
+An attacker can supply a token that starts with the same character (e.g. 's') and be incorrectly authenticated.
+This behavior is compounded by concurrent execution and the use of raw pointer access.

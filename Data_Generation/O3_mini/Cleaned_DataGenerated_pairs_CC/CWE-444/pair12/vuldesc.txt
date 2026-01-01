@@ -1,0 +1,4 @@
+This vulnerable implementation unsafely parses HTTP headers using unchecked conversions and, critically, misinterprets
+the presence of both "Content-Length" and "Transfer-Encoding" headers by always using the Content-Length value.
+Such behavior can result in an incomplete processing of the chunked transfer body, paving the way for request smuggling
+attacks.

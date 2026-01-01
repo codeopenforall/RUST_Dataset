@@ -1,0 +1,4 @@
+In this revision the sensitive accessor method is made safe by removing the unsafe block. More importantly, 
+the Service::handle function now strictly checks that the caller’s role is "admin". As a result, any unprivileged 
+attempt (e.g. using "user") will be denied access. This corrects the improper authorization flaw (CWE-285) found 
+in the earlier version.

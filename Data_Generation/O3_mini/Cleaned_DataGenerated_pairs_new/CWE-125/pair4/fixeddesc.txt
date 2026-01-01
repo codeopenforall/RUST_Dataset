@@ -1,0 +1,1 @@
+This revised code fixes the vulnerability by replacing the unchecked pointer arithmetic with a safe bounds check using Vec::get. When an index out-of-bound is requested, get returns None rather than reading invalid memory. This approach complies with Rust's safety guarantees and prevents potential undefined behavior associated with out-of-bounds reads.

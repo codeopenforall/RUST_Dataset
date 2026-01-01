@@ -1,0 +1,6 @@
+In this corrected version, the unsafe global variable is removed from the
+authentication logic. The debug flag parameter is retained only for API
+compatibility and no longer influences authentication. The authenticate method
+always verifies whether the provided token exists in the valid tokens list,
+ensuring that only clients with correct credentials can access the admin endpoint.
+This change prevents any alternate authentication bypass routes.

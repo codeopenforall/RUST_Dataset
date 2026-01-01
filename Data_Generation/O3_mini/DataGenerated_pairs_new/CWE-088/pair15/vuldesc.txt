@@ -1,0 +1,1 @@
+The vulnerable code constructs a shell command by concatenating untrusted input directly into a command string, then passes it to "sh -c" inside an unsafe block. This leads to CWE-088 (OS Command Injection) because an attacker can inject additional shell commands (e.g., "safe_input; echo injected") leading to unintended command execution.

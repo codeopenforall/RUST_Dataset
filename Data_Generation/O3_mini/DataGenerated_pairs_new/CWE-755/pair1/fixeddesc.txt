@@ -1,0 +1,4 @@
+The fixed code corrects the vulnerability by propagating errors instead of suppressing them.
+In the multi-threaded processing function, the unsafe compute() call is combined with the ? operator,
+so that when a negative input is detected the error is returned immediately.
+This way, the exceptional condition is not lost, allowing callers to react appropriately rather than silently continuing.

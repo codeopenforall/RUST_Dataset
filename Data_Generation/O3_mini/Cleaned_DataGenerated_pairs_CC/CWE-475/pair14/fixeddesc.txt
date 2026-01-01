@@ -1,0 +1,3 @@
+In this corrected version the MemoryBlock structure now performs explicit validation in validated_sum(), ensuring that the sum of offset and count does not exceed the size of the buffer.
+If the precondition is violated, an error is returned instead of proceeding with dangerous pointer arithmetic.
+This prevents undefined behavior from invalid input to the unsafe API and thus fixes the CWE-475 vulnerability.

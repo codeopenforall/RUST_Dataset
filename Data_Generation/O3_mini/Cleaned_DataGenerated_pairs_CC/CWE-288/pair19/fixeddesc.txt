@@ -1,0 +1,1 @@
+The corrected version removes the unsafe bypass logic from the diagnostic endpoint. Both secure and debug endpoints now use the same authentication check via the safe_check method. Moreover, the configuration flag is set to disable debug mode in production, ensuring that alternate flows do not inadvertently bypass security controls.

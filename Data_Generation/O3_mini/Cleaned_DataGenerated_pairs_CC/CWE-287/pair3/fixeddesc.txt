@@ -1,0 +1,1 @@
+The corrected version resolves the vulnerability by performing a full string comparison between the provided token and the stored secret. A constant-time loop is used to avoid timing side channels, ensuring that authentication is accurately validated against the complete token rather than just its first byte.

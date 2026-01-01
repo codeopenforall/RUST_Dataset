@@ -1,0 +1,1 @@
+This code simulates an HTTP request parser vulnerable to inconsistent interpretation (CWE-444). It unsafely parses the request using raw pointer arithmetic and mis-handles requests containing both "Content-Length" and "Transfer-Encoding" headers. Instead of rejecting such ambiguous requests, it accepts them, which can allow an attacker to smuggle a secondary request.

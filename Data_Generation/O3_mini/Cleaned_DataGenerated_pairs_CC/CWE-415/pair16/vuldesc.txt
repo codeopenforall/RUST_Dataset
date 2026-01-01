@@ -1,0 +1,1 @@
+This code demonstrates a double free vulnerability. It unsafely transforms a raw pointer back into a Box twice, leading to the resource being dropped two times, thereby triggering CWE-415. Such a pattern can result in undefined behavior including memory corruption.

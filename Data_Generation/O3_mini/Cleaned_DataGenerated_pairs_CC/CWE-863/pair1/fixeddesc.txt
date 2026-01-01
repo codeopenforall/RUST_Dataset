@@ -1,0 +1,1 @@
+In the corrected code, a hardcap (SAFE_LIMIT) is defined and enforced prior to spawning any threads. The allocate method now checks the requested number of tasks against the permit threshold, returning an error if the request exceeds the limit. This prevents potential resource exhaustion or denial-of-service attacks and conforms with proper resource management best practices.

@@ -1,0 +1,4 @@
+In this secure version, the resource allocation is properly limited by checking that the requested
+number of threads does not exceed a pre-defined constant (MAX_THREADS). If the input count is too high,
+the function returns an error instead of spawning threads. This prevents potential exhaustion of system
+resources while retaining the unsafe block to mirror a real-world scenario where legacy unsafe code exists.

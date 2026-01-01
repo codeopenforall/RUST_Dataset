@@ -1,0 +1,3 @@
+In the corrected implementation the subtraction operation is safeguarded by first validating that the balance is sufficient.
+The update method returns an error instead of performing an unchecked subtraction if the requested debit exceeds the current balance.
+Thus, the underflow vulnerability is prevented. The concurrency management (using Arc, Mutex, and Barriers) remains to replicate realistic multi-threaded usage.

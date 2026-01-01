@@ -1,0 +1,5 @@
+The vulnerability is a race condition stemming from an unsynchronized check-then-act operation on a shared resource.
+The Controller struct uses unsafe raw pointer manipulation to access a heap-allocated integer.
+In the process method, the check (if get() equals 0) and the subsequent update (set(1)) are not atomic.
+Meanwhile, a concurrently spawned thread can preempt and modify the same shared state,
+resulting in an unexpected final value. This type of issue is classified under CWE-362.

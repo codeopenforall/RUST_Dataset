@@ -1,0 +1,1 @@
+In this corrected version, the Debug trait is implemented manually for the configuration struct so that the sensitive API key is masked (shown as "********"). This prevents any accidental disclosure via logs, thread outputs, or unsafe memory operations, thereby fixing the vulnerability by ensuring no sensitive data is output.

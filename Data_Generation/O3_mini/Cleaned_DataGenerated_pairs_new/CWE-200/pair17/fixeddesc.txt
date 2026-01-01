@@ -1,0 +1,1 @@
+In the corrected version, the unsafe extraction of the secret is eliminated from the error path. Instead of formatting an error message that includes confidential details, the program returns a generic error string ("Access denied."). This prevents any accidental exposure of sensitive information through log messages or panic outputs while preserving the intended functionality.

@@ -1,0 +1,1 @@
+The corrected version safely initializes the vector by using resize to allocate and set default values across the entire range. In addition, the populate method iterates using "0..self.data.len()" (excluding the invalid upper bound) ensuring that each element is updated within the allocated capacity. This eliminates the fencepost bug and prevents any out-of-bounds memory access.

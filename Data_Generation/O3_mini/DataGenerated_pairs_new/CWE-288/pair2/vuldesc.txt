@@ -1,0 +1,1 @@
+The vulnerability arises because the debug endpoint uses an unsafe global flag (GLOBAL_DEBUG) that, when true, bypasses authentication checks. This effectively allows an attacker to gain unauthorized access if they can reach the /debug endpoint without providing valid credentials. The unsafe block misuses the global variable to skip security checks, leading to CWE-288.

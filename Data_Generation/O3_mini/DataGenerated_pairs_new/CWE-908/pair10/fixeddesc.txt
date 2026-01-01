@@ -1,0 +1,1 @@
+The corrected code properly initializes every field of the Data struct by explicitly setting the 'flag' field to false in the unsafe block. This ensures that when concurrently accessed, no uninitialized memory is used. The overall concurrency pattern, structure usage, and API remain unchanged ensuring minimal code differences.

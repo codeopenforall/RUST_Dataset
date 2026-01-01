@@ -1,0 +1,4 @@
+In this version, an input validation check ensures that the number of threads “n” does not exceed 
+the predefined MAX_ALLOWED value. Moreover, the vector is initialized with the required capacity 
+to safely accommodate all thread handles. These modifications prevent out-of-bounds memory writes, 
+thereby mitigating the CWE-770 vulnerability regarding unbounded resource allocation.

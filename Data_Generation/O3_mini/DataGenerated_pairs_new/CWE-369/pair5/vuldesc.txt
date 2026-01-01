@@ -1,0 +1,1 @@
+This version contains a division by zero vulnerability (CWE-369). The unsafe block inside Processor::operation performs an unchecked division using raw pointers. When the denominator (supplied via command-line) is zero, the division operation causes a panic inside a concurrent thread, leading to uncontrolled program termination.

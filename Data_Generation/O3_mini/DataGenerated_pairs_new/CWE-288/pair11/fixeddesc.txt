@@ -1,0 +1,5 @@
+In the fixed code, the unsafe alternate authentication path has been removed. Even when debug mode is
+active, the verify() function now strictly compares the provided credential with the stored secret.
+This adjustment ensures that no alternate or bypass path exists—thus enforcing proper authentication
+and mitigating the CWE-288 vulnerability. Additionally, the debug branch now only logs that debug mode
+is active without compromising security.

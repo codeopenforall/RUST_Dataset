@@ -1,0 +1,5 @@
+This snippet demonstrates a real-world OS command injection vulnerability (CWE-088). The function
+prepare a shell command by unsafely concatenating a user-supplied input into a string that is then
+passed to "sh -c" within an unsafe block. The misuse of unsafe code along with shell invocation
+can allow an attacker to inject malicious shell commands if the input is not properly sanitized.
+Concurrent execution using threads and smart pointers further mimics realistic usage patterns.

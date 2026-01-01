@@ -1,0 +1,1 @@
+This improved version completely disregards any externally provided PATH variable. Instead, it uses a constant, trusted search path (SECURE_PATH) when spawning commands. By hardcoding a safe and known PATH value, the code prevents an attacker from influencing command resolution, thus mitigating the uncontrolled search path vulnerability (CWE-427).

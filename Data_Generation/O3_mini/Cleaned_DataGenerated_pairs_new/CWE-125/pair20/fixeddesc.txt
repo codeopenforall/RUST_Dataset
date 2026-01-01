@@ -1,0 +1,1 @@
+The fixed version of the code replaces the unsafe block with a safe method call using the inherent bounds-checking of the slice::get method. This method returns an Option, where an out-of-bound index yields None. By ensuring that every access is validated, the fix prevents any possibility of out-of-bounds memory reads and thus remedies the CWE-125 vulnerability.

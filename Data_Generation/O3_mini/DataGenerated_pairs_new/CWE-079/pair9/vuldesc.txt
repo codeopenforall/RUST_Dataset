@@ -1,0 +1,3 @@
+This code uses an unsafe block and raw pointer copying to build an HTML response. The untrusted user input is directly
+embedded into the HTML without any sanitization or escaping, leading to a Cross-Site Scripting (XSS) vulnerability (CWE-079).
+Any attacker-controlled input containing HTML or JavaScript (e.g., a <script> tag) would be rendered as-is.

@@ -1,0 +1,4 @@
+The revised code rectifies the control flow error by appropriately updating the state in the unsafe block.
+Now, when a positive input is encountered and the current state is Init, the state is correctly
+set to Running rather than Completed. This fix ensures that the intended processing logic is met,
+eliminating the vulnerability associated with CWE-670.

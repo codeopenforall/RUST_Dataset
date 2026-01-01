@@ -1,0 +1,1 @@
+This code demonstrates an improper access control vulnerability (CWE-285) where a non-privileged user is allowed to update a sensitive resource. The update method spawns a thread to manipulate internal memory using an unsafe block, but it does not verify whether the provided user has administrative rights. As a result, unprivileged users may alter the secret data.

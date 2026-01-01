@@ -1,0 +1,1 @@
+The updated code removes unsafe pointer conversions and no longer relies on the process environment’s search path by using the absolute path "/bin/ls". This change effectively mitigates CWE-426 by ensuring only the intended executable is run, regardless of any PATH manipulations.

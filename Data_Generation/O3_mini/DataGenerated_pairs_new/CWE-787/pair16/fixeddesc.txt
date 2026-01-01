@@ -1,0 +1,1 @@
+In the corrected version, the unsafe block that was writing beyond the vector’s allocated bounds has been removed. This guarantees that all vector operations occur within the valid range. By relying solely on safe APIs, the sum calculation returns the intended result (15), thereby mitigating the out-of-bounds write vulnerability (CWE-787).

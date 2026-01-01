@@ -1,0 +1,1 @@
+In the fixed code, a dedicated escape function is introduced that replaces critical characters (&, <, >, quotes) with their corresponding HTML entities. The Renderer now uses this function before embedding the user-supplied input into the HTML template, mitigating the XSS vulnerability. The unsafe block is removed so that regular Rust safety guarantees are upheld.

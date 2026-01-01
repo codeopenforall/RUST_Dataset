@@ -1,0 +1,1 @@
+In the corrected code, the unsafe routine is modified such that the vector's length is set exactly equal to the number of elements copied from the input. The call to buffer.set_len() now uses the correct value (input.len()), which prevents reading or using uninitialized memory beyond the allocated capacity. This eliminates the off-by-one error and conforms to safe Rust practices.

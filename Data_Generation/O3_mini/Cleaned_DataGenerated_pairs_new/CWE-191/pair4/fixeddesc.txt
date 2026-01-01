@@ -1,0 +1,1 @@
+The corrected code prevents an integer underflow by replacing the unchecked subtraction with saturating subtraction. This means that if the decrement would drive the counter below zero, it stops at 0 instead of wrapping around. The unsafe block remains as a simulation of low-level operations, but the arithmetic now avoids the vulnerability.

@@ -1,0 +1,5 @@
+In this corrected version the vulnerability is addressed by eliminating shell invocation with "sh -c". 
+User input is no longer concatenated into a shell command; instead, "ls" is executed directly with the input provided as an argument. 
+Additionally, the constructor performs input validation and panics if dangerous characters (such as ';', '&', '|') are detected. 
+This prevents attackers from injecting additional commands. 
+Concurrency is maintained with thread spawning and shared ownership, preserving the original architecture without the security flaw.

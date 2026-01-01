@@ -1,0 +1,5 @@
+The vulnerable code creates a Handler struct that spawns a thread executing an unsafe block.
+Within that block, it dereferences a raw pointer and, upon detecting an unexpected condition (i.e., the value is 0), it triggers a panic.
+Since the panic is not caught (using mechanisms like catch_unwind), it propagates through the thread's join operation,
+potentially causing abnormal termination of the overall application. This mimics scenarios similar to CAD vulnerability
+reports where panics cross FFI or thread boundaries unchecked (CWE-248).

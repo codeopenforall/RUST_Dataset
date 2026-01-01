@@ -1,0 +1,1 @@
+In this corrected version, a constant TASK_LIMIT is introduced to specify the maximum number of tasks allowed. The function now validates the input and immediately returns an error if the requested count exceeds this limit, effectively preventing an attacker or a faulty input from spawning an excessive number of threads and allocating too much memory.

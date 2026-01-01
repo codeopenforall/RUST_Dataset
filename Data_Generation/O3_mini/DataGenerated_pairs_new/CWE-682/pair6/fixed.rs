@@ -1,0 +1,40 @@
+//////////////////////////////////////////////////////////
+// Corrected Code: Accurate Calculation Implementation  //
+//////////////////////////////////////////////////////////
+use std::thread;
+
+struct Computor {
+    data: Vec<i32>,
+}
+
+impl Computor {
+    fn new(data: Vec<i32>) -> Self {
+        Computor { data }
+    }
+
+    // Computes the average correctly using unsafe pointer arithmetic.
+    fn compute(&self) -> i32 {
+        let len = self.data.len() as i32;
+        let mut sum: i32 = 0;
+        unsafe {
+            let ptr = self.data.as_ptr();
+            for i in 0..len {
+                sum += *ptr.add(i as usize);
+            }
+        }
+        // Fixed: Correctly divide the sum by the total number of elements.
+        if len > 0 {
+            return sum / len;
+        }
+        0
+    }
+}
+
+fn main() {
+    // Mimic concurrent execution using a separate thread.
+    let data = vec![1, 2, 3];  // Triggering input: average should be 2
+    let comp = Computor::new(data);
+    let handle = thread::spawn(move || comp.compute());
+    let result = handle.join().unwrap();
+    println!("Result: {}", result);
+}

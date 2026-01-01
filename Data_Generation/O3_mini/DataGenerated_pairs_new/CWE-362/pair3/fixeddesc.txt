@@ -1,0 +1,1 @@
+In this corrected version the shared counter is encapsulated within a Mutex. Each thread obtains a lock before modifying the counter, ensuring that only one thread can update the value at a time. This synchronization eliminates the race condition, guaranteeing that the final counter equals NUM_THREADS * ITER.

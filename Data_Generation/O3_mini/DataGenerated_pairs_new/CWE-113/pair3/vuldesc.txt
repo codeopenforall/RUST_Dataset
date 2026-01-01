@@ -1,0 +1,5 @@
+This code accepts untrusted input as the value for an HTTP header without filtering out
+carriage return and line feed characters. It uses an unsafe block to convert the raw bytes
+of the input to a string slice, bypassing UTF-8 validation on injected CRLF sequences.
+An attacker may exploit this behavior to perform HTTP response splitting attacks by injecting
+malicious headers.

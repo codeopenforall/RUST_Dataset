@@ -1,0 +1,4 @@
+In the corrected code the vulnerability is mitigated by not passing user input directly as a format string.
+Instead, the safe routine uses Rust’s formatting facilities by embedding the user input into a fixed format
+("{}"). This ensures that any percent (%) characters in the input are treated as literal characters rather than
+format specifiers, neutralizing the externally-controlled format string vulnerability (CWE-134).

@@ -1,0 +1,3 @@
+The corrected implementation fixes the vulnerability by calculating the buffer size using input.len(),
+which returns the correct number of UTF-8 bytes in the string. The allocation and subsequent data copy
+now match the actual string length, ensuring that the complete string data is safely and correctly handled.

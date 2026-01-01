@@ -1,0 +1,1 @@
+This corrected version follows the same resource allocation mechanism but fixes the double free vulnerability by ensuring that the resource is deallocated exactly once. The redundant second call to deallocate is removed, thereby preventing the unsafe double deallocation and eliminating the associated panic.

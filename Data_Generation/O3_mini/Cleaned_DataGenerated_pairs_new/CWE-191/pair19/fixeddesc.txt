@@ -1,0 +1,5 @@
+The revised code replaces the unchecked subtraction with a saturating subtraction using the built-in
+saturating_sub method. This ensures that if the subtraction would normally underflow, the value instead
+saturates at 0. Hence, even when subtracting a value greater than the current, the computation remains safe.
+All concurrency components and struct definitions remain intact, preserving the overall structure while
+eliminating the integer underflow vulnerability (CWE-191).

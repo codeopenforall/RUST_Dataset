@@ -1,0 +1,3 @@
+In the corrected code the vulnerability is mitigated by eliminating the shell invocation.
+Instead of constructing a command string that is processed by a shell, the code now directly executes the "echo" binary
+with the untrusted input passed as a separate argument. This prevents any shell metacharacter expansion and defends against CWE-088.

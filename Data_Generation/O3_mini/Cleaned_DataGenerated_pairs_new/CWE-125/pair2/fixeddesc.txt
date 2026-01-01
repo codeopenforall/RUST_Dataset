@@ -1,0 +1,1 @@
+The corrected code replaces the unchecked pointer access with a safe method that uses the slice’s get method. This guarantees that if an invalid index is provided, None is returned rather than invoking undefined behavior. The API remains the same while ensuring memory safety and preventing out-of-bound reads.

@@ -1,0 +1,44 @@
+////////////////////////////////////////////////////////////
+// Vulnerable Code (Sensitive Exposure via Debug Logging)
+////////////////////////////////////////////////////////////
+use std::fmt;
+use std::thread;
+
+#[derive(Debug)]
+struct Config {
+    name: String,
+    api_key: String, // Sensitive secret that should not be exposed
+}
+
+impl Config {
+    fn new() -> Self {
+        Config {
+            name: "ServerAlice".into(),
+            api_key: "SECRET123".into(),
+        }
+    }
+}
+
+fn run_session() -> String {
+    let conf = Config::new();
+    // Unsafe block that unsafely copies the debug-formatted string without sanitization.
+    let debug_str = format!("{:?}", conf);
+    let log_output = unsafe {
+        // Mimic risky manipulation: copying raw bytes and reconstructing the string.
+        let ptr = debug_str.as_ptr();
+        let len = debug_str.len();
+        let slice = std::slice::from_raw_parts(ptr, len);
+        String::from_utf8_lossy(slice).to_string()
+    };
+    // Concurrency: A spawned thread also logs the configuration using its derived Debug.
+    let handle = thread::spawn(move || {
+        format!("Logging config data: {:?}", conf)
+    });
+    let thread_log = handle.join().unwrap();
+    format!("{}; {}", log_output, thread_log)
+}
+
+fn main() {
+    let output = run_session();
+    println!("{}", output);
+}

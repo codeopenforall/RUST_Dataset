@@ -1,0 +1,5 @@
+In this corrected version, the fill_data method has been adjusted to only iterate
+over valid indices of the underlying vector (using a range 0..n instead of 0..=n).
+This ensures that no out‐of‐bounds write occurs and the vector’s length remains unchanged.
+By removing the unsafe extension of the vector length, the code now adheres to proper bounds
+checking and prevents the vulnerability.

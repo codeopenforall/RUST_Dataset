@@ -1,0 +1,5 @@
+This version exhibits a CWE-787 vulnerability via an out-of-bounds write.
+Specifically, the buffer is created with a capacity for 10 elements but its length is
+erroneously set to 11 (line 8). The unsafe block in the update method (line 18) writes to
+index 10 without validating the index, leading to undefined behavior that can corrupt memory.
+The concurrency introduced via a spawned thread further complicates the unsafe access.

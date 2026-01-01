@@ -1,0 +1,6 @@
+This vulnerable code attempts to verify a file before opening it by fetching its metadata (using std::fs::metadata)
+to ensure it is a regular file. However, it then introduces a delay (simulating concurrent processing)
+before reopening the file via File::open with the same path. During this TOCTOU (Time‐of‐Check to Time‐of‐Use) window,
+an attacker can replace the original file with a symlink pointing to a malicious file.
+Additionally, an unsafe block is used to mimic complex systems code; although the unsafe operation here is benign,
+it reflects common patterns found in real-world Rust code that abuse unsafe code in concurrent contexts.

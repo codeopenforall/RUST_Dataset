@@ -1,0 +1,1 @@
+The fixed code resolves the incorrect tax calculation by adjusting the order of operations to multiply the base price by the tax percentage before performing the division. This ensures that for prices below 100 the tax is still computed correctly. The unsafe optimizations and concurrent design remain unchanged.

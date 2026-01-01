@@ -1,0 +1,1 @@
+The vulnerable code constructs an HTTP response header by directly concatenating untrusted input with fixed header strings without neutralizing carriage return and line feed characters. This unsafe practice can lead to HTTP Response Splitting (CWE-113), where an attacker may exploit the CRLF injection to inject additional headers or manipulate the response.

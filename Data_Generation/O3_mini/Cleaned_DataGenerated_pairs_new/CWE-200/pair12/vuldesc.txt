@@ -1,0 +1,3 @@
+This vulnerable code suffers from CWE-200 by exposing sensitive information through error messages.
+When an authentication error occurs, the expected secret ("s3cr3t!") is logged in the panic message.
+This unsafe practice of including internal secrets in error logs can lead to significant security breaches.

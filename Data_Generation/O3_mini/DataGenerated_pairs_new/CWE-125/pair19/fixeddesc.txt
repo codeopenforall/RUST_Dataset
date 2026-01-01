@@ -1,0 +1,1 @@
+In this corrected version the implementation of the compute method is modified to avoid out-of-bound reads. Instead of iterating over the entire vector, the loop now runs from 0 to len - 2 (i.e. using 0..(len-1)), which guarantees that the access of element (i + 1) remains within the valid range. This change eliminates the unsafe read that previously triggered undefined behavior.

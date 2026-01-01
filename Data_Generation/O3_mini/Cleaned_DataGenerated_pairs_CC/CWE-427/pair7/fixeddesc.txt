@@ -1,0 +1,4 @@
+In this corrected version the code avoids using the attacker-controlled PATH value.
+Instead, it explicitly sets a secure default PATH ("/usr/bin:/bin") and clears the inherited environment for the spawned process.
+The unsafe block is still used for pointer conversion, but only on a trusted string.
+This revision mitigates CWE-427 by preventing external manipulation of the search path.

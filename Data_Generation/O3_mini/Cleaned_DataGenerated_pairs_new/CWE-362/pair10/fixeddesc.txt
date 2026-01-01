@@ -1,0 +1,5 @@
+The corrected version addresses the race condition by wrapping the shared counter in a Mutex.
+With the mutex in place, each thread obtains exclusive access to update the counter atomically.
+Even though the code still contains an artificial delay to simulate a realistic TOCTOU window,
+the critical section (check and increment) is now properly synchronized, ensuring that the final
+counter always evaluates to 10000. This approach adheres to community idioms for safe concurrent access.

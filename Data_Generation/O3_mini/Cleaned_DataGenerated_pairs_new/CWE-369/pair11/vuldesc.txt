@@ -1,0 +1,6 @@
+This code implements an arithmetic module that uses an unsafe trait method to perform division.
+It dereferences a raw pointer to obtain the divisor without checking if it is zero.
+As a result, supplying a zero divisor (from user input or threaded execution) triggers an unchecked division,
+leading to a panic. Concurrency is introduced via thread spawning, further mimicking real-world usage.
+A public API, run_calc, wraps this computation in a catch_unwind solely for testing, but the main routine
+still directly exhibits the vulnerability.

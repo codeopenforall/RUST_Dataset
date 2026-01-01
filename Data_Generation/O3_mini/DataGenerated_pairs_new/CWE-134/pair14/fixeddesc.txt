@@ -1,0 +1,1 @@
+In this corrected version, the unsafe call to printf is modified so that it no longer uses the user‐supplied input as the format string. Instead, a fixed format string ("%s") is used, and the user input is passed strictly as a data argument. This prevents any malicious format specifiers in the input from being interpreted, thereby mitigating the format string vulnerability.

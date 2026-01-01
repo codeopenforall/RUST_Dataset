@@ -1,0 +1,7 @@
+This vulnerable implementation defines a DataBuffer struct that encapsulates a Vec<u8>.
+Its process method unsafely writes to the buffer using raw pointer arithmetic without any bounds checking,
+allowing an out-of-bounds write if the provided index is equal to or greater than the current length.
+It then misuses Vec::set_len to artificially increase the length of the vector, incorporating
+potentially uninitialized or corrupted memory. Such operations can lead to memory corruption and
+undefined behavior, classifying this as a CWE-787 Out-of-Bounds Write vulnerability.
+The code also uses Arc and Mutex to simulate a realistic setup with concurrent access.

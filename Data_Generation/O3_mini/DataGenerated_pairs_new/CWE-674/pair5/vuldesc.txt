@@ -1,0 +1,3 @@
+This vulnerable code implements a recursive descent parser for nested parentheses without enforcing a maximum recursion depth.
+It uses an unsafe block for pointer arithmetic to access input bytes. If provided with a deeply nested (attacker-controlled) input,
+the recursion could grow uncontrollably, eventually leading to a stack overflow.

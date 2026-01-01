@@ -1,0 +1,1 @@
+This code allocates a vector of a fixed size, unsafely sets its length, and then uses a for loop with an inclusive upper bound (0..=len) to populate it. This off-by-one mistake writes beyond the allocated region, leading to potential memory corruption. The use of Arc and Mutex simulates realistic concurrent scenarios where such bugs might be hidden.

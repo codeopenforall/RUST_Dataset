@@ -1,0 +1,1 @@
+The vulnerability arises from the unsafe block in the process method that obtains a raw pointer to the password and formats it with Debug. This unsafe dereference causes CWE-200: Exposure of Sensitive Information as it inadvertently leaks sensitive data (the password) in error messages.

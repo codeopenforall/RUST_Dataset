@@ -1,0 +1,1 @@
+This corrected version does not reveal whether a record exists or if the secret is wrong. Both errors trigger the generic "Invalid credentials" response. This consistency thwarts attackers attempting to exploit timing or error message discrepancies, mitigating the CWE-203 risk.

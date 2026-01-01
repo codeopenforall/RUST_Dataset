@@ -1,0 +1,1 @@
+This version uses an unsafe block to format a command string by directly inserting untrusted input into a shell command passed to "sh -c". The unsanitized interpolation allows an attacker to inject additional shell commands (e.g. "echo injected") by including shell metacharacters in the input. The vulnerability is a classic OS Command Injection (CWE-088) scenario.

@@ -1,0 +1,1 @@
+This version allows an attacker or misconfiguration to supply an unbounded number of threads to spawn via command line. There is no cap on the number of tasks that can be created, thus potentially exhausting system resources. The use of an unsafe block to dereference a raw pointer exacerbates the risk by bypassing safe Rust abstractions.

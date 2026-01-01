@@ -1,0 +1,5 @@
+The fix corrects the off-by-one error in the load_data function. Instead of accessing src[i+1],
+the loop now correctly uses src[i] for each iteration, ensuring that only valid memory is read.
+The set_len call is still used to prepare the vector storage, but now the copying of data happens
+within the correct bounds. This safe adjustment prevents reading past the allocated slice while preserving
+the overall design and concurrency model.

@@ -1,0 +1,4 @@
+In this fixed version the vulnerability is mitigated by eliminating the use of the user-supplied string as the format
+specifier. Instead, the code uses a fixed formatting pattern via Rust’s safe formatting API (format!). The user input
+is interpolated as plain data and not interpreted as formatting instructions, thereby preventing any uncontrolled format
+string exploitation.

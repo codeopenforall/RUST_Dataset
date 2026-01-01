@@ -1,0 +1,1 @@
+The corrected code avoids out-of-bound writes by using safe Rust methods. It verifies that the requested count does not exceed the allocated capacity and populates the vector using push operations. By eliminating unsafe pointer arithmetic and off-by-one loops, the fix prevents memory corruption and ensures that the computed sum reflects only the properly initialized elements.

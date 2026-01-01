@@ -1,0 +1,3 @@
+This vulnerable code relies on a relative search path to locate and execute a helper binary. By using Command::new with "helper" instead of an absolute path,
+an attacker may introduce a malicious executable in an untrusted directory (such as the current working directory) that is found first by the OS command search order.
+This CWE-426 situation (Untrusted Search Path) is compounded by the use of unsafe blocks and concurrent execution, mimicking real-world vulnerabilities found in RustSec advisories.

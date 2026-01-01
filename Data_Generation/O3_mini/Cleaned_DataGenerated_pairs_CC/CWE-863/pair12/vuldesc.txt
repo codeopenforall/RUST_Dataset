@@ -1,0 +1,1 @@
+The above code suffers from CWE-863 due to unbounded resource allocation. Untrusted input directly controls the capacity of a vector without applying any limits, which may lead to extreme memory usage. Furthermore, unsafe usage in setting vector length and a global pointer update in a concurrent thread mimics real-world mismanagement patterns seen in RustSec reports.

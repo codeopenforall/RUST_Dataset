@@ -1,0 +1,4 @@
+In the corrected version, the authorization check now uses a proper string equality operator (user != "admin") 
+instead of an unsafe pointer comparison. This ensures that only the privileged "admin" is exempt from the memory 
+limit. Unauthorized users (non-"admin") are limited by the MAX_LIMIT constant, thereby preventing uncontrolled 
+allocation of resources. This fix mitigates the risk of exhaustion of system resources.

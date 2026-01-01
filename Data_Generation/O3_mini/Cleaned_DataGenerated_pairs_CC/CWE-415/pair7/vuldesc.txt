@@ -1,0 +1,1 @@
+This example demonstrates a double free vulnerability (CWE-415) by manually converting a raw pointer into a Box twice. The Resource’s custom Drop implementation uses a global atomic flag to detect if it has already been dropped, and panics on a second drop attempt. This mimics real-world unsafe manual deallocation issues reported in RustSec and CVE reports.

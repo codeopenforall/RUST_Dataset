@@ -1,0 +1,1 @@
+This version creates a Data object via unsafe initialization. The constructor only initializes the 'value' field and leaves the 'flag' field uninitialized. When threads access 'flag', its indeterminate state may lead to unsafe operations and undefined behavior. Using an uninitialized boolean resource exemplifies CWE-908 in a realistic concurrent setting.

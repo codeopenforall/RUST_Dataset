@@ -1,0 +1,3 @@
+The vulnerable code improperly handles HTTP header parsing by using an unsynchronized global variable updated inside unsafe blocks.
+Duplicate "Content-Length" headers are tolerated, and pointer arithmetic is used without validating buffer boundaries.
+This inconsistent interpretation may allow a crafted HTTP request (request smuggling) to be misparsed, causing the actual body length to mismatch the expected value.

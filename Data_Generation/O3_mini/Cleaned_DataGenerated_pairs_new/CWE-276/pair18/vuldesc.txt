@@ -1,0 +1,1 @@
+The code above creates a file ("data.txt") with overly permissive permissions (0o777), allowing any user full read, write, and execute access. The use of unsafe blocks and concurrent threads mimics realistic scenarios where such insecure defaults can lead to unauthorized file access (CWE-276).

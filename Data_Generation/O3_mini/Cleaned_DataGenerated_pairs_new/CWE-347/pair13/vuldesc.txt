@@ -1,0 +1,1 @@
+The above vulnerable code improperly verifies cryptographic signatures (CWE-347). Within an unsafe block, it copies the provided signature into a fixed-size buffer without enforcing the proper length or performing any real cryptographic verification. This means even truncated or forged signatures will be accepted, leading to an authentication bypass.

@@ -1,0 +1,4 @@
+The corrected code addresses the vulnerability by enforcing two key changes. First, it checks that the provided algorithm string exactly matches the approved "ed25519".
+Second, it abandons the unsafe raw pointer arithmetic in favor of a safe, deterministic, constant–time signature comparison.
+The proper_verify function computes an expected signature from the message using a fixed key and then compares it with the provided signature,
+ensuring both proper algorithm verification and memory safety.

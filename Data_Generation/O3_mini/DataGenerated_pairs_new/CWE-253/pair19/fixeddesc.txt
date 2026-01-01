@@ -1,0 +1,5 @@
+The corrected implementation first validates the index by properly checking the return value 
+of the helper function. Only when the helper returns an Ok value (indicating a valid index) does it 
+proceed to perform the unsafe memory update. For indices that are out-of-bound, the update function returns 
+an error, preventing any unsafe memory write. This adjustment resolves the vulnerability by ensuring that 
+the function's return value is correctly interpreted.

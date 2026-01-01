@@ -1,0 +1,5 @@
+This implementation suffers from an incorrect check of the return value from the helper function 
+that validates index bounds. Instead of updating the buffer only when the index is valid, the 
+code erroneously treats an error (indicating an out-of-bound index) as a signal to proceed with an unsafe 
+memory write. This misinterpretation, compounded by the use of unsafe pointer arithmetic and concurrent threads, 
+results in a realistic memory-safety vulnerability.

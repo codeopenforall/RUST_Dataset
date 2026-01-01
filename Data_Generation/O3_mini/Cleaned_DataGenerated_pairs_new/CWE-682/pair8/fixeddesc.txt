@@ -1,0 +1,1 @@
+In this revision the arithmetic has been correctly grouped to perform the intended calculation: ((total - measured) * 100) / total. The unsafe raw pointer usage and concurrent thread spawning have been retained to maintain realistic usage patterns, but the mathematical error is fixed, ensuring correct results.

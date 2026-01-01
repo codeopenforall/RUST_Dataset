@@ -1,0 +1,4 @@
+This code simulates a decryption error handling path where sensitive information is inadvertently exposed via error messages.
+It uses an unsafe block to mimic low-level operations and spawns multiple threads to reflect real-world concurrency.
+The vulnerability is that the error message generated in the process function embeds the secret key in its output, 
+which then gets passed to a panic in run_app, potentially exposing sensitive details in logs or crash reports.

@@ -1,0 +1,1 @@
+This revised version fixes the vulnerability by preventing any processing of external entities. Rather than attempting to resolve external references, the code now checks for the presence of a DOCTYPE declaration and immediately rejects the input, returning an error message. This eliminates the unsafe external file access and associated risks characteristic of CWE-611.

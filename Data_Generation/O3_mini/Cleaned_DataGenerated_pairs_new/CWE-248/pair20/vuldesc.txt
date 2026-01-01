@@ -1,0 +1,4 @@
+The above code spawns a thread that performs an unsafe memory read and conditionally panics when a specific condition is met. The panic
+occurs inside the thread, and the main thread calls join() using unwrap() on the result. If the child thread panics, unwrap() re-panics,
+causing the application to terminate abruptly. This is a realistic scenario where cross-thread panics are not properly caught,
+violating proper exception handling conventions (CWE-248).

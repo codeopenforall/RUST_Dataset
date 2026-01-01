@@ -1,0 +1,4 @@
+The vulnerable code implements an XML parser that unsafely resolves external entities by parsing the XML string,
+extracting a file path from a DOCTYPE declaration, and then calling fs::read_to_string on it.
+The unsafe block uses raw pointers to reconstitute the file path string. This design permits an attacker to trigger
+an XXE attack (CWE-611) and force the system to read arbitrary files, which may lead to sensitive data exposure.

@@ -1,0 +1,4 @@
+This code exposes sensitive information through its error messages by returning 
+distinct errors for an unknown user (UserNotFound) versus a known user with an incorrect password (WrongPassword). 
+Furthermore, the unsafe block compares only the first byte of the password and its length, 
+which can introduce timing discrepancies and leaks about the internal state.

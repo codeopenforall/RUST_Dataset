@@ -1,0 +1,1 @@
+This version creates a raw pointer to a heap‐allocated integer and then explicitly deallocates the memory using unsafe code. However, it fails to nullify or update the pointer afterwards. This leads to a dangerous use‐after‐free vulnerability when the code later dereferences the now-dangling pointer via a trait method call.

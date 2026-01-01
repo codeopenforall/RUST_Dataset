@@ -1,0 +1,1 @@
+This revision fixes the information exposure vulnerability by returning a single, generic error message ("Invalid credentials") for all authentication failures. Regardless of whether the username exists or the password is incorrect, the response remains the same and does not leak any sensitive state.

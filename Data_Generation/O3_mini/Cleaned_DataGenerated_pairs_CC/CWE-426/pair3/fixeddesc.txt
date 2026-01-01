@@ -1,0 +1,5 @@
+In this corrected version the vulnerability is mitigated by requiring that the external 
+command be specified with an absolute path. The code checks whether the provided path is 
+absolute (using std::path::Path) and refuses to run if it is not, returning an error. This 
+ensures that the executable being called is the expected binary, rather than one that might 
+be substituted by an attacker through manipulation of the system search path.

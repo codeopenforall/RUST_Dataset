@@ -1,0 +1,5 @@
+This code simulates an arithmetic vulnerability where the intended percentage gain,
+computed by ((input - factor) * 100) / input, is mistakenly implemented as (input - factor) / input * 100.
+Due to integer division in Rust, the intermediate division truncates the value before multiplication,
+resulting in an incorrect (often zero) result. Additionally, the code uses unsafe pointer dereferencing and concurrency 
+to mimic real-world patterns observed in RustSec reports involving unsafe code misuse.

@@ -1,0 +1,1 @@
+The above code contains a vulnerability (CWE-311) where a sensitive secret is stored on disk in cleartext. An unsafe method “expose” is used to extract a raw byte slice of the secret, and the data is then written unprotected to a file named "config.txt". This lack of encryption exposes sensitive data to potential unauthorized access.

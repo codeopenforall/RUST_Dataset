@@ -1,0 +1,4 @@
+The corrected implementation removes the second, erroneous conversion of the raw pointer back to a Box.
+Only one Box instance is created, ensuring that the resource is deallocated only once. This change prevents
+the double free vulnerability while preserving the intended functionality. The use of a static AtomicBool in the
+Drop implementation remains as an additional safeguard.

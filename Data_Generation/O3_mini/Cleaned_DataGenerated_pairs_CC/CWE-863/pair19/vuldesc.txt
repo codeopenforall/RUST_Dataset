@@ -1,0 +1,4 @@
+This vulnerable code accepts an arbitrary count from user input and uses it to drive a loop within an unsafe block.
+The code allocates a fixed-size buffer of 50 elements but does not verify that the supplied count does not exceed this limit.
+This absence of bounds checking leads to potential out‐of‐bounds memory writes (a form of resource exhaustion and memory corruption),
+which may allow an attacker to compromise program integrity.

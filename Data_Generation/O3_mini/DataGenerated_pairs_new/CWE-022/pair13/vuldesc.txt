@@ -1,0 +1,4 @@
+The vulnerability arises from the insecure way the file path is constructed using a naive join operation.
+User-supplied input (e.g., "../secret.txt") is directly appended to the base directory without canonicalization or proper checks,
+allowing an attacker to traverse directories and access files outside the intended "safe_dir".
+Additionally, an unsafe block is used to demonstrate low-level pointer manipulation, mimicking real-world unsound usage.

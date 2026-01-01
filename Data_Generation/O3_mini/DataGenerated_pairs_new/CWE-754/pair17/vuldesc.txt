@@ -1,0 +1,1 @@
+In this version the code improperly checks for exceptional conditions. When a thread panics (simulating a timeout), the error is misinterpreted. Instead of propagating the error properly, it allocates a default integer (100) and returns its value. This masks the exceptional condition and can lead to unexpected program logic.

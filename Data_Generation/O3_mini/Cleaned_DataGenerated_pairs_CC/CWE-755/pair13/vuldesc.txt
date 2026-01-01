@@ -1,0 +1,4 @@
+This code suffers from CWE-755 due to improper handling of exceptional conditions: when parsing the input string into a number,
+it uses unwrap_or_default(), which silently converts any parsing error into a default value of 0. As a result, invalid inputs
+(e.g. "invalid") do not produce an error and are instead processed as 0, leading to unintended behavior in subsequent logic.
+Additionally, the code uses unsafe blocks and concurrent threads to mimic real-world patterns, exacerbating potential risks.

@@ -1,0 +1,1 @@
+The vulnerable code allocates a memory buffer based directly on user-provided input without imposing any upper bounds. This lack of limits may allow an attacker to trigger a resource exhaustion attack (CWE-770) by specifying a very large allocation. Unsafe blocks are used to directly manage the raw memory, and no throttling or input validation is enforced.

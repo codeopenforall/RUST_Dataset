@@ -1,0 +1,4 @@
+This code demonstrates a double free vulnerability (CWE-415). The Container struct allocates memory for an integer
+using Box::new and later converts it into a raw pointer. The unsafe free_resource method drops the Box without
+nullifying the pointer. Consequently, when free_resource is called a second time, it attempts to deallocate memory
+that has already been freed, leading to undefined behavior.

@@ -1,0 +1,3 @@
+The fixed code addresses the math error by swapping the order of operations: it multiplies the revenue by the rate value
+before dividing by 100. This ensures that, for instance, a revenue of 200 with a 5% rate correctly yields 10.
+The unsafe block and concurrency primitives remain to mimic real-world usage patterns without affecting the calculation.

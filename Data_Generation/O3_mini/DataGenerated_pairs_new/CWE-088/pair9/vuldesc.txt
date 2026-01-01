@@ -1,0 +1,1 @@
+This version constructs a command string by concatenating untrusted input into a shell command ("echo {}") and then passes it to "sh -c". The use of an unsafe block with String::from_raw_parts further complicates memory safety and can lead to undefined behavior. The injected content is interpreted by the shell, enabling CWE-088 (OS Command Injection) vulnerability.

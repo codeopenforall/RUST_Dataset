@@ -1,0 +1,5 @@
+This implementation contains a vulnerability related to CWE-248. The unsafe operation
+performs raw pointer usage without proper lifecycle management and does not catch panics
+from its inner thread. In particular, when the input is zero (a boundary error condition),
+the unsafe block triggers a panic that is not handled, causing an abnormal termination.
+Additionally, the allocated memory is leaked because the raw pointer is never freed.

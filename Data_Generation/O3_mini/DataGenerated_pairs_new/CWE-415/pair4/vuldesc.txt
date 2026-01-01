@@ -1,0 +1,5 @@
+This code demonstrates a double free vulnerability (CWE-415) by manually managing memory using unsafe blocks.
+A heap-allocated Resource is created and its raw pointer extracted. The pointer is then converted back into a Box
+twice via unsafe code. This results in two separate Box instances owning the same memory, so that when both are dropped,
+the memory is freed twice. The Drop implementation uses a static AtomicBool to detect and panic upon a double free.
+In real-world scenarios, such unsafe patterns have led to serious security issues.

@@ -1,0 +1,4 @@
+In this corrected version, the file path is canonicalized using fs::canonicalize both for the base directory and the candidate file path.
+A strict check is performed with starts_with to ensure the candidate fully resides within the permitted base directory.
+This prevents path traversal attacks by rejecting any input that attempts to escape the designated directory.
+The unsafe block is removed to avoid misleading practices, using safe Rust operations for path manipulation.

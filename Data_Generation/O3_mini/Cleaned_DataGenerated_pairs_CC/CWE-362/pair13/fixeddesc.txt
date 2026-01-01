@@ -1,0 +1,1 @@
+In this corrected version the vulnerability is eliminated by replacing the unsynchronized update of a global counter with an AtomicU32. The 'fetch_add' operation provides atomicity, ensuring that every increment is safely applied across all threads without interference, ultimately resulting in the expected final count of 10,000.

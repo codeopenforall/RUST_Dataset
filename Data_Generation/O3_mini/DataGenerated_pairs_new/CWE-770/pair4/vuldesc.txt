@@ -1,0 +1,5 @@
+This version suffers from CWE-770: Allocation of Resources Without Limits.
+It accepts an arbitrary number “n” and uses unsafe pointer arithmetic to write to a vector 
+that was not pre-allocated. Writing beyond the allocated memory causes undefined behavior 
+or memory corruption, particularly when “n” is large, leading to potential denial-of-service 
+or compromise of program integrity.

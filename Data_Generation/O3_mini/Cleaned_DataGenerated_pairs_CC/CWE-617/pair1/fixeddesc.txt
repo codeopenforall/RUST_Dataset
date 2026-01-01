@@ -1,0 +1,4 @@
+The fixed version mitigates the reachable assertion vulnerability by replacing the direct assertion
+with explicit precondition checks. It computes the new counter value and, if that value would exceed
+the safe threshold, returns an error instead of panicking. This change preserves program integrity
+by preventing the DoS condition while still logging or handling unexpected input safely.

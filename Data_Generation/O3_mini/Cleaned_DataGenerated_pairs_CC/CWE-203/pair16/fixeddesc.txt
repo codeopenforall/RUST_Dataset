@@ -1,0 +1,4 @@
+The revised code consolidates all authentication failures into a single error type (Failure),
+thereby preventing attackers from deducing whether a username exists based on differing error messages.
+It also replaces the unsafe and non-constant-time password check with a constant-time comparison function.
+Dummy comparisons ensure uniform execution paths for both valid and invalid cases.

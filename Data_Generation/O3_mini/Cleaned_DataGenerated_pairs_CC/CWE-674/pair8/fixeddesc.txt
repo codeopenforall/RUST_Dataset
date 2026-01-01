@@ -1,0 +1,5 @@
+In this corrected version, a maximum recursion depth (MAX_DEPTH) is introduced into the recursive descent
+parsing. Each recursive invocation of parse_expr() carries an additional depth counter. If the depth 
+exceeds MAX_DEPTH, the function returns an error rather than continuing the recursion. This effectively 
+prevents an attacker from triggering a stack overflow by providing deeply nested input. All original unsafe 
+operations and parsing logic are preserved to maintain realistic system behavior.

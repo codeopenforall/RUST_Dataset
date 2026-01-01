@@ -1,0 +1,3 @@
+This code contains an authentication bypass flaw. Within an unsafe block, if the environment variable 
+"DEBUG_MODE" is set to "1", the code unsafely writes to the bypass flag using a raw pointer, allowing 
+authentication to be erroneously granted regardless of provided credentials.

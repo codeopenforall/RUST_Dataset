@@ -1,0 +1,1 @@
+In the corrected version the authorization check is properly enforced. The retrieve method now returns a Result and verifies that the caller’s role is "admin" and that the service is in an admin-enabled state. The unsafe block has been removed in favor of safe, mutex-protected access, ensuring that sensitive data is only available to authorized users.

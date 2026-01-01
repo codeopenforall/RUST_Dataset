@@ -1,0 +1,1 @@
+The corrected code fixes the off-by-one error by modifying the loop to iterate over the proper range (0..len), ensuring that only allocated memory is written to. This eliminates the dangerous out‐of‐bounds write. The rest of the code— including the use of unsafe, Arc, and Mutex—remains to simulate real-world coding idioms while ensuring memory safety.

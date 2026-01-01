@@ -1,0 +1,4 @@
+The corrected code refactors the process method to return a Result type rather than an i32.
+This change allows the function to propagate errors instead of silently converting them into a default value.
+Negative inputs now result in an Err variant, which can be handled explicitly by the caller.
+The unsafe block and concurrent design remain to mimic realistic system-level operations while resolving the CWE-755 vulnerability.

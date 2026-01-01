@@ -1,0 +1,1 @@
+The updated code creates the same file ("data.txt") but now uses secure file permissions (0o600) so that only the owner can read and write to it. This change, along with maintaining the original design pattern (including unsafe blocks and multithreading), ensures that the default permissions are not overly permissive, thereby mitigating the CWE-276 vulnerability.

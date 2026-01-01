@@ -1,0 +1,1 @@
+This code demonstrates a critical issue: it uses an unsafe block to perform unchecked pointer arithmetic when appending values to a vector. In a concurrent setting, the unbounded insertion loop continuously grows the vector, leading to uncontrolled resource consumption (DoS). The absence of capacity checks or backpressure makes this vulnerable to system exhaustion.

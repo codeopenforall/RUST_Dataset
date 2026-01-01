@@ -1,0 +1,1 @@
+This implementation leaks sensitive information by returning distinct error messages for failed authentication attempts. Specifically, it returns "Username does not exist" if the account is missing and "Password does not match" if the password is incorrect, thereby allowing an attacker to infer valid account identifiers.

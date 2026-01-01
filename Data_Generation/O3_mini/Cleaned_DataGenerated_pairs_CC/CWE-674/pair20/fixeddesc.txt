@@ -1,0 +1,4 @@
+The corrected version mitigates the uncontrolled recursion vulnerability by introducing a maximum recursion depth.
+A depth parameter is passed on each recursive call and compared against a constant limit (MAX_DEPTH).
+If the recursion exceeds this limit, an error ("Recursion too deep") is returned, thereby avoiding a potential stack overflow.
+This solution preserves the overall logic while using safe boundary checks in the recursive parser.

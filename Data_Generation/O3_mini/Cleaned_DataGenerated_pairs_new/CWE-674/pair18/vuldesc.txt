@@ -1,0 +1,4 @@
+The vulnerability in this code is uncontrolled recursion (CWE-674). The parse_helper function recursively processes 
+nested input without imposing a maximum recursion depth. Additionally, the use of unsafe pointer dereferencing with 
+get_unchecked compounds the risk. Attackers may supply deeply nested input (e.g., tens of thousands of nested parentheses) 
+to trigger a stack overflow, leading to a denial of service.

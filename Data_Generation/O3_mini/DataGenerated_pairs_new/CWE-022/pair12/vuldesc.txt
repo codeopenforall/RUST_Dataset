@@ -1,0 +1,4 @@
+This version contains a path traversal vulnerability stemming from the naive use of PathBuf::join with user-supplied input.
+No canonicalization or prefix validation is performed, allowing an attacker to use "../" sequences (or absolute paths)
+to escape the intended directory. An unsafe block is used to convert the file path to a CString and then to a raw pointer,
+simulating real-world unsafe usage patterns.

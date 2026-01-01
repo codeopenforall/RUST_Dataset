@@ -1,0 +1,3 @@
+In the corrected code, the unsafe block is removed and a bounds check is implemented.
+Before performing any operations, it determines the minimum of the user-supplied length and the actual vector length.
+This guarantees that the slice operation accesses only valid memory locations, thereby preventing undefined behavior.

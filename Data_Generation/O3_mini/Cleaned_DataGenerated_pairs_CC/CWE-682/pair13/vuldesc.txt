@@ -1,0 +1,4 @@
+The vulnerable code instantiates a calculation object that holds a percentage value. Its compute method,
+// which is executed within an unsafe block for demonstration purposes, erroneously calculates the
+// deduction by performing integer division (r/100) before multiplication with the revenue. For a rate
+// less than 100, this yields 0 instead of the expected scaled value, leading to an incorrect result.

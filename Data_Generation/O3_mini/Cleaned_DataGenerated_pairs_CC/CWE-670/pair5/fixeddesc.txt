@@ -1,0 +1,4 @@
+The corrected version retains the same concurrency pattern, unsafe arithmetic, and data structures.
+The critical fix lies in the control flow of the update method.
+Rather than inverting the condition, it now returns Ok(current) when the counter is non-negative, and only signals an error if the counter becomes negative.
+This fix ensures that valid states are accepted and only truly erroneous states are rejected.

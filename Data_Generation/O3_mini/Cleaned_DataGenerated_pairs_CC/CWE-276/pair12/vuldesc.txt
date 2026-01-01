@@ -1,0 +1,4 @@
+The vulnerable code creates and writes to a file using unsafe operations and concurrency.
+It opens the file with overly permissive mode 0o777 in both the file creation and appending operations.
+This exposes the file to unwanted modifications by any user, reflecting CWE-276 (Incorrect Default Permissions).
+Additionally, an unsafe block is used for pointer dereferencing to simulate low-level operations.

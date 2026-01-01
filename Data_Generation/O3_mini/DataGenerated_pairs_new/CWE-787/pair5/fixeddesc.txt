@@ -1,0 +1,6 @@
+In the fixed implementation the process method now first checks that the provided index is within
+the current bounds of the vector. If the index is invalid (i.e. out-of-bound), the update is skipped.
+No unsafe block is used, and the vector’s length remains controlled by Rust’s safe abstractions.
+This prevents any possibility of an out-of-bound memory write or improper vector length manipulation.
+Both the multithreading constructs and the API usage reflect real-world coding practices adopted
+by the community to enforce memory safety.

@@ -1,0 +1,5 @@
+The vulnerability arises from an uncontrolled recursion scenario in the parser. The recursive function 
+parse_expr() does not enforce a limit on the depth of nested expressions. An attacker controlling 
+the input can supply deeply nested parentheses, triggering an excessive number of recursive calls 
+and eventually causing a stack overflow (CWE-674). Additionally, the use of unsafe blocks to directly 
+read from raw pointers contributes to the realistic complexity of the code.

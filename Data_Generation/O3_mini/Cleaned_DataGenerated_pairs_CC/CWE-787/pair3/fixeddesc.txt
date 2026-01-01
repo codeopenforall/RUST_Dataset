@@ -1,0 +1,1 @@
+The corrected code fixes the vulnerability by adjusting the pointer arithmetic: it writes directly to ptr.add(i) instead of ptr.add(i + 1), ensuring that each element is accessed within the bounds of the allocated vector. This prevents the out-of-bound write and eliminates the undefined behavior.

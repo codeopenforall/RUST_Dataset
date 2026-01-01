@@ -1,0 +1,4 @@
+This code accepts user-controlled data as input to specify an index into a fixed-sized vector.
+It then employs an unsafe block with pointer arithmetic to write to that index without verifying that the index is within the bounds of the allocated buffer.
+If an out-of-bound index (for example, "15") is provided, this can lead to undefined behavior manifested as memory corruption or a segmentation fault.
+Concurrency is involved via a spawned thread that also modifies the buffer, adding further complexity typical of real-world unsafe code scenarios.

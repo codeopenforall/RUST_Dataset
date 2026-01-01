@@ -1,0 +1,1 @@
+The vulnerable code manually deallocates a heap-allocated object twice by converting a Box into a raw pointer and recreating two Boxes from it. This results in a double free (CWE-415), which can cause undefined behavior, memory corruption, or security issues in real-world applications.

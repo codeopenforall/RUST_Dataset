@@ -1,0 +1,1 @@
+The fixed version eliminates the vulnerability by using a safe constructor that fully initializes all fields of the configuration structure. Both the 'timeout' and 'label' fields are explicitly set, ensuring that no uninitialized memory is read when the configuration is later accessed concurrently by multiple threads.

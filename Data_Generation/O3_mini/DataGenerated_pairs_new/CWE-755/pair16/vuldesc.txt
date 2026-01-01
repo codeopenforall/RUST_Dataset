@@ -1,0 +1,4 @@
+This version mishandles exceptional conditions by swallowing errors during both file read and parsing operations.
+Specifically, it uses unwrap_or_default() when reading the configuration file and converting its contents to a number.
+When a malformed or non-existent configuration file is encountered, the program silently falls back to a default value,
+which can lead to insecure or unintended behavior.

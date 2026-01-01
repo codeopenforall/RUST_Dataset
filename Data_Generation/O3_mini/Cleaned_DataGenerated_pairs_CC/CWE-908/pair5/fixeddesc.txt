@@ -1,0 +1,1 @@
+In the corrected code, all fields of the Resources structure are properly initialized. The new constructor "new_complete()" sets both "title" and "amount" (with a safe default of 0) ensuring that no uninitialized memory is used. This change eliminates the undefined behavior observed in the previous version and guarantees predictable program operation even under concurrent usage.

@@ -1,0 +1,1 @@
+This version is vulnerable because it writes a sensitive secret in clear text to disk without any encryption. Additionally, it uses unsafe blocks to obtain a raw pointer to the secret, which in a real-world scenario could be exploited if combined with other memory corruption issues. The lack of encryption violates best practices as per CWE-311.

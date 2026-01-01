@@ -1,0 +1,3 @@
+This vulnerable code processes input data by unsafely copying it into a buffer and then concurrently updates a log file across threads.
+An unsafe function writes the log message to disk and may return an error (for instance, if the message contains "fail"). However, the error result is immediately discarded (using let _ = ...), resulting in an unchecked return value (CWE-252).
+This practice can allow silent failure of critical operations, leading to inconsistent state or loss of important data.

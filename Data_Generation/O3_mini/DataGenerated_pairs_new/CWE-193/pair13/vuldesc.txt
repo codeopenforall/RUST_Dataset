@@ -1,0 +1,1 @@
+This code suffers from an off-by-one error in the populate method. The for-loop incorrectly iterates over 0..=n instead of 0..n, causing it to write one element past the allocated memory. This unsafe behavior can lead to memory corruption and undefined behavior, especially when using unsafe blocks combined with vector set_len.

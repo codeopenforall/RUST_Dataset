@@ -1,0 +1,4 @@
+This code demonstrates a vulnerability corresponding to CWE-426 by invoking an external executable using a relative path.
+An unsafe function converts a CString into a raw pointer and then “executes” it without validating that the command's path is absolute.
+Concurrent threads call the loader concurrently, further compounding the unsafe behavior.
+If an attacker places a malicious executable named "insecure_app" in an untrusted location, it may be executed.

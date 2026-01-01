@@ -1,0 +1,1 @@
+In the corrected version, the prepare() method checks if the provided command is an absolute path. If not, it prepends a trusted directory (here "/usr/bin/") to the command. This forces the use of an absolute path when launching external commands and thus prevents an attacker from influencing the search path to load a malicious executable.

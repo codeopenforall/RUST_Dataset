@@ -1,0 +1,6 @@
+This vulnerable code suffers from an always-incorrect control flow implementation. 
+Intended logic was to check a boolean flag to decide between safe and unsafe processing of input. 
+However, due to an inversion error, when the flag indicates that safe behavior should be used, 
+the code erroneously uses an unsafe block with an incorrect index offset (adding 1 to the intended index). 
+This leads to returning the wrong value (for example, an input of 0 returns the value at index 1 instead of index 0), 
+which can lead to further problems when the incorrect value is used in a security-sensitive context.

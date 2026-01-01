@@ -1,0 +1,1 @@
+In the corrected code the configuration object is fully initialized by specifying all struct fields explicitly. The load_config function now constructs the Config using its constructor syntax so that both the "value" and "valid" fields are valid. This removal of the unsafe uninitialized memory access eliminates the undefined behavior and fixes the CWE-908 vulnerability.

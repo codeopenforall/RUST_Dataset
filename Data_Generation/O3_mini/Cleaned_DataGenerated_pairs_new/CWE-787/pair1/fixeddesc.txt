@@ -1,0 +1,1 @@
+In the corrected version the unsafe routine is safeguarded by explicitly checking whether the input length exceeds the valid capacity before performing any write. This prevents any out-of-bounds memory writes and preserves the guard value. The error is returned when the input is too large, so the unsafe operation never proceeds.

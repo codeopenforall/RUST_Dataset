@@ -1,0 +1,4 @@
+The corrected version uniformly returns the error "Invalid credentials" for every authentication failure.
+Rather than revealing through distinct error messages whether a username exists or not,
+this design prevents the leakage of sensitive state helpful to attackers (CWE-203).
+The unsafe block remains to mimic realistic usage patterns, but it no longer leads to observable discrepancies.

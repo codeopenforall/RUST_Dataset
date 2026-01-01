@@ -1,0 +1,3 @@
+The vulnerable code misinterprets the return value in its update operation: when provided a negative value (which should be invalid), it incorrectly returns Ok and proceeds to update shared state. 
+This inversion is demonstrated by the perform_update method that returns Ok when value < 0, allowing threads to update the shared vector with an invalid input. 
+Additionally, the code uses an unsafe block with pointer operations and spawns concurrent threads to emulate a realistic system-level vulnerability.

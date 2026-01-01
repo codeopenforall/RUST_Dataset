@@ -1,0 +1,3 @@
+The fixed code encrypts the sensitive secret using a basic XOR cipher before transmitting it.
+It completely removes unsafe memory access and pointer manipulation, ensuring that the secret is not exposed in cleartext.
+This approach mitigates CWE-311 by preventing the leakage of sensitive data.

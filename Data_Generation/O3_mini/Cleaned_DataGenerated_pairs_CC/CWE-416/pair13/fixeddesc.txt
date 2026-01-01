@@ -1,0 +1,1 @@
+The corrected implementation completely removes the unsafe manipulation of raw pointers. Instead, it employs the Arc smart pointer to automatically manage memory and allow safe shared access. This approach ensures that the allocated Data remains valid for every owner until all references are dropped, thereby eliminating the use-after-free risk.

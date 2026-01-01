@@ -1,0 +1,5 @@
+The above code performs an arithmetic division using an unsafe block that reads
+the divisor via a raw pointer. It does not check whether the divisor is zero,
+resulting in a divide-by-zero operation that leads to a panic at runtime.
+This pattern mimics real-world unsafe numeric code where unchecked arithmetic
+operations can lead to security and stability issues (CWE-369).

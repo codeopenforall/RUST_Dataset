@@ -1,0 +1,1 @@
+This improved version adds a depth counter to the parser and enforces a maximum recursion depth (MAX_DEPTH). If the depth exceeds this limit, the parser returns false rather than recursing further, preventing stack overflow. The unsafe block remains for pointer arithmetic to simulate a real-world scenario where low-level operations coexist with safe logic.

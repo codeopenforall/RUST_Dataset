@@ -1,0 +1,1 @@
+The code above suffers from an integer wrap-around vulnerability. In the unsafe compute method, the multiplication of the input and multiplier is performed using 32‐bit arithmetic. For the test input, the true mathematical product (5,000,000,000) exceeds u32::MAX and wraps around before being cast to u64. This results in an incorrect value being returned, representing CWE-190.

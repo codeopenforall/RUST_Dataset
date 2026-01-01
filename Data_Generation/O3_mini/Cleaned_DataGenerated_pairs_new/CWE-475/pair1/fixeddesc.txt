@@ -1,0 +1,4 @@
+In the corrected version, the compute_sum function has been modified to include an explicit check
+that validates if the input count does not exceed the length of the vector. If the count is too high,
+the function panics instead of proceeding to perform unsafe memory dereferencing. This prevents
+undefined behavior by ensuring that the API's preconditions are respected.

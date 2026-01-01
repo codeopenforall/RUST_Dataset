@@ -1,0 +1,1 @@
+In the corrected version, the unsafe block has been removed and the origin header is securely verified using a safe, explicit string comparison. This ensures that only requests from the trusted origin ("https://trusted.com") are approved, effectively mitigating the risk of header forgery or cross-site request forgery.

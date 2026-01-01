@@ -1,0 +1,5 @@
+The corrected version addresses the exposure vulnerability by removing the unsafe memory read and
+implementing a custom Debug trait for the credentials structure. In the custom implementation,
+the secret is replaced with a masked value ("******") so that any logging or formatting of the structure
+does not inadvertently reveal sensitive information. The concurrency pattern remains, but the sensitive
+data is now safely handled.

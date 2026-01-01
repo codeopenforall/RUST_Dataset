@@ -1,0 +1,4 @@
+This version suffers from CWE-770: Allocation of Resources Without Limits.
+It blindly spawns a thread for every unit in the input count without checking whether the request
+exceeds a safe threshold. In high-load situations (e.g. input of 250 or more), this can overwhelm
+the system. Moreover, the unsafe pointer read simulates an unsafe practice that might hide additional risks.

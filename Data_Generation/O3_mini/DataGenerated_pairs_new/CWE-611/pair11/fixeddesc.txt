@@ -1,0 +1,5 @@
+The secure version disables the dangerous behavior by checking for any external entity declarations
+in the XML input. When such a declaration is detected, processing is aborted and a clear error is returned.
+This prevents the unsafe resolution of external resources and mitigates the risk of XXE attacks (CWE-611).
+Additionally, unsafe blocks and unnecessary concurrency operations have been removed from the external
+entity resolution path.

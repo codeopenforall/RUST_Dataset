@@ -1,0 +1,1 @@
+/home/ikqnm/PycharmProjects/PythonProject/O3_mini/testdata/safe.txt

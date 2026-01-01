@@ -1,0 +1,1 @@
+This code demonstrates an unchecked return value flaw where the error returned by an unsafe memory copy operation (performed inside a spawned thread) is silently ignored. When oversized data is provided, the unsafe function returns an error, but the caller discards it, potentially masking critical failures in a concurrent setting.

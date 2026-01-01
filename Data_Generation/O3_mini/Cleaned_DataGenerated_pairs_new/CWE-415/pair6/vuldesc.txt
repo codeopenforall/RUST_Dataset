@@ -1,0 +1,5 @@
+The above code demonstrates a double free vulnerability (CWE-415). It allocates memory via Box,
+converts it into a raw pointer, and then frees it manually (in manual_drop) without nullifying
+the pointer. When the Resource is dropped, its Drop implementation frees the memory again.
+A global atomic counter (FREE_COUNT) is used to simulate detection (by panicking on the second free).
+This design mimics real-world unsafe manual deallocation errors seen in RustSec reports.

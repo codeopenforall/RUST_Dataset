@@ -1,0 +1,4 @@
+In this corrected version, the update method performs an explicit bounds check before writing to the buffer.
+If the index is not within the valid range, it returns an error instead of attempting an unsafe write.
+By avoiding unsafe pointer arithmetic and the misuse of set_len, the code eliminates the possibility
+of out-of-bounds memory corruption.

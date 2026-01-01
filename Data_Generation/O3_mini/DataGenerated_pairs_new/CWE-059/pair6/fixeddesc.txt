@@ -1,0 +1,5 @@
+The corrected version mitigates the vulnerability by canonicalizing the user input and verifying that
+the resolved absolute path starts with the permitted directory. If the resolved path lies outside the allowed
+directory (as may be the case when a symlink points elsewhere), the write operation is aborted with a 
+PermissionDenied error. This approach prevents attackers from exploiting symbolic links to bypass intended
+access controls.

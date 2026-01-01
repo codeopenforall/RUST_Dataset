@@ -1,0 +1,5 @@
+The vulnerability arises from an unsafe pointer-based comparison used to check if the caller is "admin." 
+By relying on std::ptr::eq, the code only recognizes the literal "admin" from the same memory location and 
+fails to properly restrict allocation sizes for non-privileged users. This incorrect authorization logic allows 
+unauthorized users (e.g., "guest") to allocate excessive memory without enforcement of limits, leading to potential 
+denial-of-service through resource exhaustion. The use of concurrency further amplifies the potential impact.

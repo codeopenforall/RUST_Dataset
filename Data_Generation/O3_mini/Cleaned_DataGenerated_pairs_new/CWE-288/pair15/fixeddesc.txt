@@ -1,0 +1,1 @@
+In the corrected implementation the unsafe global flag and associated bypass logic have been removed entirely. All incoming requests, including those targeting the "/debug" endpoint, must now pass through the standard authentication routine. This unified validation approach eliminates the alternate insecure code path and fixes the CWE-288 vulnerability.

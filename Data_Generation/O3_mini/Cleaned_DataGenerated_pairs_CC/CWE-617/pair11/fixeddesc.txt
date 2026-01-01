@@ -1,0 +1,4 @@
+In the corrected version, the update function now pre-validates the increment using checked arithmetic.
+Before updating the counter, it checks whether adding the input value would equal or exceed the threshold.
+If so, it rejects the update gracefully rather than relying on a reachable assertion (or unsafe block) that may
+be triggered by malicious input. This prevents the attacker from forcing a panic (DoS) by sending extreme values.

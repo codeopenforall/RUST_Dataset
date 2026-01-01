@@ -1,0 +1,5 @@
+In this corrected version, a maximum allowable count constant (MAX_COUNT defined as 50) is introduced.
+Before any memory operations occur, the code checks whether the supplied count exceeds this threshold.
+If it does, an error is returned, preventing execution of the unsafe loop.
+Additionally, safe access (i.e. direct indexing) is used in place of manual pointer arithmetic,
+eliminating the misuse of unsafe blocks and ensuring that memory writes remain within the bounds of the allocated buffer.

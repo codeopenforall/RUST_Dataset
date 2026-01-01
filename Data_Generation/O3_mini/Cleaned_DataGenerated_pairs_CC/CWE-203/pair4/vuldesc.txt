@@ -1,0 +1,3 @@
+This vulnerable implementation of the authentication service uses an unsafe block to simulate low-level memory access and concurrent operations using threads and Arc<Mutex<>>.
+It exhibits CWE-203 by returning distinct error messages ("User not found" when the user does not exist, and "Invalid password" when the user exists but the password is incorrect). 
+These observable discrepancies may allow an attacker to determine valid usernames on the system.

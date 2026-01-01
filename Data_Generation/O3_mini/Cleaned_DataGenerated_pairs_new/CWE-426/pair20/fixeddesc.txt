@@ -1,0 +1,4 @@
+The corrected code mitigates CWE-426 by using an absolute path for the external executable (e.g.,
+"/usr/bin/dummy_executable" on Unix-like systems or "C:\Trusted\dummy_executable" on Windows). By doing so,
+the code avoids inadvertent loading of a malicious executable that might reside in an untrusted search path.
+All other logic remains similar, preserving the structure while ensuring the executable is loaded from a trusted location.

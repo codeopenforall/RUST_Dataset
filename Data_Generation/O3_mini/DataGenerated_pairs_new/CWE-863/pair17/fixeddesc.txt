@@ -1,0 +1,3 @@
+The corrected implementation adds a simple check that rejects input values exceeding MAX_ALLOWED (set to 1000). This prevents
+excessive resource use by limiting the number of threads that can be spawned concurrently. The unsafe block is removed where unnecessary,
+and the code now adheres to safe resource usage practices.

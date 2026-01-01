@@ -1,0 +1,5 @@
+This Rust program illustrates a use-after-free vulnerability (CWE-416). The structure “Processor” allocates
+memory for a u32 value using Box and stores its raw pointer. In the execute() function, a local instance of Processor
+is created and its internal pointer captured, but once the instance goes out of scope, its Drop implementation frees
+the allocated memory. Later, the program unsafely dereferences the stale pointer (in an unsafe block) resulting in
+undefined behavior. The pattern mimics real-world unsafe code issues found in RustSec reports.

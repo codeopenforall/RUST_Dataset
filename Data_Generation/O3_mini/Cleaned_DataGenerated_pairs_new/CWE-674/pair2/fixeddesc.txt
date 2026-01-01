@@ -1,0 +1,4 @@
+The corrected code adds a recursion depth counter to the parser function.
+Before recursing, it checks whether the current depth has exceeded a preset MAX_DEPTH.
+If the depth is too high, it returns an error rather than continuing to recurse.
+This change prevents stack overflow by enforcing a maximum recursion limit. A dummy unsafe block remains to mirror the original style.

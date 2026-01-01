@@ -1,0 +1,5 @@
+In this implementation, an authentication manager holds an expected token and processes incoming tokens concurrently.
+Within the validate function an unsafe block is used to compare memory byte‐by‐byte.
+However, the comparison is only done for the minimum length of the expected token and the user-supplied token.
+This omission allows an adversary to supply a token like "SuperSecretExtra" (which has the correct prefix "SuperSecret")
+and bypass authentication. This flaw directly corresponds to CWE-287 (Improper Authentication).

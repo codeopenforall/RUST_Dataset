@@ -1,0 +1,1 @@
+This vulnerable implementation fails to validate the resolved file path, allowing an attacker to supply a path with directory traversal elements (e.g., "../") and potentially access sensitive files. The flaw is compounded by the use of an unsafe block that does not perform rigorous checks on the underlying C string conversion. As a result, unauthorized file access may occur.

@@ -1,0 +1,4 @@
+This version creates a MemoryBlock structure that internally holds a fixed buffer.
+The function dangerous_sum() unsafely creates a slice from a raw pointer using an offset and count without validating that offset+count is within the actual length of the buffer.
+The safe_entry() method wraps this dangerous_sum() in a panic catch, but it does not validate the preconditions, hence providing undefined behavior if an invalid offset or count is passed.
+This violates CWE-475 by not ensuring that the API’s preconditions (valid pointer and size) are met before using the unsafe API.

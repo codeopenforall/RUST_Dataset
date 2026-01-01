@@ -1,0 +1,1 @@
+This corrected code adds a role-based authorization check in the “retrieve_info” function. Now only accounts with the Admin role can access the sensitive data through the unsafe block; Regular users receive an "Access denied" error. This prevents the unauthorized disclosure of sensitive data, addressing the flaw in the original implementation.

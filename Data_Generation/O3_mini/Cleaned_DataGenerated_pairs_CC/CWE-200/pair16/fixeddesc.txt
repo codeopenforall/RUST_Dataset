@@ -1,0 +1,1 @@
+In the corrected version, the error message no longer includes the sensitive API key. The unsafe block remains, but its output is not used for logging or error reporting. Instead, a sanitized, generic error message is returned. This prevents accidental exposure of sensitive details in logs or panics, addressing the CWE-200 vulnerability of exposing sensitive information.

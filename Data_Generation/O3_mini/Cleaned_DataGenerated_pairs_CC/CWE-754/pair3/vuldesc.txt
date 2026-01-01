@@ -1,0 +1,4 @@
+The vulnerability in this code lies in the improper check for exceptional conditions (CWE-754). Specifically,
+when the unsafe external_call returns an error (e.g. ErrorKind::TimedOut), the code incorrectly compares the error kind
+against ErrorKind::WouldBlock. This results in the error branch erroneously turning an error condition into a successful outcome,
+leading to incorrect state modifications in a concurrent setting.

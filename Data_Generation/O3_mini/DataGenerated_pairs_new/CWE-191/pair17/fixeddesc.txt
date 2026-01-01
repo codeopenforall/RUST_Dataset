@@ -1,0 +1,1 @@
+In the corrected implementation, the subtraction method uses Rust's checked_sub to detect potential underflows. If the subtraction would drop below zero, the code returns an error ("Underflow detected") rather than performing unchecked arithmetic. This fix mitigates CWE-191 by ensuring that no invalid arithmetic operation is performed, thereby preventing wrap-around behavior.

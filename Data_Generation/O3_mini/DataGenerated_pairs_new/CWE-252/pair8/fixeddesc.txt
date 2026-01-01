@@ -1,0 +1,2 @@
+In the corrected version, the program properly handles and propagates any I/O errors from file updates. Instead of discarding the Result, each thread checks the return value of update_file, and errors are propagated back to the main thread.
+This modification ensures that if a critical failure (such as when the message contains "fail") occurs, the application will detect and report the failure, thereby preserving the integrity of the operation.

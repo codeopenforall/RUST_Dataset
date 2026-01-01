@@ -1,0 +1,1 @@
+In the corrected version, the program avoids the use‐after‐free by reading the required value from memory before releasing the resource. The unsafe memory access is confined to a safe retrieval step and is performed while the memory is still allocated, ensuring that the value (256) is preserved and that no invalid memory accesses occur.

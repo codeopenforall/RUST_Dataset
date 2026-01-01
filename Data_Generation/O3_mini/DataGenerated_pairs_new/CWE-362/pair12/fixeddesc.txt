@@ -1,0 +1,1 @@
+The fixed code replaces the unsynchronized global variable with an AtomicU32. By using the atomic fetch_add method with sequential consistency ordering, all increments are performed atomically. This eliminates the race condition, ensuring that the final counter value is deterministically equal to the expected total (10 threads × 1000 increments = 10,000).

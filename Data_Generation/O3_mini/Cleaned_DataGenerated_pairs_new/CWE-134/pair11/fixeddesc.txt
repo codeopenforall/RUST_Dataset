@@ -1,0 +1,4 @@
+This improved version fixes the vulnerability by eliminating the unsafe block and the use of externally-controlled 
+format strings. Instead of passing the user input directly as the format template, it wraps the input inside a constant 
+format string ("{}"), ensuring that any formatting directives in the user input are treated as literal text. This 
+remediation prevents the pitfalls of uncontrolled formatting while preserving the original program’s concurrency behavior.

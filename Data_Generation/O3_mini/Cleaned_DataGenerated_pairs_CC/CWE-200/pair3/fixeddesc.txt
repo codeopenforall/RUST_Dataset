@@ -1,0 +1,3 @@
+This corrected version removes the unsafe pointer dereference and implements a custom Debug trait
+for the credentials structure that redacts the sensitive password field. By only logging non-sensitive
+information (such as the username), it prevents accidental exposure of secrets.

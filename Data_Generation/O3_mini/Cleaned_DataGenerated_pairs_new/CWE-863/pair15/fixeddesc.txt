@@ -1,0 +1,5 @@
+The corrected code limits the amount of user-controlled resource allocation by
+enforcing a maximum allowed input (MAX_INPUT, set to 1000). It also uses checked
+multiplication to preempt any potential integer overflow issues. Thus, if a user supplies a
+value that may cause excessive thread spawning or memory allocation, the program will
+reject the input rather than proceeding with dangerous operations.

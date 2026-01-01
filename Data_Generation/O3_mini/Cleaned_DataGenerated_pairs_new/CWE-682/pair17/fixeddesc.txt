@@ -1,0 +1,4 @@
+In this corrected version, the computation in the compute function has been modified to multiply the difference by 100 
+before dividing by the input. This adjustment ensures that the intermediate rounding errors due to integer division are avoided,
+yielding the intended result. Note that the overall structure—including the use of unsafe, concurrency, and smart pointers—remains the same,
+so that the changes are isolated to the arithmetic logic.

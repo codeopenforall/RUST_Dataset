@@ -1,0 +1,3 @@
+The code allocates a heap object and extracts its raw pointer. It then explicitly frees the memory using an unsafe block (via Box::from_raw)
+and immediately allocates another object in hopes that the allocator reuses the memory slot. Finally, it dereferences the now-dangling pointer,
+thereby triggering a use-after-free vulnerability. This pattern mimics real-world unsafe code misuse in concurrent contexts.

@@ -1,0 +1,1 @@
+The corrected code fixes the vulnerability by ensuring the unsafe populate function copies exactly data.len() bytes, which matches the allocated buffer size. This change respects the API precondition required by std::ptr::copy_nonoverlapping, avoiding any out-of-bounds writes. The rest of the code, including concurrency primitives and memory allocation/release, remains unchanged.

@@ -1,0 +1,1 @@
+In this corrected implementation the unsafe helper’s return value is checked using the '?' operator. By propagating any error that occurs when the simulated write fails, the code enforces proper error handling. This adjustment prevents the masking of I/O failures during concurrent logging, ensuring that errors are reported rather than silently ignored.

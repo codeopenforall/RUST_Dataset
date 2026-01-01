@@ -1,0 +1,4 @@
+In the corrected version, the vulnerability is fixed by extracting the value from the 
+resource before it is freed. By not retaining or dereferencing a raw pointer after the Box 
+is dropped, the code avoids the use-after-free condition. The concurrent thread is preserved 
+to mimic real-world patterns without compromising memory safety.

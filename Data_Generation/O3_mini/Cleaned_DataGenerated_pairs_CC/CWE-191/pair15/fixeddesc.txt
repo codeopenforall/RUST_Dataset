@@ -1,0 +1,1 @@
+In the corrected version, a safeguard is added inside the adjustment function. Before subtracting, the method checks if the amount exceeds the current balance. If so, it returns an error instead of performing the subtraction, thereby preventing the integer underflow. The code now uses safe Rust arithmetic rather than unsafe pointer manipulation.

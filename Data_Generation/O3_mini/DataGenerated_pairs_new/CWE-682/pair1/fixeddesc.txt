@@ -1,0 +1,4 @@
+The fixed code resolves the vulnerability by explicitly grouping addition using parentheses.
+This ensures that the sum of 'value' and 'factor' is computed before the division, yielding the correct result.
+The concurrency and unsafe usage patterns remain unchanged to reflect realistic design choices, 
+but the arithmetic logic flaw is properly addressed.

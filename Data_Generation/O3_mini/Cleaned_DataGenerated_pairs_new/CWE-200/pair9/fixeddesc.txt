@@ -1,0 +1,4 @@
+In the corrected implementation, the error message has been sanitized so that it does not include any sensitive details.
+Even though the unsafe block is retained to mimic realistic low-level operations, the returned error string 
+provides a generic explanation ("incorrect key") without disclosing the actual secret. This prevents leakage 
+of confidential data through logs or crash reports while preserving the intended control flow and concurrency design.

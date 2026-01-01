@@ -1,0 +1,4 @@
+This corrected implementation fixes the CWE-611 vulnerability by disallowing any XML input that contains an external entity declaration.
+Rather than attempting to resolve external entities via unsafe operations and concurrent threads,
+it immediately rejects the input by returning a fixed error string. This approach prevents an attacker from coercing 
+the application into revealing sensitive data via external entity injection.

@@ -1,0 +1,1 @@
+This vulnerable code misinterprets the return value from an unsafe operation. The function "obtain" returns Some(value) when the pointer is valid, but both the single-threaded and multi-threaded operations erroneously treat a Some(_) value as a failure, returning an error instead of success.

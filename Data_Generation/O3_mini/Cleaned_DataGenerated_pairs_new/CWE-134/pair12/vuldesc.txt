@@ -1,0 +1,3 @@
+This code receives a format string from an external source (command-line argument) and passes it directly to the C library function printf via an unsafe block.
+By not controlling or sanitizing the format string, an attacker may supply format specifiers (e.g. "%s", "%x", or "%p") to manipulate the output and potentially read or write arbitrary memory.
+The usage of concurrency and unsafe FFI makes this a realistic example mimicking reported issues in real-world Rust applications.

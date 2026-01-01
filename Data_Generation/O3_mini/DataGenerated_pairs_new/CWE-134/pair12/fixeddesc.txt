@@ -1,0 +1,4 @@
+In the corrected version the dangerous use of the externally-controlled input as a format string is removed.
+Instead of passing the user input directly to the C printf, the code uses Rust’s safe println! macro with a fixed format string,
+thereby treating the external data solely as content. This eliminates any unintended interpretation of format specifiers,
+resolving the format string vulnerability while preserving the original behavior.

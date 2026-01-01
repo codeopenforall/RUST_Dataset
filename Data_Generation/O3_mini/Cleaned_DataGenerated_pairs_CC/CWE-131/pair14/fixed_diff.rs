@@ -1,0 +1,1 @@
+            let size = input.len();

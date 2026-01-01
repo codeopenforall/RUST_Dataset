@@ -1,0 +1,6 @@
+This version implements an authentication mechanism where the function
+"validate" checks a token string against a secret. However, it contains an alternate
+authentication path: if the token equals "debug" and a global debug flag remains enabled,
+the unsafe block bypasses proper authentication. This vulnerability might be exploited
+if debug endpoints or flows are inadvertently left enabled in production, allowing an attacker
+to supply the "debug" token and gain unauthorized access (CWE-288).

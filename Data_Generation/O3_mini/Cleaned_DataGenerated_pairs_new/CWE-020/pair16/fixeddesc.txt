@@ -1,0 +1,4 @@
+In this corrected version, the code first validates that the index parsed from user input is within the bounds of the fixed-length vector.
+Only after ensuring that the index is less than the length of the vector does it proceed to modify the buffer.
+Additionally, the conversion from the u8 slice to a UTF‑8 string uses a safe, checked conversion.
+These improvements prevent the undefined behavior seen in the vulnerable example by enforcing proper input validation.

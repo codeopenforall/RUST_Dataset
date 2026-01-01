@@ -1,0 +1,4 @@
+The corrected code resolves the externally-controlled format string vulnerability by employing a fixed format ("%s")
+in the sprintf call. Instead of passing the user-supplied payload as the format specifier, the payload is provided
+as a separate argument. This prevents any embedded format specifiers in the payload from being interpreted,
+thereby mitigating the risk associated with CWE-134.

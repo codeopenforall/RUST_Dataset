@@ -1,0 +1,5 @@
+The corrected code eliminates the use of raw pointers by using Arc to manage shared ownership of the Object.
+A Handler now holds an Arc reference rather than a raw pointer.
+This change prevents premature deallocation because the Object remains alive as long as any Arc reference exists.
+Thus, the fetch() method accesses valid memory, eliminating the Use-After-Free vulnerability.
+Concurrent usage remains safe and predictable.

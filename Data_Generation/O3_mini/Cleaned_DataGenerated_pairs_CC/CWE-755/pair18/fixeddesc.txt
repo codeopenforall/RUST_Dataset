@@ -1,0 +1,5 @@
+The improved version propagates errors rather than suppressing them. 
+By replacing unwrap_or_default() with the '?' operator and proper error mapping for parsing issues, 
+the code now ensures that any failures during file reading or conversion become visible. 
+This prevents the logic from proceeding based on an unintended default value and improves overall robustness, 
+especially in concurrent and unsafe operations.

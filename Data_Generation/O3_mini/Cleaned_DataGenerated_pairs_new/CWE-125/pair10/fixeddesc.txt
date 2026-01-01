@@ -1,0 +1,4 @@
+The corrected code adds explicit bounds checking before accessing the slice.
+By verifying that the provided index is nonzero and does not exceed the length of the vector,
+the subtraction (idx - 1) is guaranteed to be valid. This change prevents any out‐of‐bounds
+accesses and thus mitigates the vulnerability (CWE-125).

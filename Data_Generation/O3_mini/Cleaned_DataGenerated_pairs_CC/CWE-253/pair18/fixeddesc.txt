@@ -1,0 +1,3 @@
+In this corrected version the update function properly interprets the return value of the unsafe "change" function.
+If the operation fails (i.e. when new_val is 42), the error is logged and no further update is performed.
+This ensures that forbidden inputs do not alter the internal state, addressing the incorrect check of the return value vulnerability.

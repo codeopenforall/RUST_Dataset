@@ -1,0 +1,5 @@
+In this corrected version, the transfer function checks that the computed copy length (source length
+plus 10) does not exceed the size of the destination buffer or the length of the source slice. By
+validating the preconditions before calling the unsafe function, we prevent the undefined behavior
+caused by out‐of‐bounds memory access. The concurrency model remains unchanged, but now errors are
+properly propagated using Result types.

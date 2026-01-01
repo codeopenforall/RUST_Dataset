@@ -1,0 +1,4 @@
+The corrected implementation adds an essential validation step after reading the header.
+It checks whether the input buffer’s total length is at least 4 bytes (for the header)
+plus the declared payload length. If the check fails, it returns an error.
+This change prevents the unsafe memory access while maintaining a similar API and structure.

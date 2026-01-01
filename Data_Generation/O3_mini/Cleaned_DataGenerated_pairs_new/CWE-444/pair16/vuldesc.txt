@@ -1,0 +1,5 @@
+The above code unsafely converts the raw HTTP request into a string using an unchecked conversion.
+It then iterates over each line and extracts the Content-Length header without verifying that only one instance exists.
+If multiple Content-Length headers are present, the code silently overwrites the previous value,
+leading to an ambiguous interpretation between different components in a proxy/back-end setup.
+This mimics a real-world inconsistency that can result in request smuggling vulnerabilities (CWE-444).

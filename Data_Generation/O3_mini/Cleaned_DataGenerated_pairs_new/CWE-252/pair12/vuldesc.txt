@@ -1,0 +1,4 @@
+This version contains a flaw where the return value from an unsafe initialization method is ignored.
+The method “init” returns a Result indicating whether the machine is ready (active).
+In the operation function, the error is discarded (using “let _ = …”) and processing continues even when the machine is inactive.
+This unchecked return value vulnerability (CWE-252) can lead to incorrect program logic and unexpected state.

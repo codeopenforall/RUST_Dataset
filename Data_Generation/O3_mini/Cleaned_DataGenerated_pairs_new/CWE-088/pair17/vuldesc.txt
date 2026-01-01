@@ -1,0 +1,5 @@
+The vulnerable code unsafely converts a string from a locked Mutex using an unsafe block
+and directly injects untrusted input into a shell command string via format!.
+This command is then executed with "sh -c", enabling an attacker to inject additional
+commands by supplying metacharacters (e.g., semicolons). Additionally, the use of unsafe code
+to interpret raw pointers exacerbates the risk by relying on assumptions about string termination.

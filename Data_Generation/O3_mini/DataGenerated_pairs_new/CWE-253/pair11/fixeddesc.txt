@@ -1,0 +1,3 @@
+In the corrected version, the function that interprets the update result now checks if the update returned Ok.
+Since the update function returns an Err when the counter becomes negative, the perform function appropriately returns false.
+This fix prevents the mistaken acceptance of an error condition as a success, ensuring proper error propagation.

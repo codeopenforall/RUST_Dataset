@@ -1,0 +1,44 @@
+use std::sync::{Arc, Mutex};
+use std::thread;
+
+struct User {
+    name: String,
+    is_admin: bool,
+}
+
+struct SensitiveResource {
+    secret: String,
+}
+
+impl SensitiveResource {
+    // This unsafe function remains to simulate low-level operations.
+    unsafe fn retrieve_secret(&self) -> String {
+        let ptr: *const String = &self.secret;
+        (*ptr).clone()
+    }
+}
+
+fn execute(user: &User, resource: Arc<Mutex<SensitiveResource>>) -> Result<String, &'static str> {
+    // FIX: Enforce proper access control. Only admin users are allowed to retrieve the secret.
+    if !user.is_admin {
+        return Err("Unauthorized access");
+    }
+    let resource_guard = resource.lock().unwrap();
+    unsafe { Ok(resource_guard.retrieve_secret()) }
+}
+
+fn main() {
+    let resource = Arc::new(Mutex::new(SensitiveResource { secret: String::from("TopSecret") }));
+    // Admin user with proper privileges.
+    let user = User { name: String::from("admin_user"), is_admin: true };
+    
+    let resource_clone = Arc::clone(&resource);
+    let handle = thread::spawn(move || {
+        match execute(&user, resource_clone) {
+            Ok(secret) => println!("Operation succeeded: {}", secret),
+            Err(e) => println!("Operation failed: {}", e),
+        }
+    });
+    
+    handle.join().unwrap();
+}

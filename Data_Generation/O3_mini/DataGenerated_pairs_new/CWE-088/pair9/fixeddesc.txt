@@ -1,0 +1,1 @@
+This corrected version eliminates the unsafe raw pointer conversion and avoids invoking a shell altogether. By directly calling the "echo" binary with the input as a separate argument, it prevents interpretation of metacharacters, thus mitigating the OS Command Injection vulnerability (CWE-088). The command injection risk is removed, and safe concurrency is maintained.

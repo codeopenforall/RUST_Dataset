@@ -1,0 +1,5 @@
+In this corrected version, the shared integer is wrapped in an Arc<Mutex<i32>>.
+The Mutex ensures that only one thread can access or modify the data at a time.
+The check-then-act pattern in the process method is now completely enclosed within a lock,
+precluding any race condition. This guarantees that if a thread sees the value as 0,
+it will update it to 1 without interference from concurrently running threads.

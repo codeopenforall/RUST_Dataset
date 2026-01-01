@@ -1,0 +1,5 @@
+This vulnerable code implements an Engine that updates an internal counter based on an external (attacker‐controlled)
+input. It uses an unsafe block to perform a pointer write operation bypassing normal checks. A reachable assertion
+(assert!(counter < 100)) follows the update. Since the counter value directly depends on the parsed user input,
+an attacker can supply a value that causes the counter to reach or exceed 100, triggering the assert and resulting in
+a denial of service (DoS) panic.

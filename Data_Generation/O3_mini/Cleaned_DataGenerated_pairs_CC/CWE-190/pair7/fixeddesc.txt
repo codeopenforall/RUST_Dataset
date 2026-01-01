@@ -1,0 +1,1 @@
+The corrected code replaces the unsafe unchecked multiplication with Rust’s checked_mul method. This function returns None if overflow occurs, and the implementation converts this into an error. This prevents the wrap-around that causes unintended behavior in the vulnerable version. The change enforces safe arithmetic as outlined by CWE-190.

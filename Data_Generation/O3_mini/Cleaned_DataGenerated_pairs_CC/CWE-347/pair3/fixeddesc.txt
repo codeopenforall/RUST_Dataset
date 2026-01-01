@@ -1,0 +1,4 @@
+The fix involves removing the flawed bypass logic from the verification routine. Instead of
+allowing a signature starting with 0x00 to automatically pass, the corrected routine strictly
+compares the entire signature against the expected value. This eliminates the possibility of attackers
+providing malformed signatures to bypass security, thereby addressing the CWE-347 vulnerability.

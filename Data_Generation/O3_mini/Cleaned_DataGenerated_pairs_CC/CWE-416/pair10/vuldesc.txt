@@ -1,0 +1,4 @@
+The code above simulates a use‐after‐free vulnerability (CWE-416) by converting a Box into a raw pointer,
+then freeing the memory and finally dereferencing that dangling pointer. A concurrent thread is used
+to trigger allocator re-use, which may result in reading unexpected data. This mirrors real-world issues
+seen in unsafe Rust code when manual memory management is mishandled.

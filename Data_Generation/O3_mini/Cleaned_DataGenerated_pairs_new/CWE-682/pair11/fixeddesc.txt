@@ -1,0 +1,4 @@
+The fixed code resolves the arithmetic vulnerability by correctly grouping the multiplication and division operations:
+instead of "self.amount - self.amount * (self.discount / 100)", it uses "self.amount - ((self.amount * self.discount) / 100)".
+This ensures that the discount is computed correctly before subtracting it from the original amount. The overall structure,
+including the unsafe block and concurrency with Arc and threads, remains unchanged to mimic a realistic refactoring.

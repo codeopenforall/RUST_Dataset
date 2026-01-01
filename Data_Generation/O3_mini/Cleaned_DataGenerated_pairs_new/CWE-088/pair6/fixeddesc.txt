@@ -1,0 +1,1 @@
+The corrected version eliminates the unsafe block and avoids constructing a shell command that interpolates untrusted input. Instead of invoking a shell using "sh -c", it calls the "echo" command directly with the input as an argument. This change prevents shell metacharacter interpretation and mitigates OS command injection (CWE-088).

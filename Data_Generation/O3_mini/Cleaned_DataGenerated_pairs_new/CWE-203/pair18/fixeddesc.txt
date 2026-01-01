@@ -1,0 +1,1 @@
+The fixed version eliminates the vulnerability by removing unsafe access to internal state. Instead of revealing detailed error messages (which include sensitive debug tokens), it now returns a generic error message ("Authentication failed: invalid credentials") for both invalid username and wrong password cases, thus mitigating CWE-203.

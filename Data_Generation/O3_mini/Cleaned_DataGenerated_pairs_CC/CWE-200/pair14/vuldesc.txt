@@ -1,0 +1,6 @@
+This code creates a credentials structure containing a username and a sensitive secret.
+It uses an unsafe block to read the contents of the locked data structure and then formats
+it using the automatically derived Debug implementation. As a result, the secret is directly
+included in the logged output, causing an exposure of sensitive information. The use of
+unsafe memory access, concurrency with threads, and smart pointers mimics real-world usage
+patterns where such exposures have been reported.

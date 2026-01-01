@@ -1,0 +1,4 @@
+In this revised implementation the input is validated to allow only alphanumeric characters and whitespace.
+Any input containing shell metacharacters (such as semicolons) is rejected.
+By enforcing input validation and omitting unsafe raw pointer manipulations,
+the code prevents unintended command injection attacks.

@@ -1,0 +1,1 @@
+The code above is vulnerable to improper synchronization (CWE-662). Instead of acquiring a write lock for modifying the shared counter, it obtains a read lock and then bypasses immutability by unsafely casting the reference to a mutable pointer. This unsynchronized mutation across threads can lead to data races and an incorrect final counter value.

@@ -1,0 +1,1 @@
+In the secure implementation, the file is created with restrictive permissions (0o600), addressing the improper default permissions flaw. The code retains its structure with concurrency via threads and a mutex, and the unsafe block remains only for legacy pointer handling. This fix mitigates CWE-276 by ensuring that only the file owner has the read and write privileges.

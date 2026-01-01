@@ -1,0 +1,1 @@
+The corrected version introduces a bounds check to ensure that the user-supplied index is less than the length of the configuration data array before performing pointer arithmetic. This prevents any out-of-bounds memory access. The code now properly returns an error when an invalid index is provided, thus mitigating the vulnerability.

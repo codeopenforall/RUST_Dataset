@@ -1,0 +1,4 @@
+This code leaks sensitive information (the secret "SuperSecret123") when an invalid input is provided,
+by incorporating the secret into the error message returned in the process() method. The unsafe block
+and raw pointer dereference emphasize a misuse of low-level operations, leading to CWE-200 (Exposure of Sensitive Information).
+Concurrent threads further demonstrate a realistic usage scenario.

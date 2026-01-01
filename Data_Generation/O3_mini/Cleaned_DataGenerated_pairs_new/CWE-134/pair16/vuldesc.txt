@@ -1,0 +1,5 @@
+This code demonstrates an externally controlled format string vulnerability. 
+The method in the primary structure unsafely dereferences a pointer to obtain a secret value 
+and then uses a user-supplied string directly as the format specifier in the formatting macro. 
+An attacker can supply a malicious format string (e.g., "Alert: {}") to cause the secret to be revealed.
+This mimics real-world issues documented in CWE-134.

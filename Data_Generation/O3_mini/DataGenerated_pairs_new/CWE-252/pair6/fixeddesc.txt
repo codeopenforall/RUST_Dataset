@@ -1,0 +1,3 @@
+In this corrected version the return value from the unsafe copy operation is no longer ignored.
+If the function signals that the buffer is too small, the code resizes the buffer accordingly and retries the copying manually.
+This proper checking and handling of the Result fixes the unchecked return value vulnerability (CWE-252) and ensures that the operation only signals success when the entire data is correctly copied.

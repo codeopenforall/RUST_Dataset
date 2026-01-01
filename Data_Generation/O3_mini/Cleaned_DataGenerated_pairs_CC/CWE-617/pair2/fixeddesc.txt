@@ -1,0 +1,5 @@
+In the corrected code the vulnerability is mitigated by adding proper input validation and boundary checks.
+Before performing any unsafe operations, the code verifies that the provided index is within the vector's range
+and that the selected element meets the invariant (being greater than 100). This change prevents attacker–controlled
+inputs from triggering a reachable assertion, thereby preventing a denial-of-service condition. The unsafe block has been
+eliminated in favor of safe, idiomatic Rust.

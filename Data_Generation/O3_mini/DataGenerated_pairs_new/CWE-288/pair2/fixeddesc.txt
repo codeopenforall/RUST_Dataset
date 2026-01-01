@@ -1,0 +1,1 @@
+In the corrected version, the unsafe global flag and its bypass logic have been removed from the debug endpoint. Instead, both the /admin and /debug endpoints enforce identical authentication checks by verifying that a provided token matches the server's secret. This ensures that no alternate path bypasses the authentication, thereby mitigating CWE-288.

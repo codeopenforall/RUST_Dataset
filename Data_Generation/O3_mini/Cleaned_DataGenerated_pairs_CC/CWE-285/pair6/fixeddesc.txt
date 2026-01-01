@@ -1,0 +1,3 @@
+The corrected version introduces a check in the update method that verifies whether the provided user possesses an Admin role.
+If the user is not authorized, the function returns early without modifying the secret.
+This change preserves the existing unsafe pattern but ensures that only properly authorized calls can modify sensitive data, thereby remedying the CWE-285 issue.

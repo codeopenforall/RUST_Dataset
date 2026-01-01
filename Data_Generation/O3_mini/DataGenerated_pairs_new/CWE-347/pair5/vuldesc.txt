@@ -1,0 +1,4 @@
+The vulnerable code uses an unsafe block to reinterpret the provided signature as a fixed-size array and
+only verifies that the signature length is 65 bytes and that the 64-byte content is non-zero. It completely
+omits the critical check of the algorithm identifier (expected as the first byte), allowing forged signatures
+with an incorrect algorithm id to be accepted.

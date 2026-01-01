@@ -1,0 +1,4 @@
+This code exhibits an improper synchronization vulnerability by acquiring mutex locks in different orders.
+In function op1, the code locks 'lock_a' before 'lock_b', whereas in op2 it reverses the order by locking 'lock_b' before 'lock_a'.
+Under concurrent execution, this inconsistent locking order can cause a deadlock if one thread holds the first lock and waits for the second while another does the opposite.
+The use of an unsafe block is included to mimic realistic complex patterns found in actual codebases.

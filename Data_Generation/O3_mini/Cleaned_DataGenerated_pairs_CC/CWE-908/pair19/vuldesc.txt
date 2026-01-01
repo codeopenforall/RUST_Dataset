@@ -1,0 +1,1 @@
+The vulnerability arises from using an uninitialized memory region for the 'factor' field in the Settings struct. In the load function, only 'threshold' is initialized, while 'factor' is left uninitialized and later used in a concurrent context, leading to undefined behavior (CWE-908: Use of Uninitialized Resource).

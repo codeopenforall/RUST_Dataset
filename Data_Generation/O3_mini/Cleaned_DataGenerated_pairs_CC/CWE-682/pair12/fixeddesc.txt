@@ -1,0 +1,4 @@
+The corrected version resolves the arithmetic error by using proper parentheses to calculate the discount.
+The fixed logic computes the total price as (price * (100 - discount)) / 100, ensuring that the discount 
+is correctly applied. The unsafe block remains to simulate realistic usage of raw pointer dereferencing,
+but it is no longer the source of the logic error.

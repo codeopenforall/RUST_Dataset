@@ -1,0 +1,4 @@
+In this corrected version the core unsafe operation is protected by std::panic::catch_unwind, so that any panic 
+triggered by a negative input is caught rather than being allowed to propagate. The run method now returns a 
+Result type, and the thread’s join result is handled safely. This properly isolates the panic, preventing it from 
+crossing thread or FFI boundaries, and addresses the CWE-248 vulnerability.

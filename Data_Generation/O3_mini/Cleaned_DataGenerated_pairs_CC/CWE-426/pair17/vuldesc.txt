@@ -1,0 +1,6 @@
+The above code is vulnerable because it spawns an external command using a relative path
+without proper validation. This creates an untrusted search path vulnerability: an attacker
+could place a malicious executable with the same name ("vulnerable_app") in a directory that
+appears earlier in the search path, causing unintended code execution. The code uses an unsafe
+block and threads to mimic a real-world scenario where low-level system interfaces and
+concurrency are involved.

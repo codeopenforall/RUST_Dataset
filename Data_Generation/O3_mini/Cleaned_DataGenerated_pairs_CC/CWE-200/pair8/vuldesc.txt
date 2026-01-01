@@ -1,0 +1,1 @@
+This code exposes sensitive information by logging the password in plain text. The default Debug implementation and an unsafe block are used to directly convert the password string from raw memory, leading to unintentional leakage of sensitive data.

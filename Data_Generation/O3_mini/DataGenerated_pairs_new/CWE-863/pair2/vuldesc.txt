@@ -1,0 +1,1 @@
+This code exhibits a resource exhaustion vulnerability (CWE-863 style) by allowing any user—even those without administrative privileges—to allocate an unbounded number of resources (threads) without proper checks. The unsafe block performing direct memory writes further mimics low-level operations common in real-world systems, increasing the risk of exploitation.

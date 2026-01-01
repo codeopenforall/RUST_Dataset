@@ -1,0 +1,1 @@
+In this secure implementation, any XML input containing external entity declarations is explicitly rejected. By checking for the presence of "<!ENTITY" and returning an error when found, the code prevents external resource fetching via XML entities. This eliminates the unsafe behavior and adheres to best practices in XML processing.

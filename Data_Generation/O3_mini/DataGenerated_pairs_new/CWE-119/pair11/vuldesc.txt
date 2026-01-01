@@ -1,0 +1,5 @@
+This code creates a Buffer and wraps it in a Container struct that includes a sentinel value.
+The update method is marked unsafe and uses raw pointer arithmetic via std::ptr::copy_nonoverlapping without checking
+if the write would exceed the bounds of the buffer. In the main function, a thread calls update with an offset of 20 and 16 bytes
+of data, which writes beyond the 32-byte buffer (20+16=36), thereby corrupting the adjacent sentinel value.
+This is an instance of CWE-119 (Improper Restriction of Operations within Memory Bounds).

@@ -1,0 +1,5 @@
+In the fixed code, the external input from the "UNTRUSTED_PATH" has been validated to ensure
+that each path component is an absolute path (i.e. it begins with '/'). If the input fails validation,
+a secure default ("/usr/bin") is used instead. The unsafe block has been removed entirely.
+This design prevents attackers from influencing the dynamic search paths of spawned processes,
+thereby mitigating CWE-427.

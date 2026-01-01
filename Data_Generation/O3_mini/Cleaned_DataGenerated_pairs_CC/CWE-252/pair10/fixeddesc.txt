@@ -1,0 +1,4 @@
+The corrected version addresses the vulnerability by verifying that the input does not exceed the allocated
+buffer size before performing any unsafe operations. It also propagates the error from the unsafe function,
+thereby ensuring that any attempt to process oversized data is met with a recoverable error rather than silently
+ignoring the issue. This corrects the unchecked return value flaw observed in the vulnerable version.

@@ -1,0 +1,6 @@
+The corrected version fixes the off‐by‐one error by:
+1. Safely initializing the vector using “resize” to ensure all elements are properly set.
+2. Iterating from 0 up to (but not including) the vector’s length in the “process” method.
+3. Using safe indexing (or safe pointer arithmetic bounded by the vector’s length)
+to avoid out-of-bound writes.
+These changes eliminate the fencepost vulnerability while preserving the intended functionality.

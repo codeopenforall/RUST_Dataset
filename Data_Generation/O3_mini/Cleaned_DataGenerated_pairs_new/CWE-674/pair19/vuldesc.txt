@@ -1,0 +1,1 @@
+This variant employs a recursive descent parser that processes nested parentheses. It uses an unsafe block for pointer arithmetic when consuming characters. However, it does not enforce any recursion depth limit, meaning that excessively nested input (crafted by an attacker) can cause a stack overflow, leading to a denial‐of‐service (CWE-674).

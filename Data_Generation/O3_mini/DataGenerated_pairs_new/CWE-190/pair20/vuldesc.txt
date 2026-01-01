@@ -1,0 +1,1 @@
+This program implements a concurrently updated accumulator using an UnsafeCell. Multiple threads call the update method, which performs an unchecked wrapping addition. When large update values are added repeatedly, the arithmetic overflows without detection, leading to an incorrect (wrapped) final result.

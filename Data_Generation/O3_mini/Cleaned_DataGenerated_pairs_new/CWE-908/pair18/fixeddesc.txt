@@ -1,0 +1,4 @@
+The fixed version properly initializes the entire Config structure by explicitly setting all its fields, including
+the description field (desc) with a default value ("default config"). By avoiding the unsafe use of MaybeUninit 
+and ensuring that every member is initialized before use, the vulnerability is resolved. The concurrent usage using
+Arc remains intact, but now each thread sees a fully initialized resource.

@@ -1,0 +1,1 @@
+In the corrected version, input validation is implemented to reject dangerous characters (such as ';', '&', and '|') that could be used in a command injection attack. Moreover, the code avoids invoking a shell by calling the "echo" command directly with its arguments, thereby preventing any unexpected shell interpolation. This change mitigates the risk of CWE-088.

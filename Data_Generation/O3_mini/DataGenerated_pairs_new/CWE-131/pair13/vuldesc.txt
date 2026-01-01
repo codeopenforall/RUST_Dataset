@@ -1,0 +1,4 @@
+The flawed implementation miscalculates the required buffer size by using mem::size_of_val(&input) on a &str,
+which returns the size of the fat pointer (typically 16 bytes on 64‐bit systems), instead of using input.len()
+to obtain the actual number of UTF-8 bytes. This error causes an insufficient copy of data when the string length
+does not match the size of the pointer, potentially leading to incomplete buffers or memory safety issues.

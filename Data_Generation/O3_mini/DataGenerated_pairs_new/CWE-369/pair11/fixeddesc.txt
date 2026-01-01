@@ -1,0 +1,5 @@
+The fixed code introduces a proper validation check that detects if the divisor is zero prior to performing division.
+Within the unsafe trait method, an explicit conditional returns an error instead of proceeding with a division-by-zero.
+This adjustment prevents the panic observed in the previous version while maintaining the realistic use of unsafe blocks,
+concurrency, and common community idioms. The public API (run_calc) and main routine now propagate an error message,
+thereby remedying the vulnerability.

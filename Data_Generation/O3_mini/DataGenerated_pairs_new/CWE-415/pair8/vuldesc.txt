@@ -1,0 +1,3 @@
+This code manually frees allocated memory in a method and then repeats the free in the Drop
+implementation without resetting the pointer to null. This causes a double free vulnerability
+(CWE-415), as the same memory is deallocated twice, which can lead to undefined behavior or a crash.

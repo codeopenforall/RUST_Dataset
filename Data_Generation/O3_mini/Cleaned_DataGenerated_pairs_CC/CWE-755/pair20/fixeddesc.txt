@@ -1,0 +1,5 @@
+The fixed code improves upon the vulnerable version by propagating errors from both file I/O and parsing operations 
+using the ? operator. Rather than swallowing errors with unwrap_or_default(), any issue during configuration loading 
+results in an explicit error. This change ensures that a malformed or missing configuration is correctly reported, 
+allowing for proper error handling upstream. The use of unsafe blocks and concurrency remains, modeling real-world 
+code that properly handles exceptional conditions.

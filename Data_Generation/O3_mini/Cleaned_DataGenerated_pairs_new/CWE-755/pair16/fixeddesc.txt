@@ -1,0 +1,5 @@
+In this corrected version the configuration loader properly propagates errors.
+Instead of using unwrap_or_default(), the code uses map_err and the question-mark operator to handle
+failures in file I/O and parsing operations. If the configuration file is missing or contains invalid
+(non-numeric) data, the error is returned immediately rather than silently defaulting to a zero value.
+This explicit error handling prevents accidental use of insecure default settings.

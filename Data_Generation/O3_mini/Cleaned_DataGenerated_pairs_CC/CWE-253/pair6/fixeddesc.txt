@@ -1,0 +1,1 @@
+The fixed version addresses the vulnerability by properly interpreting the return value of the unsafe call. The run_process function now checks that the result is Ok (indicating success) and only then returns true. Otherwise, it returns false. This change ensures that an error is not misinterpreted as a valid, successful outcome.

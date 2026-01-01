@@ -1,0 +1,1 @@
+In the corrected version, the process method no longer masks errors returned by the unsafe compute function. Instead, it directly propagates the Result returned from compute. This ensures that invalid inputs (such as negative numbers) are properly handled as errors rather than being erroneously interpreted as successful computations.

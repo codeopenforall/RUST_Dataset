@@ -1,0 +1,6 @@
+This vulnerable code accepts a numeric parameter from the command line and uses it
+to spawn an unbounded number of threads. Each thread allocates a vector with a size
+multiplied by a constant and fills it via unsafe pointer operations. There is no check
+on the input value, leading to potential resource exhaustion, integer overflows, and
+memory allocation issues. This is indicative of CWE-863 (Resource Exhaustion due to
+lack of proper authorization checks on resource usage limits).

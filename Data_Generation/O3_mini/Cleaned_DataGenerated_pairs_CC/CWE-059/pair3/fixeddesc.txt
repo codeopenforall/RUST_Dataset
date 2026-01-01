@@ -1,0 +1,1 @@
+In this version the vulnerability is mitigated by replacing fs::metadata with fs::symlink_metadata, which does not follow symlinks. By explicitly checking for a symbolic link and aborting the operation, the code prevents the TOCTOU race condition that could otherwise allow an attacker to swap in a symlink between the check and subsequent file use.

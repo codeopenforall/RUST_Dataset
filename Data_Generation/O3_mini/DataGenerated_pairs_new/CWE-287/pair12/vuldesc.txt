@@ -1,0 +1,1 @@
+The vulnerable implementation exhibits improper authentication by checking only that the provided token is non-empty instead of verifying it against the securely stored token. In addition, it uses an unsafe global variable (GLOBAL_TOKEN) accessed concurrently in a spawned thread, which may lead to data races or unpredictable behavior. This design flaw corresponds to CWE-287.

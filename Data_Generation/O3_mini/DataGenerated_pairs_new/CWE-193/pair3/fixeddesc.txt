@@ -1,0 +1,3 @@
+The corrected version fixes the off-by-one vulnerability by creating a slice with a length equal exactly to the size of the
+"data" array. This ensures that only the intended elements are processed and that the out-of-bounds memory (the "extra" field)
+is not inadvertently read, thereby mitigating the vulnerability.

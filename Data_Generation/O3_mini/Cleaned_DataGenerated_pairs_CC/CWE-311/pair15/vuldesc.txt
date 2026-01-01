@@ -1,0 +1,1 @@
+This version of the program loads a sensitive secret and transmits it over a simulated network without encryption. The unsafe block is used to obtain a byte slice from the string without bounds checking, further increasing risk. This clearly violates secure handling practices since it leaves secrets in clear text, matching the CWE-311 (Missing Encryption of Sensitive Data) issue.

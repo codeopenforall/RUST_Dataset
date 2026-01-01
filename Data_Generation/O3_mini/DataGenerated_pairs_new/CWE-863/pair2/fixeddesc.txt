@@ -1,0 +1,1 @@
+In the corrected version, access control is enforced by permitting only "admin" users to allocate resources. Additionally, a cap is imposed on the number of resources that can be allocated per call (set to 50). This prevents unauthorized users from causing resource exhaustion. Although the unsafe operations remain, they are now guarded by proper authorization and limits.

@@ -1,0 +1,4 @@
+The fixed implementation addresses the CWE-203 vulnerability by unifying error responses. Instead of 
+providing a detailed message that reveals whether the user exists, it always returns "Invalid credentials" 
+on authentication failure. The unsafe block is removed from the error handling logic to avoid inadvertent data exposure.
+This solution prevents attackers from distinguishing between non-existent and incorrectly authenticated accounts.

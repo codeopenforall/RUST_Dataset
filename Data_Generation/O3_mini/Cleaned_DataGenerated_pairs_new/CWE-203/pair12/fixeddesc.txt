@@ -1,0 +1,3 @@
+The revised implementation consolidates error messages to "Invalid credentials" for any authentication failure,
+thereby preventing attackers from discerning whether a username exists. Additionally, unsafe pointer access
+has been removed in favor of a safe, idiomatic retrieval of user data.

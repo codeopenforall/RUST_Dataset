@@ -1,0 +1,6 @@
+The issue in this code is an out-of-bound write caused by an unchecked unsafe memory operation. 
+The function “write_data” calculates a destination pointer by adding an offset to a vector’s 
+raw pointer and copies the input bytes without verifying that the write stays within the 
+allocated buffer. The subsequent use of “set_len” forces the vector’s length to extend beyond 
+its capacity, resulting in memory corruption. This pattern closely mirrors real-world issues 
+reported in RustSec for CWE-787.

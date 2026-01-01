@@ -1,0 +1,4 @@
+This version exhibits a classic CWE-252 vulnerability by failing to check the return value from a function
+that might signal an error (here, a buffer overflow) during an unsafe memory operation. Specifically,
+the error produced by the unsafe add_data function is discarded in process(), allowing invalid data
+to potentially corrupt memory in concurrent execution.

@@ -1,0 +1,1 @@
+In the corrected version, the code avoids extracting a raw pointer from the locked data. Instead, it acquires the mutex lock and performs the increment directly while the lock is held. This change ensures that all modifications to the shared value are properly synchronized, eliminating the race condition.

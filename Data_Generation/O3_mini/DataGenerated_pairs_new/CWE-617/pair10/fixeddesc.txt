@@ -1,0 +1,4 @@
+The corrected version replaces the unsafe, unsynchronized global update with a thread-safe approach using AtomicI32.
+It uses a compare_exchange loop to atomically update the shared value only when the addition would not exceed THRESHOLD.
+This prevents attacker-controlled input from driving the state into an unsafe region, thereby eliminating the reachable assertion 
+that previously resulted in a denial-of-service.

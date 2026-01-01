@@ -1,0 +1,4 @@
+This code incorrectly performs an unchecked subtraction on the wallet's balance within an unsafe block.
+By subtracting an amount (20) greater than the current balance (10) without bounds checking,
+the arithmetic operation underflows, wrapping the value around and corrupting the account state.
+Such behavior is indicative of CWE-191 (Integer Underflow).

@@ -1,0 +1,4 @@
+The corrected implementation removes the unsafe block and performs a simple, strict equality check 
+against the known trusted origin. By comparing the received 'Origin' header directly with the expected 
+value, it effectively blocks malicious requests. This change mitigates the risk of CSRF/SSRF pivot attacks 
+by preventing unauthorized headers from passing the validation.

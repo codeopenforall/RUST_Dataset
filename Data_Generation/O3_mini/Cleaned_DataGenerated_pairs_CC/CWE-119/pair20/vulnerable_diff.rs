@@ -1,0 +1,1 @@
+    let data = b"ABCDEFGHIJKL"; 

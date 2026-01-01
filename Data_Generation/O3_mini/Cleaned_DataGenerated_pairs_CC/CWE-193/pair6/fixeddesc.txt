@@ -1,0 +1,1 @@
+The fixed version eliminates the off-by-one error by iterating over the correct range (0 to n exclusive) when writing to the vector. It no longer writes the extraneous 999 value, and it sums only the properly initialized elements. This correction ensures that the computation is safe and yields the expected result.

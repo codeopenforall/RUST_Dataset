@@ -1,0 +1,4 @@
+The corrected version addresses the unchecked return value flaw by verifying the outcome of critical file operations.
+The file is opened based on the same environment condition; however, the write operation's Result is now propagated using the ? operator.
+If the write fails (for example, when SIM_FAILURE is set forcing an invalid file path), the error is returned and handled in main.
+This ensures that critical errors are not silently overlooked, eliminating the CWE-252 vulnerability.

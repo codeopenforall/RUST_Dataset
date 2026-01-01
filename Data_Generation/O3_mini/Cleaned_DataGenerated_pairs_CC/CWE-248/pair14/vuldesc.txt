@@ -1,0 +1,4 @@
+This vulnerable code demonstrates CWE-248 by invoking unsafe code that panics on invalid input 
+(with a negative value). A thread is spawned without using catch_unwind to intercept panics, 
+and a join().unwrap() is used to retrieve the result. If a panic occurs within the thread, the panic 
+propagates unhandled, leading to abnormal termination.

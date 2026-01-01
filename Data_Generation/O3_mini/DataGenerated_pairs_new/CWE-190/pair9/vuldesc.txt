@@ -1,0 +1,5 @@
+This version uses an unsafe unchecked addition via std::intrinsics::unchecked_add in a concurrent context.
+Because the addition is performed without overflow checks, if the input values sum to more than u32::MAX, the operation will wrap around,
+leading to an incorrect result. In our example with init set near the maximum value and a sufficiently large addend, the arithmetic
+wraps around, triggering CWE-190. This vulnerability is realistic in cases where developers misuse unsafe arithmetic in concurrent
+applications.

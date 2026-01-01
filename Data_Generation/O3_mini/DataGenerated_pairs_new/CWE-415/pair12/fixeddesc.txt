@@ -1,0 +1,3 @@
+This corrected version prevents the double free vulnerability by ensuring that the resource is deallocated only once.
+The deallocation function now checks a global flag before performing the free operation, and if the resource has 
+already been freed, it does nothing. This eliminates the unsafe duplicate deallocation and thereby mitigates CWE-415.

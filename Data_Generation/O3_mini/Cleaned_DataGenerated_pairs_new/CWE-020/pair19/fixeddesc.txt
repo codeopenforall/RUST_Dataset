@@ -1,0 +1,3 @@
+The corrected code now validates that the sum of the offset and length does not exceed the underlying string's length.
+If the provided indices are out-of-bound, an error is returned rather than performing unsafe memory operations.
+This proper input validation effectively mitigates the vulnerability.

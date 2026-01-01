@@ -1,0 +1,4 @@
+This code simulates a security-critical processor that authorizes operations based on an input threshold.
+Inside the validation method, an unsafe block is used to perform a dummy pointer read, but the subsequent match statement
+contains incorrect branch logic. Regardless of whether the input is above or below the threshold, the authorization flag 
+is always set to true. This “always-incorrect control flow” flaw (aligned with CWE-670) enables unauthorized operation execution.

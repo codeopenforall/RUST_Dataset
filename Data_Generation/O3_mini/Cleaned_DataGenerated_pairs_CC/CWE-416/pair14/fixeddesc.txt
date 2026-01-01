@@ -1,0 +1,4 @@
+In the corrected code the resource is still allocated on the heap and converted into a raw pointer.
+However, unlike the vulnerable version, the dereference of the raw pointer happens before the memory is freed.
+After the necessary use of the pointer, the resource is then deallocated properly.
+This reordering ensures that the pointer remains valid when accessed, preventing the use‐after‐free error.

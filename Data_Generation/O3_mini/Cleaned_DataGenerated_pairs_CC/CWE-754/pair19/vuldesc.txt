@@ -1,0 +1,4 @@
+The vulnerable implementation improperly handles exceptional conditions when waiting for a thread's result.
+Specifically, if the channel recv times out—which should indicate an error—the code mistakenly bypasses a proper error return
+and instead enters an unsafe block that dereferences uninitialized memory. This incorrect check and unsafe fallback mimics a real-world
+CWE-754 vulnerability, where the wrong error flag/state is used to decide how to proceed.

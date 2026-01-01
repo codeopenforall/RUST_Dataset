@@ -1,0 +1,3 @@
+This version fixes the vulnerability by checking the return value from the unsafe initialization method.
+Instead of discarding the error, the code uses the “?” operator to propagate errors if the machine is inactive.
+This ensures that if the initialization fails, subsequent operations do not proceed, thus properly handling the error condition.

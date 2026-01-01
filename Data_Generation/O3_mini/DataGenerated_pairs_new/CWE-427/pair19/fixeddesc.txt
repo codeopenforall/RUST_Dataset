@@ -1,0 +1,4 @@
+This corrected version secures the uncontrolled search path vulnerability by validating the environment-supplied PATH value.
+The resolve function now checks that the supplied string begins with "/usr/bin" and uses safe UTF-8 conversion.
+If the input does not satisfy the safe criteria, a trusted default value ("/usr/bin:/bin") is used instead.
+This ensures that an attacker cannot inject directories into the executable search path.

@@ -1,0 +1,1 @@
+This snippet implements a Calculator that performs division inside an unsafe block without validating that the denominator is nonzero. In concurrent execution using threads and smart pointers, the unchecked division operation (line 16) may lead to a division by zero error (CWE-369), causing a runtime panic.

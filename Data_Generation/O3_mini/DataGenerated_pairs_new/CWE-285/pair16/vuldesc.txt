@@ -1,0 +1,1 @@
+The above code contains an authorization flaw where the function retrieving sensitive data does not verify if the calling user has sufficient privileges. Despite the existence of user roles, the function ignores the user's admin status, and the unsafe block exacerbates the risk by performing unchecked pointer operations.

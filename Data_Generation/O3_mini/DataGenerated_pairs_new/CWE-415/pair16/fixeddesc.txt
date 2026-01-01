@@ -1,0 +1,1 @@
+This revision fixes the double free issue by ensuring that the raw pointer is converted back into a Box only once. The erroneous second deallocation has been removed so that the resource is dropped exactly one time, thereby preventing the double free vulnerability (CWE-415).

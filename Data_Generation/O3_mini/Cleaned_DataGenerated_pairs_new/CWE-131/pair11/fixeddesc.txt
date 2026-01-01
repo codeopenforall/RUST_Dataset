@@ -1,0 +1,4 @@
+This corrected version fixes the vulnerability by calculating the buffer size correctly using input.len(),
+which returns the number of bytes in the string. As a result, the allocated memory is exactly sufficient
+to copy the intended data, preventing under-allocation and data truncation. The overall structure remains
+the same, including the unsafe block for performance and direct memory manipulation, and concurrency is preserved.

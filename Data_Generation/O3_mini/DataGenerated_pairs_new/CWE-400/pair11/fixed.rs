@@ -1,0 +1,52 @@
+use std::sync::{Arc, Mutex};
+use std::thread;
+use std::time::Duration;
+use std::io::{self, BufRead};
+
+const MAX_ITEMS: usize = 10;
+
+struct Service {
+    data: Vec<u64>,
+}
+
+impl Service {
+    fn new() -> Self {
+        Service { data: Vec::new() }
+    }
+
+    fn compute(&mut self, value: u64) {
+        // Apply backpressure: if we've reached the cap, refuse to add new items.
+        if self.data.len() >= MAX_ITEMS {
+            return;
+        }
+        // Use safe vector push to avoid unsafe memory operations.
+        self.data.push(value);
+    }
+}
+
+fn main() {
+    let service = Arc::new(Mutex::new(Service::new()));
+    let worker = {
+        let svc = Arc::clone(&service);
+        thread::spawn(move || {
+            // Loop continues, but further additions are blocked once MAX_ITEMS is reached.
+            loop {
+                if let Ok(mut s) = svc.lock() {
+                    s.compute(42);
+                }
+                thread::sleep(Duration::from_micros(10));
+            }
+        })
+    };
+
+    println!("Server running (enter 'quit' to stop):");
+    let stdin = io::stdin();
+    for line in stdin.lock().lines() {
+        if let Ok(input) = line {
+            if input.trim() == "quit" {
+                break;
+            }
+        }
+    }
+    let _ = worker.join();
+}

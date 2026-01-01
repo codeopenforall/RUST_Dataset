@@ -1,0 +1,4 @@
+This code implements a controller for a resource containing a secret value protected by an owner identity.
+However, the modify() function fails to verify that the provided caller (e.g., "intruder") matches the resource owner.
+It uses an unsafe block to update the secret via a raw pointer and drops the mutex guard early,
+resulting in an authorization bypass where any caller can update the secret.

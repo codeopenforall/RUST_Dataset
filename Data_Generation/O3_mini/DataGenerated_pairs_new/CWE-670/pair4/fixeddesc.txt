@@ -1,0 +1,1 @@
+This corrected version properly distinguishes between acceptable and dangerous commands. The “danger” case now immediately returns an error, eliminating any unsafe memory manipulation or concurrent state updates. By removing the unsafe block and additional thread spawning, the control flow adheres to the intended logic and prevents the underlying vulnerability.

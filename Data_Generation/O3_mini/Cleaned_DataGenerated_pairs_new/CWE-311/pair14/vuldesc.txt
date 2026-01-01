@@ -1,0 +1,3 @@
+This code loads a sensitive secret from a configuration file in cleartext and transmits it unencrypted over an insecure TCP connection.
+An unsafe block is used to convert the string slice to raw bytes for transmission.
+The concurrent architecture using threads and Arc mimics a realistic scenario where improper handling of sensitive data leads to a CWE-311 vulnerability.

@@ -1,0 +1,4 @@
+This version contains a calculation bug due to incorrect operator precedence in the arithmetic expression.
+Instead of computing (price * (100 - discount)) / 100, it computes (price * 100) - (discount / 100),
+resulting in a drastically incorrect total. The unsafe block is used to dereference the discount value,
+mimicking lower-level unsafe practices common in real-world systems.

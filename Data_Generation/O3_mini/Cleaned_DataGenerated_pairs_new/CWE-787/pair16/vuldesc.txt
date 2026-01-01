@@ -1,0 +1,1 @@
+The code uses an unsafe block to perform pointer arithmetic on a vector. Specifically, it writes to data[5] while the vector is only allocated for 5 elements, and then manually sets the length to 6. This out-of-bounds write violates memory safety requirements and can corrupt memory, leading to unexpected results or crashes, in accordance with CWE-787.

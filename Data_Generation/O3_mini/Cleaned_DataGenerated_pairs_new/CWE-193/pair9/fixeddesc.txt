@@ -1,0 +1,4 @@
+The fixed version corrects the off-by-one mistake by setting the vector's length to exactly n, 
+ensuring that all bytes within the vector have been properly allocated before they are written. 
+Additionally, the fill method now iterates over the entire range of indices. This removes the risk 
+of accessing uninitialized memory.

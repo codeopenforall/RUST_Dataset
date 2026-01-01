@@ -1,0 +1,1 @@
+In the corrected version the build function sanitizes user input by filtering out carriage return and line feed characters before concatenating it with the header prefix. This eliminates the possibility of CRLF injection and ensures that any malicious control sequences in the input are removed. Concurrency and smart pointer usage remain unchanged to simulate real-world behavior.

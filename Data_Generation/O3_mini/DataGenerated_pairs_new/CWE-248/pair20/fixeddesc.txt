@@ -1,0 +1,3 @@
+In the corrected version, the thread's join result is examined rather than unwrapping it directly. By matching on the result of join(),
+the code intercepts the panic from the thread and recovers gracefully, logging the incident without letting the panic
+propagate unchecked. This ensures stable operation without abnormal termination and addresses the vulnerability from CWE-248.

@@ -1,0 +1,5 @@
+The vulnerability arises from an incorrect order of operations in the metric computation. Instead 
+of multiplying the total sum by 100 and then performing the division by the data count, the code 
+divides first (losing precision in the integer division) and then multiplies by 100. In concurrent 
+contexts with unsafe pointer arithmetic, this miscalculation can lead to significant errors in the 
+final metric, as demonstrated with the sample input where 550 is expected but 500 is computed.

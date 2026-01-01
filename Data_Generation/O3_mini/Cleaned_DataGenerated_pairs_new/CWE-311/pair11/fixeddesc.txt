@@ -1,0 +1,4 @@
+This revised code addresses the vulnerability by encrypting the sensitive secret before transmission.
+Instead of using unsafe blocks to extract and send the cleartext secret,
+the program applies an XOR-based encryption (for demonstration) to obscures the sensitive data.
+This change mitigates CWE-311 by ensuring that even if intercepted, the secret is not available in cleartext.

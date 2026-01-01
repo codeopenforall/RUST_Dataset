@@ -1,0 +1,4 @@
+Description: The above code constructs a Settings struct via an uninitialized memory block.
+It only sets the 'threshold' field, leaving 'description' uninitialized. Later, a spawned thread 
+reads the uninitialized 'description' field, leading to undefined behavior. This misuse of 
+MaybeUninit emulates CWE-908 by using an object before full initialization.

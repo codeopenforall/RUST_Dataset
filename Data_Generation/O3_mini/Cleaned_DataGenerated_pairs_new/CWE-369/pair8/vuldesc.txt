@@ -1,0 +1,4 @@
+This snippet demonstrates a concurrency and unsafe usage scenario where an unchecked division 
+operation is performed using user input. Without validation, an input of zero causes a division 
+by zero, triggering a runtime panic. The use of an unsafe block to wrap arithmetic operations 
+mimics real-world issues found in systems where pointer manipulation and concurrency are involved.

@@ -1,0 +1,4 @@
+In this fixed version, the unsafe pointer arithmetic has been replaced with safe array indexing. 
+Before performing an update, the code checks the attacker-controlled value to ensure that it does not violate
+the invariant (value < 1000). Thus, the update is skipped if the value is invalid, preventing the reachable 
+assertion from being triggered and eliminating the potential denial-of-service.

@@ -1,0 +1,1 @@
+The corrected code replaces the unsafe raw pointer with a safe, atomic counter using Arc<AtomicUsize>. By leveraging fetch_add with SeqCst ordering, the counter is incremented atomically, eliminating the race condition. This ensures that concurrent increments from multiple threads are correctly synchronized, and the final value consistently equals the expected sum.

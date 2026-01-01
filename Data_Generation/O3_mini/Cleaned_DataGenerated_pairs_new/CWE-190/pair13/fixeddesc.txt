@@ -1,0 +1,4 @@
+In the corrected version, the compute_size() method has been updated to use checked multiplication via checked_mul.
+This ensures that if the multiplication of count and element_size would overflow, the code will panic instead of
+proceeding with a wrapped, incorrect value. The allocation and subsequent memory writes are now performed only when
+the product is valid. This eliminates the integer overflow vulnerability and ensures that memory is safely allocated.

@@ -1,0 +1,4 @@
+In this corrected version, the double free vulnerability is eliminated by ensuring unique ownership of the allocated memory.
+The pointer is encapsulated within an Option<T> so that the Drop implementation can call .take()
+to move the pointer out on first drop, preventing any later double free attempts.
+No duplicate owners are created, thereby following proper Rust RAII idioms and safe resource management practices.

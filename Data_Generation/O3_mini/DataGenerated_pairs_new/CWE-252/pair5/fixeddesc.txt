@@ -1,0 +1,1 @@
+The corrected code now enforces proper error handling. Instead of discarding the Result from the unsafe update operation, it explicitly matches on it and panics when the update fails because the input exceeds the allowable threshold. This ensures that any unexpected condition is not silently ignored, preventing improper state updates and aligning with secure coding practices.

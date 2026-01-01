@@ -1,0 +1,6 @@
+In this corrected version the unchecked return value is fixed by explicitly checking
+the result of each operation. In the thread closure, the return value from executing
+the task is matched against Ok and Err. In case of an error, the code panics rather
+than ignoring the failure, ensuring that capacity violations or other errors do not go unnoticed.
+This adjustment enforces correct behavior and prevents logical inconsistencies that could
+occur if an operation failed silently.

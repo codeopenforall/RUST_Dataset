@@ -1,0 +1,6 @@
+The corrected code avoids invoking a shell to execute the echo command. Instead of concatenating
+the input into a command-line string and passing it to "sh -c" within an unsafe block, the fix
+calls the "echo" command directly while passing the untrusted input as a separate argument.
+This eliminates the possibility of the shell interpreting malicious metacharacters,
+thus mitigating CWE-088. The removal of the unsafe block and the careful use of Command arguments
+reflect realistic best practices.

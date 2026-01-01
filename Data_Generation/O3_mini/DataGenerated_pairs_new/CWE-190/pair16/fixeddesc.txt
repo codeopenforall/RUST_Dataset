@@ -1,0 +1,4 @@
+In the corrected version, the multiplication operands are immediately promoted to u64.
+This ensures that the full 64-bit result is computed without any overflow. By removing the unsafe
+block and performing the multiplication in a wider integer type, the vulnerability is completely
+mitigated.

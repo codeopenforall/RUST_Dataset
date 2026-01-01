@@ -1,0 +1,8 @@
+The above code is vulnerable because it uses an unsafe global variable (DEBUG_FLAG)
+to control a debug mode that completely bypasses proper token authentication.
+When the debug flag is set to true (as it is in the main method), the authenticate
+function returns true regardless of the provided token. This behavior is exploited to
+obtain administrative access even with invalid credentials, effectively bypassing the
+intended authentication mechanism. The concurrency and use of Arc/Mutex mimic real-world
+server patterns, while the unsafe block exposes a real risk when combined with mutable
+shared state.

@@ -1,0 +1,4 @@
+The fixed version addresses the control flow flaw by eliminating the erroneous branch. 
+When the flag is set to true, the function now correctly uses a safe, bounds-checked array access 
+to retrieve the element at the requested index. The unsafe block and the mistaken offset (adding 1 to the index) 
+have been removed, ensuring that a call like process(0) returns the expected value (10) rather than an unintended value.

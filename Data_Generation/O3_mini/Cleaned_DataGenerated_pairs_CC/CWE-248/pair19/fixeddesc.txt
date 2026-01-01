@@ -1,0 +1,5 @@
+In the corrected version, the unsafe operation is wrapped inside std::panic::catch_unwind so that
+if the dangerous condition is met and a panic is triggered, the panic is captured instead of causing
+an abort. Furthermore, the main thread inspects the result from join() rather than unwrapping it
+directly, which prevents the program from terminating abnormally. This approach mirrors robust error
+handling patterns seen in production Rust code when dealing with concurrency and unsafe blocks.

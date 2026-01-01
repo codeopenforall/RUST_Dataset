@@ -1,0 +1,4 @@
+The corrected code properly verifies the exceptional condition. Instead of mistakenly returning a
+successful result when the cancellation flag is set, it now returns an error (Err(MyError::Cancelled)).
+This change ensures that any cancellation is accurately reported, preserving the system's error
+handling integrity and preventing misleading success indicators.

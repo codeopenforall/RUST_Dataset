@@ -1,0 +1,1 @@
+This version contains a vulnerability due to an incorrect check of the return value from an unsafe function. The unsafe function "change" returns an error (Err) for a forbidden input (42), indicating that the update should be rejected. However, the code mistakenly treats the error branch as a success case and forces the update on error, allowing forbidden values to be applied.

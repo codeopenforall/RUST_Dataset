@@ -1,0 +1,5 @@
+The corrected code first enforces that the signature vector must have exactly 64 bytes!
+If the length does not match, the verifier immediately returns a failure. This change prevents an attacker 
+from “padding” the signature to bypass the check. Moreover, by removing the concurrent signature modification 
+(race condition) and by performing verification exclusively under a lock, the overall cryptographic integrity 
+is maintained. This properly addresses the issues in CWE-347.

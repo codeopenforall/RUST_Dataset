@@ -1,0 +1,1 @@
+This version contains a logic flaw in the run_process function. Instead of verifying if the unsafe call succeeded (i.e. checking for Ok), the code mistakenly treats an error (i.e. Err) as a successful outcome. Such a misinterpretation of the return value could lead to invalid state transitions or unintended behavior in a multithreaded context.

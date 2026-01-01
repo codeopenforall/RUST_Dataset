@@ -1,0 +1,1 @@
+This version is vulnerable to CWE-770 because it does not validate or limit the number of requested allocations. A caller can supply an arbitrarily large number that will result in an unbounded number of threads being spawned and memory allocations made via unsafe code. This behavior can lead to resource exhaustion and denial-of-service in real-world scenarios.

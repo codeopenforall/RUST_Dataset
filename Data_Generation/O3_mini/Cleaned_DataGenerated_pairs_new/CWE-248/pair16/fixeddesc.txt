@@ -1,0 +1,5 @@
+The corrected version incorporates proper panic handling by wrapping the thread join in a match statement.
+If the thread panics, instead of propagating the panic and causing an abnormal termination,
+the error is caught and a controlled error message is returned.
+This ensures that unchecked exceptions are handled and prevents unwinding across threads,
+thus remedying the issue described in CWE-248.

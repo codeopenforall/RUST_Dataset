@@ -1,0 +1,5 @@
+In this corrected version the unsafe pointer arithmetic has been replaced
+by an update method that performs an explicit bounds check before writing into the vector.
+If the provided index is not less than the vector’s length, the method returns an error.
+This validation prevents any off-by-one or out‐of‐bounds writes, thereby mitigating
+the vulnerability (CWE-119) while adhering to safe Rust practices.

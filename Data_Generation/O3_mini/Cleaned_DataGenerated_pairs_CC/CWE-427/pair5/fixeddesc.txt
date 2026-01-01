@@ -1,0 +1,1 @@
+The corrected code removes reliance on any attacker-controlled environment variable by replacing it with a hardcoded safe PATH value. The unsafe block performing unchecked pointer operations is eliminated, ensuring that the external command invocation uses only a trusted search path. This change prevents external manipulation of the command's execution environment.

@@ -1,0 +1,4 @@
+This code implements a Calculator that performs an unsafe division by using raw pointers.
+It does not check if the second parameter (the divisor) is zero before performing the division.
+In a concurrent context, multiple threads invoke this unsafe division.
+If a pair with a zero divisor is processed, it leads to a runtime panic (CWE-369: Divide By Zero) without any recovery.

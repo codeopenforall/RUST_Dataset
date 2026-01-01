@@ -1,0 +1,4 @@
+In the corrected code, the Processor's process() method no longer uses the externally supplied format string.
+Instead, a constant and safe format string ("%s") is used, ensuring that no extra format specifiers can be injected.
+The change prevents the vulnerability by not treating user input as the formatting directive. The rest of the code
+(remains the same, including concurrency and shared mutable state) to mimic the same real-world usage pattern.

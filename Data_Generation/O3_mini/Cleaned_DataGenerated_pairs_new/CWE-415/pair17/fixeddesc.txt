@@ -1,0 +1,5 @@
+The corrected version fixes the double free vulnerability by transferring ownership control
+into a shared Arc-protected Mutex holding an Option for the raw pointer. Instead of having the
+concurrent thread erroneously free the memory, it merely reads the value. The deallocation
+is exclusively handled in the Drop implementation (via take() to guarantee single free). This
+ensures that only one free operation is performed on the resource even in a concurrent context.

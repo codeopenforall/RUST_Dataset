@@ -1,0 +1,1 @@
+The fixed version eliminates the vulnerability by disabling any form of external entity resolution. Instead of attempting to extract and process file paths from SYSTEM entities, the parser inspects the XML for the presence of the keyword "SYSTEM" and immediately returns an error if found. This avoids unsafe pointer arithmetic and concurrent file access, mitigating CWE-611.

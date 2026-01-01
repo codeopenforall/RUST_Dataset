@@ -1,0 +1,4 @@
+The vulnerability arises because of an alternate control flow in the authentication logic.
+Specifically, if a request contains the "X-Debug" header, an unsafe block uses a hardcoded pointer
+to a true boolean value, bypassing the intended check_user verification.
+This authentication bypass simulates a flaw where debug endpoints or headers left enabled can be exploited.

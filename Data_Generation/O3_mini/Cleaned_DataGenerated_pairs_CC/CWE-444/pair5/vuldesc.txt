@@ -1,0 +1,6 @@
+This version simulates a request parsing scenario where an HTTP message is read and headers collected.
+The unsafe block in the method process() erroneously uses the value from the "Content-Length" header
+to extract a slice from the body buffer without verifying that the actual body’s length is at least that large.
+In cases where both "Content-Length" and "Transfer-Encoding: chunked" headers are provided,
+the erroneous assumption leads to out-of-bounds memory access, emulating CWE-444's inconsistent HTTP request interpretation.
+Concurrent processing with threads and smart pointer (Arc) usage mimic real-world patterns.

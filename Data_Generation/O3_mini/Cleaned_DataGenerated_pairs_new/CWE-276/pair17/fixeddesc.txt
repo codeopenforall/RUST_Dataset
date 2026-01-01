@@ -1,0 +1,3 @@
+The fixed code resolves the vulnerability by changing the file permission mode from 0o777 to 0o600. 
+This ensures that only the file owner has read and write access, thereby mitigating the risk of unauthorized file access. 
+Moreover, the unsafe block is removed, as it is no longer necessary to bypass any restrictions when using safe permission settings.

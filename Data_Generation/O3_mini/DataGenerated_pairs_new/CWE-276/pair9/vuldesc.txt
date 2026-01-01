@@ -1,0 +1,4 @@
+This code demonstrates a vulnerability where a configuration file is created with default file permissions set to 0o777.
+Such permissions allow any user on the system to read, write, or execute the file, leading to potential privilege escalation 
+or unauthorized modification. The use of an unsafe block and concurrent thread spawns mimics real-world patterns seen in RustSec reports.
+CWE-276 (Incorrect Default Permissions) is triggered by the overly permissive file creation mode.

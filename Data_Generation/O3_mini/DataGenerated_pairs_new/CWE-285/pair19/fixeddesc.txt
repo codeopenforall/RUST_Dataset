@@ -1,0 +1,4 @@
+In this corrected version, an explicit authorization check is added to the access method.
+The function now verifies if the caller's role is "admin" before entering the unsafe block and retrieving the secret.
+If the caller is not authorized, it returns an error ("Not authorized"). This prevents unauthorized users from accessing
+the sensitive data, resolving the CWE-285 vulnerability.

@@ -1,0 +1,1 @@
+This code simulates an improper authorization vulnerability (CWE-285), where the public API function “retrieve_info” retrieves sensitive data using an unsafe block without verifying the caller’s privileges. As a result, even a user with a Regular role can access confidential data.

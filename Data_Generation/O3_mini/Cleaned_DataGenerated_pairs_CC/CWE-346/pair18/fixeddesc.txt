@@ -1,0 +1,4 @@
+The secure version replaces the unsafe pointer check with a proper string comparison,
+ensuring that only requests with an Origin header exactly matching "http://example.com"
+are accepted. This fix directly addresses CWE-346 by validating the input header against
+a known trusted value. The concurrent processing architecture remains the same.

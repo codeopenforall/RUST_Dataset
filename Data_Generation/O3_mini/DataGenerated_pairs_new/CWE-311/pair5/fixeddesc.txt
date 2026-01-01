@@ -1,0 +1,3 @@
+In the secure implementation, sensitive data is encrypted using a simple XOR cipher before transmission.
+Although the encryption shown here is for demonstration purposes only and not suitable for production,
+this revision prevents the secret from being sent in clear text, thereby mitigating the CWE-311 vulnerability.

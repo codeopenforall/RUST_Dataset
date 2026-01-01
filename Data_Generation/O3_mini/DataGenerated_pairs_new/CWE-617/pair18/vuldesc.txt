@@ -1,0 +1,4 @@
+This vulnerable code uses unsafe pointer arithmetic in the update method to bypass Rust's built-in bounds checking. 
+It then performs a reachable assertion on an attacker-influenced state (the updated value at a specific index) 
+to enforce an invariant (value < 1000). An attacker can deliberately supply a value that triggers the assertion, 
+resulting in a panic and a potential denial-of-service (CWE-617).

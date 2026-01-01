@@ -1,0 +1,4 @@
+This code contains an unsafe update method that fails to enforce bounds checking for memory writes.
+Specifically, writing to an index equal to the designated capacity overwrites the reserved sentinel.
+This vulnerability mirrors CWE-119 (Improper Restriction of Operations within Memory Bounds), as it
+allows an attacker or buggy caller to corrupt adjacent memory.

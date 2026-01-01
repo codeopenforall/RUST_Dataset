@@ -1,0 +1,6 @@
+This implementation uses an unsafe global pointer for application configuration, which is set
+directly based on user input. The absence of input validation before storing the configuration
+allows an attacker to supply a value for the threshold that violates an invariant (i.e., it must be
+less than 100). This leads to a reachable assertion (assert!()) in the process function. Additionally,
+using unsynchronized mutable global state with unsafe blocks further exacerbates the risk of data races.
+Such patterns have been observed in real-world vulnerabilities reported in RustSec.

@@ -1,0 +1,1 @@
+The revised code eliminates the unsafe conversion and instead uses fs::canonicalize to resolve the absolute path. It checks that the resolved path remains within the permitted base directory, thus preventing an attacker from exploiting symbolic link races to access unintended files. This effectively mitigates the CWE-059 vulnerability.

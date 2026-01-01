@@ -1,0 +1,1 @@
+In this revised version, the file is created with strict permissions (mode 0o600) instead of the overly permissive 0o777. The insecure unsafe block has been removed and replaced by a safe routine that leverages the same APIs to enforce a secure default configuration. This alleviates the CWE-276 vulnerability by ensuring only the owner can access the file.

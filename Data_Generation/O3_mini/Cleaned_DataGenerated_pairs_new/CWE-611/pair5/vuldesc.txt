@@ -1,0 +1,6 @@
+This code insecurely processes XML input by allowing external entity resolution. When a DOCTYPE
+with a SYSTEM external entity declaration is detected, the code naively extracts the system
+identifier and uses an unsafe function pointer dereference to call a resolver function. The
+resolver function then unsafely reads the external file without proper validation or sandboxing,
+thus exposing the application to XXE attacks. The use of unsafe blocks and raw pointers to a function
+exacerbates the issue.

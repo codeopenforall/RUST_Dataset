@@ -1,0 +1,4 @@
+In the corrected code, the subtraction is performed safely by using the checked_sub method.
+This method returns an Option: if an underflow would occur, it returns None, allowing the code to fall back to a safe default (in this case, zero).
+Thus, when subtracting an amount greater than the available total, the fixed version prevents wraparound and ensures that the accumulator's value does not become unexpectedly high.
+The rest of the code structure remains the same to preserve the concurrency and realistic application pattern.

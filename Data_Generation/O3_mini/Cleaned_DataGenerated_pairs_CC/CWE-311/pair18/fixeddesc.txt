@@ -1,0 +1,1 @@
+In the corrected version, the sensitive secret is transformed using a simple XOR operation with a fixed key (0xAA) before it is written to disk. This change ensures that the secret is not stored in cleartext, thereby mitigating CWE-311. The unsafe code that exposed raw memory has been completely removed from the encryption pathway.

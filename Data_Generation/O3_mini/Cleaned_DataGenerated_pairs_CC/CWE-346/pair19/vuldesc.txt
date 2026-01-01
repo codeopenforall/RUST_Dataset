@@ -1,0 +1,4 @@
+This vulnerable code incorrectly performs an origin header check by comparing the raw pointers of the strings rather than their actual content.
+The unsafe block assumes that the header value provided will have the same pointer as the trusted literal.
+In practice, even if the header content is correct, the memory locations will differ, causing authorized requests to be rejected.
+This design flaw may be exploited when relying on user-supplied header information, exposing CWE-346 (Origin Validation Error) risks.

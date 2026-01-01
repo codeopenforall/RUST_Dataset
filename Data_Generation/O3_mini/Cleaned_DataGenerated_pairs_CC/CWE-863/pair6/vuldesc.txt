@@ -1,0 +1,5 @@
+This version is vulnerable because it does not impose any limits on resource allocation.
+It allows unbounded memory allocation and unthrottled thread spawning, which could be
+exploited to exhaust system resources. The unsafe block performs memory allocation and
+pointer arithmetic without validating if the requested size (derived from the unbounded input)
+is reasonable. This can lead to either excessive memory consumption or crashes in real-world scenarios.

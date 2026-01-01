@@ -1,0 +1,5 @@
+This code demonstrates a vulnerability classified under CWE-674: Uncontrolled Recursion.
+A deeply nested tree is processed via a recursively called function that uses unsafe pointer arithmetic.
+Without a recursion depth limit, an attacker can supply an input that forces the recursion to proceed
+without bounds, eventually triggering a stack overflow. The misuse of unsafe code to iterate over the
+vector's internal memory further complicates the scenario.

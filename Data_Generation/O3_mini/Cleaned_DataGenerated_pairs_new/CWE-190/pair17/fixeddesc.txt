@@ -1,0 +1,5 @@
+In the corrected implementation the multiplication is performed safely by first promoting the operands to u64,
+thus ensuring that the product (which should be 5,000,000,000) can be represented without truncation.
+The code uses checked_mul to explicitly verify that no overflow occurs. The unsafe raw pointer manipulation
+present in the vulnerable version has been removed, and although concurrency via Arc<Mutex<_>> remains for realism,
+all arithmetic is now performed using safe idioms.

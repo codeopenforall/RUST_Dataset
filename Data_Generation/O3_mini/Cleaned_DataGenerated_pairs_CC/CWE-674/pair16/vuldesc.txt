@@ -1,0 +1,1 @@
+This code snippet implements a recursive parser that processes a string of nested parentheses. It uses unsafe pointer arithmetic for iteration and recurses for each opening parenthesis without verifying that the recursion depth remains bounded. An attacker-provided input with excessive nesting can trigger a stack overflow (CWE-674: Uncontrolled Recursion).

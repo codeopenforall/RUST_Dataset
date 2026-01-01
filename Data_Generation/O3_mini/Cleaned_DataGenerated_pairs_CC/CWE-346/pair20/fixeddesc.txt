@@ -1,0 +1,1 @@
+In the corrected version the unsafe code is removed and header validation is performed safely via iteration. The check now strictly verifies that the "Origin" header exactly equals "https://example.com" as specified in the allowed list. This prevents an attacker from bypassing the security control by including benign substrings in malicious header values.

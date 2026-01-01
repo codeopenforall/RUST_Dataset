@@ -1,0 +1,3 @@
+This code uses a Mutex-guarded shared variable and checked multiplication to safely compute the factorial.
+Each thread locks the shared product and performs a checked multiplication, immediately returning an error if an overflow occurs.
+Thus, when an input like 13 is used, the overflow is detected and the error ("Overflow detected") is returned instead of a corrupted result.

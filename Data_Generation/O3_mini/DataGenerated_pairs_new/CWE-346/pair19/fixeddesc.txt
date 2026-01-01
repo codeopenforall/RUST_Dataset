@@ -1,0 +1,3 @@
+The corrected version eliminates the unsafe block and instead compares the actual string values.
+By verifying the header content directly, it properly ensures that only requests with an exactly matching trusted origin are granted access.
+This secure check prevents attackers from bypassing origin validation by spoofing header memory pointers, thus mitigating CWE-346.

@@ -1,0 +1,1 @@
+In this version, a function (critical) that validates the input is called within an unsafe block, but its returned Result is ignored. This unchecked return value vulnerability means that even if the input is invalid (e.g. input ≥ 100), the error is discarded and the function proceeds as if nothing went wrong, potentially leading to incorrect application behavior.

@@ -1,0 +1,1 @@
+The corrected version properly distinguishes between normal and exceptional conditions. Upon encountering a timeout (detected by a panic in the spawned thread), the error is propagated rather than suppressed. This ensures that error conditions are not misinterpreted as valid results, thus upholding the intended control flow and avoiding unsafe recovery.

@@ -1,0 +1,1 @@
+In the revised version the input header value is sanitized prior to use. The sanitize function removes any CR and LF characters, ensuring that an attacker’s attempt to embed CRLF sequences is mitigated. The unsafe block and concurrent header writes remain, but proper input handling ensures HTTP response splitting can no longer occur.
