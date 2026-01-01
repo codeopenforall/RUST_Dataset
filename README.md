@@ -71,7 +71,6 @@ The CWE Distribution of source data used the creation of RUST-VGA. It contain 13
 | CWE-835 |     1 |
 | CWE-863 |     2 |
 | CWE-908 |     2 |
-| NVD-CWE |    22 |
 
 
 
